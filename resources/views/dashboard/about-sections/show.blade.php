@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', $item->title_ar ?? __('dashboard.about_sections.show'))
 

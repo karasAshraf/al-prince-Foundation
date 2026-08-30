@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'editUrl' => null,
     'deleteAction' => null, // route name or URL used in the delete form
     'itemId' => null,

@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', __('dashboard.home_sections.edit') . ': ' . ($section->title_ar ?? ''))
 

@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'title' => 'لا توجد بيانات',
     'message' => 'لم يتم إضافة أي عناصر بعد.',
     'actionLabel' => null,

@@ -1,4 +1,4 @@
-﻿@if($surveys->isEmpty())
+@if($surveys->isEmpty())
     <x-tables.empty-state
         title="{{ __('dashboard.surveys.no_surveys') }}"
         message="{{ __('dashboard.common.empty_state') }}"

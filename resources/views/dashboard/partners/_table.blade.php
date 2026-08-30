@@ -1,4 +1,4 @@
-﻿@if($partners->isEmpty())
+@if($partners->isEmpty())
     <x-tables.empty-state
         title="{{ __('dashboard.partners.no_partners') }}"
         message="{{ __('dashboard.common.empty_state') }}"

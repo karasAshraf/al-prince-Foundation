@@ -1,4 +1,4 @@
-﻿@csrf
+@csrf
 
 <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 max-w-2xl space-y-4">
     <x-forms.input

@@ -1,4 +1,4 @@
-﻿@if($news->isEmpty())
+@if($news->isEmpty())
     <x-tables.empty-state
         title="{{ __('dashboard.news.no_news') }}"
         message="{{ __('dashboard.common.empty_state') }}"

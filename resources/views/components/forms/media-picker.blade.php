@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'name' => 'media',
     'label' => null,
     'selectedUrl' => null,

@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'solutions',
     'iconsMap' => null,
     'isTech' => false,

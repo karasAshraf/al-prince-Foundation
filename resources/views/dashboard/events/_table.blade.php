@@ -1,4 +1,4 @@
-﻿@if($events->isEmpty())
+@if($events->isEmpty())
     <x-tables.empty-state
         title="{{ __('dashboard.events.no_events') }}"
         message="{{ __('dashboard.common.empty_state') }}"

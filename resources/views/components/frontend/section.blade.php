@@ -8,11 +8,7 @@
 ])
 
 @php
-    // Color Rhythm distribution: Even indexes use Soft Gray (#E1DFDD via default body or F5F5F5 base)
-    // Here we enforce alternating section backgrounds:
-    // Even (0, 2, 4...) -> bg-[#F5F5F5] (White backdrop canvas)
-    // Odd (1, 3, 5...) -> bg-white (or Light Gray #EAEAE9 depending on layout hierarchy, we use bg-[#EAEAE9] for clear section-level rhythm variation)
-    $bgClass = ($index % 2 === 0) ? 'bg-[#F5F5F5]' : 'bg-white';
+    $bgClass = 'bg-surface';
 @endphp
 
 <section 

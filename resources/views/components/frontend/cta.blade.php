@@ -1,4 +1,4 @@
-﻿@props(['section'])
+@props(['section'])
 
 @php
     $locale = app()->getLocale();

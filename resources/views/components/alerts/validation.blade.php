@@ -1,4 +1,4 @@
-﻿@props(['errors' => null])
+@props(['errors' => null])
 
 @php $errList = $errors ?? $errors ?? (isset($__bag) ? $__bag : null); @endphp
 

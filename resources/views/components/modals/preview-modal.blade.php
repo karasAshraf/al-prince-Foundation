@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'eventName' => 'open-preview-modal',
     'title'     => 'معاينة',
 ])

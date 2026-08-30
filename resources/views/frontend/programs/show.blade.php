@@ -1,4 +1,4 @@
-﻿@php
+@php
     $locale = app()->getLocale();
     $title  = $locale === 'ar' ? $program->title_ar : ($program->title_en ?? $program->title_ar);
     $desc   = $locale === 'ar' ? $program->description_ar : ($program->description_en ?? $program->description_ar);

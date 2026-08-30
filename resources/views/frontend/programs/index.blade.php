@@ -1,4 +1,4 @@
-﻿<x-frontend-layout title="{{ __('frontend.development_programs') }}">
+<x-frontend-layout title="{{ __('frontend.development_programs') }}">
 
     <!-- Page Header 
     <div class="text-center mb-12">

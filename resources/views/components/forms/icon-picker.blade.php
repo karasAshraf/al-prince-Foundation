@@ -1,1 +1,1 @@
-﻿<x-icon-picker {{ $attributes->merge($attributes->getAttributes()) }} />
+<x-icon-picker {{ $attributes->merge($attributes->getAttributes()) }} />

@@ -1,4 +1,4 @@
-﻿@if($industries->isEmpty())
+@if($industries->isEmpty())
     <x-tables.empty-state
         title="{{ __('dashboard.industries.no_industries') }}"
         message="{{ __('dashboard.common.empty_state') }}"

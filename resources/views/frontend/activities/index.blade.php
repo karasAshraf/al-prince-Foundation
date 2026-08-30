@@ -1,4 +1,4 @@
-﻿<x-frontend-layout title="{{ __('frontend.activities') }}">
+<x-frontend-layout title="{{ __('frontend.activities') }}">
 
     <div x-data="{
         open: false,

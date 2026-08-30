@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', __('dashboard.solutions.show') . ': ' . $solution->title_ar)
 

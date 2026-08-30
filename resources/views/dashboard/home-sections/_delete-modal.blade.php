@@ -1,1 +1,1 @@
-﻿<x-modals.delete-modal />
+<x-modals.delete-modal />

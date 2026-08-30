@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'seoMeta' => null, // the related SeoMeta model, or null if none saved yet
 ])
 

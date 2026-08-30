@@ -1,4 +1,4 @@
-﻿<x-frontend-layout title="{{ __('frontend.projects') }}">
+<x-frontend-layout title="{{ __('frontend.projects') }}">
 
     @php $locale = app()->getLocale(); @endphp
 

@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'showUrl'     => null,
     'editUrl'     => null,
     'deleteAction'=> null,

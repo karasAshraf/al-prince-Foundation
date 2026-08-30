@@ -1,4 +1,4 @@
-﻿@php
+@php
     // Separate slider sections from the rest before rendering
     $heroSlides = $sections->filter(fn($s) => in_array($s->type, [
         \App\Models\HomePageSection::TYPE_SLIDER,

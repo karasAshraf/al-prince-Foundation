@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'name'             => 'file',
     'urlName'          => 'external_link',
     'removeMediaName'  => 'remove_media',

@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', $item->name_ar ?? __('dashboard.team_members.show'))
 

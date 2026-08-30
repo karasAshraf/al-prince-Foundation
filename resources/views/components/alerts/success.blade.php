@@ -1,4 +1,4 @@
-﻿@props(['message' => null])
+@props(['message' => null])
 
 @if($message ?? session('success'))
     <div

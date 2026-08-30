@@ -1,4 +1,4 @@
-﻿@if($users->isEmpty())
+@if($users->isEmpty())
     <x-tables.empty-state
         title="{{ __('dashboard.users.no_users') }}"
         message="{{ __('dashboard.common.empty_state') }}"

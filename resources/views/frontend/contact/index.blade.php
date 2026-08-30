@@ -1,4 +1,4 @@
-﻿<x-frontend-layout title="{{ __('frontend.contact') }}">
+<x-frontend-layout title="{{ __('frontend.contact') }}">
 
     <!-- Page Header -->
     <div class="text-center mb-12 sm:mb-16">

@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'name',
     'label',
     'checked' => false,

@@ -1,4 +1,4 @@
-﻿@csrf
+@csrf
 
 <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 items-start">
     <div class="space-y-5 lg:col-span-2">

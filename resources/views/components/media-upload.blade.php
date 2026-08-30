@@ -1,1 +1,1 @@
-﻿@include('components.forms.media-upload', $attributes->getAttributes())
+@include('components.forms.media-upload', $attributes->getAttributes())

@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'id' => null,
     'isActive' => false,
     'route' => '',

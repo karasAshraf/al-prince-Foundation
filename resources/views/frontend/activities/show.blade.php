@@ -1,4 +1,4 @@
-﻿@php
+@php
     $locale   = app()->getLocale();
     $title    = $locale === 'ar' ? ($activity->title_ar ?: '') : ($activity->title_en ?: $activity->title_ar);
     $content  = $locale === 'ar' ? ($activity->description_ar ?: '') : ($activity->description_en ?: $activity->description_ar);

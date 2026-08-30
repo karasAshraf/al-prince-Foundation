@@ -1,4 +1,4 @@
-﻿<x-frontend-layout title="{{ __('frontend.events') }}">
+<x-frontend-layout title="{{ __('frontend.events') }}">
 
     {{-- ═══════════════════════════════════════════════════════════════
          TWO-TONE SECTION HEADING

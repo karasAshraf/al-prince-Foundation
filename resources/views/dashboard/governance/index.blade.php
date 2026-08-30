@@ -1,1 +1,1 @@
-﻿@include('dashboard.governance-documents.index')
+@include('dashboard.governance-documents.index')

@@ -1,4 +1,4 @@
-﻿@props(['type' => 'button'])
+@props(['type' => 'button'])
 
 <button
     type="{{ $type }}"

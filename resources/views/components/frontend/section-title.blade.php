@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'badge' => null,
     'title' => null,
     'description' => null,

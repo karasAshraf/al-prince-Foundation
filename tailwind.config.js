@@ -21,7 +21,7 @@ export default {
                 'text-primary': '#372828',
                 'text-secondary': '#695956',
                 'text-muted': '#B4AEA4',
-                surface: '#E1DFDD',
+                surface: 'var(--color-surface)',
                 'surface-alt': '#EAEAE9',
                 'surface-muted': '#B4AEA4',
                 border: '#D5D3CE',

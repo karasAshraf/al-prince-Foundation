@@ -1,4 +1,4 @@
-﻿{{--
+{{--
     Delete Modal — global Alpine.js event bus.
     Triggered by x-tables.table-actions via: $dispatch('open-delete-modal', { action, label })
 --}}

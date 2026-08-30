@@ -1,4 +1,4 @@
-﻿@props(['headers' => []])
+@props(['headers' => []])
 
 <div class="overflow-x-auto rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9]">
     <table class="w-full text-start">

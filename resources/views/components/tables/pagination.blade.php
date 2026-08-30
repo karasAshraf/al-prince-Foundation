@@ -1,4 +1,4 @@
-﻿@props(['paginator'])
+@props(['paginator'])
 
 @if($paginator->hasPages())
     <div class="mt-4 flex flex-col items-center justify-between gap-3 border-t border-[#B49C6E]/20 px-2 pt-4 sm:flex-row">

@@ -1,4 +1,4 @@
-﻿@if($activities->isEmpty())
+@if($activities->isEmpty())
     <x-tables.empty-state
         title="{{ __('dashboard.activities.no_activities') }}"
         message="{{ __('dashboard.common.empty_state') }}"

@@ -1,4 +1,4 @@
-﻿<x-frontend-layout title="{{ __('frontend.content_management_title') }}">
+<x-frontend-layout title="{{ __('frontend.content_management_title') }}">
 
     <!-- Page Header -->
     <div class="text-center mb-16 max-w-2xl mx-auto space-y-4">

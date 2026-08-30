@@ -1,4 +1,4 @@
-﻿<x-frontend-layout title="{{ __('frontend.surveys') }}">
+<x-frontend-layout title="{{ __('frontend.surveys') }}">
 
     <!-- Page Header -->
     <div class="text-center mb-12">

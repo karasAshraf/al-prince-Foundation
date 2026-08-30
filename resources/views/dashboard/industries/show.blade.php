@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', __('dashboard.industries.show') . ': ' . $industry->title_ar)
 

@@ -9,7 +9,7 @@
      Statistics / Counter Section — Full Width Corporate Premium
      ============================================================ --}}
 <section
-    {{ $attributes->merge(['class' => 'relative w-full py-16 md:py-20 overflow-hidden bg-[#F5F5F5] dark:bg-gray-900 border-b border-border/10']) }}
+    {{ $attributes->merge(['class' => 'relative w-full py-16 md:py-20 overflow-hidden bg-surface border-b border-border/10']) }}
     aria-label="{{ __('frontend.statistics_section') ?: 'Statistics' }}"
     x-data="{ sectionInView: false }"
     x-intersect.once="sectionInView = true"

@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'url' => null,
     'alt' => 'صورة',
     'size' => 'md', // sm | md | lg

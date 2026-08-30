@@ -1,4 +1,4 @@
-﻿<x-frontend-layout title="{{ __('frontend.governance_and_transparency') }}">
+<x-frontend-layout title="{{ __('frontend.governance_and_transparency') }}">
 
     @php
         $categoryNames = [

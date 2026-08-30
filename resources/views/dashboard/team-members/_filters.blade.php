@@ -1,4 +1,4 @@
-﻿<div class="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+<div class="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 
     {{-- Type Tabs --}}
     <div class="flex items-center gap-1 rounded-xl border border-[#B49C6E]/30 bg-[#EAEAE9] p-1.5 shadow-sm">

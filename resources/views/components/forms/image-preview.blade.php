@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'url'      => null,
     'size'     => 'md', // sm | md | lg
     'mimeType' => null, // optional: pass the mime type from Spatie media if available

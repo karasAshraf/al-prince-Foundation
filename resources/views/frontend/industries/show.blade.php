@@ -1,4 +1,4 @@
-﻿@php
+@php
     $locale = app()->getLocale();
     $title  = $locale === 'ar' ? $industry->title_ar : ($industry->title_en ?? $industry->title_ar);
     $desc   = $locale === 'ar' ? $industry->description_ar : ($industry->description_en ?? $industry->description_ar);

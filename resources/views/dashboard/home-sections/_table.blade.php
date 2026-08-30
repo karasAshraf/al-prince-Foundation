@@ -1,4 +1,4 @@
-﻿@if($sections->isEmpty())
+@if($sections->isEmpty())
     <x-tables.empty-state
         title="{{ __('dashboard.home_sections.no_sections') }}"
         message="{{ __('dashboard.common.empty_state') }}"

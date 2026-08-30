@@ -1,4 +1,4 @@
-﻿@if($services->isEmpty())
+@if($services->isEmpty())
     <x-tables.empty-state
         title="{{ __('dashboard.services.no_services') }}"
         message="{{ __('dashboard.common.empty_state') }}"

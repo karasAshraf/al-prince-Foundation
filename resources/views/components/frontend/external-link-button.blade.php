@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'model'      => null,
     'link'       => null,
     'collection' => 'default',

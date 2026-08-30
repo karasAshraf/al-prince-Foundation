@@ -1,4 +1,4 @@
-﻿@if($programs->isEmpty())
+@if($programs->isEmpty())
     <x-tables.empty-state
         title="{{ __('dashboard.programs.no_programs') }}"
         message="{{ __('dashboard.common.empty_state') }}"

@@ -1,4 +1,4 @@
-﻿<x-frontend-layout title="{{ __('frontend.server_error_title') }}">
+<x-frontend-layout title="{{ __('frontend.server_error_title') }}">
     <div class="min-h-[60vh] flex items-center justify-center py-16">
         <div class="text-center space-y-6 max-w-lg mx-auto">
             <div class="w-24 h-24 rounded-3xl bg-red-500/10 text-red-500 flex items-center justify-center text-4xl font-bold mx-auto shadow-sm">

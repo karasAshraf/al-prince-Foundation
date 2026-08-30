@@ -1,4 +1,4 @@
-﻿@csrf
+@csrf
 
 <div x-data="{
     type: @js(old('type', $section->type ?? 'hero_slider')),

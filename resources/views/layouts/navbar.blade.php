@@ -35,10 +35,9 @@
                 </svg>
             </button>
 
-            {{-- Brand / logo --}}
-            <a href="{{ route('dashboard.home') }}" class="flex items-center gap-2">
-                <x-application-logo
-                    class="h-16 sm:h-20 lg:h-28 w-auto  object-contain " />
+            {{-- Brand / logo — fixed sizing so it never overflows the header/sidebar --}}
+            <a href="{{ route('dashboard.home') }}" class="flex items-center gap-2 flex-shrink-0 overflow-hidden">
+                <x-application-logo class="h-14 sm:h-15 lg:h-15 w-auto max-w-[180px] sm:max-w-[220px] lg:max-w-[260px] object-contain" />
             </a>
 
         </div>

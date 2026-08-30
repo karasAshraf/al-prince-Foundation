@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', $item->id ? __('dashboard.media_library.edit') : __('dashboard.media_library.create'))
 

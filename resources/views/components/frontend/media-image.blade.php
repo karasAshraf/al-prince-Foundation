@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'src'        => null,
     'alt'        => '',
     'aspectRatio'=> '4/3',

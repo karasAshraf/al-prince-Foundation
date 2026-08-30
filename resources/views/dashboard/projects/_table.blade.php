@@ -1,4 +1,4 @@
-﻿@if($projects->isEmpty())
+@if($projects->isEmpty())
     <x-tables.empty-state
         title="{{ __('dashboard.projects.no_projects') }}"
         message="{{ __('dashboard.common.empty_state') }}"

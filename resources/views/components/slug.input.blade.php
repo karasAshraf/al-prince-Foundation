@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'name' => 'slug',
     'label' => 'الرابط (Slug)',
     'value' => null,

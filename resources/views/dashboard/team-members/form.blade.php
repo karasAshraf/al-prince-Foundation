@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', $member->exists ? 'تعديل عضو' : 'إضافة عضو فريق')
 

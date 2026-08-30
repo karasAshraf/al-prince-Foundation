@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'title' => __('frontend.no_data_available'),
     'description' => null,
     'icon' => null,

@@ -1,4 +1,4 @@
-﻿{{-- Alias: delegates to empty.state.blade.php content --}}
+{{-- Alias: delegates to empty.state.blade.php content --}}
 @props([
     'title'       => 'لا توجد بيانات',
     'message'     => 'لم يتم إضافة أي عناصر بعد.',

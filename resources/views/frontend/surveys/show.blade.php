@@ -1,4 +1,4 @@
-﻿@php
+@php
     $locale = app()->getLocale();
     $title  = $survey->title;
     $desc   = $survey->description;

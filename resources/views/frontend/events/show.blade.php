@@ -1,4 +1,4 @@
-﻿@php
+@php
     $locale   = app()->getLocale();
     $title    = $locale === 'ar' ? ($event->title_ar ?: '') : ($event->title_en ?: $event->title_ar);
     $content  = $locale === 'ar' ? ($event->description_ar ?: '') : ($event->description_en ?: $event->description_ar);

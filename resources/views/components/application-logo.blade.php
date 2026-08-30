@@ -1,65 +1,72 @@
-﻿@php
+{{--
+    resources/views/components/application-logo.blade.php
+
+    Renders the foundation logo image (Cloudinary URL or local storage path).
+
+    KNOWN ISSUE THIS HANDLES: the settings.value column has, at different
+    points, been JSON and LONGTEXT. If a value was saved via json_encode()
+    without a matching json_decode() on read (or vice versa), a plain string
+    value can come back wrapped in literal double-quote characters, e.g.
+        "https://res.cloudinary.com/.../logo.png"
+    instead of the clean value. That leading `"` breaks any startsWith/regex
+    check for http/https. We defensively strip that here before checking.
+--}}
+
+@php
+    $logoValue = null;
+
+    try {
+        $companyInfo = \App\Models\Setting::group('company_info');
+        $logoValue = $companyInfo['logo'] ?? null;
+    } catch (\Throwable $e) {
+        $logoValue = null;
+    }
+
     $logoUrl = null;
 
-    // 1. Check setting from DB if available
-    try {
-        $dbLogo = $companyInfo['logo'] ?? null;
-        if ($dbLogo) {
-            if (preg_match('/^(https?:)?\/\//i', $dbLogo)) {
-                $logoUrl = $dbLogo;
-            } elseif (\Illuminate\Support\Facades\Storage::disk('public')->exists($dbLogo)) {
-                $logoUrl = \Illuminate\Support\Facades\Storage::url($dbLogo);
+    if ($logoValue) {
+        // 1. Trim whitespace/newlines that may have been introduced by
+        //    copy-paste or storage round-tripping.
+        $logoValue = trim($logoValue);
+
+        // 2. Strip a single layer of literal surrounding quotes, in case the
+        //    value is a JSON-encoded string that was never json_decode()'d
+        //    (e.g. value stored as `"https://..."` including the quotes).
+        if (\Illuminate\Support\Str::startsWith($logoValue, '"') && \Illuminate\Support\Str::endsWith($logoValue, '"')) {
+            $decoded = json_decode($logoValue, true);
+            if (is_string($decoded)) {
+                $logoValue = $decoded;
+            } else {
+                $logoValue = trim($logoValue, '"');
             }
         }
-    } catch (\Throwable $e) {
-        // ignore DB exception if table not populated
-    }
 
-    // 2. Dynamic scan of public storage logo directory
-    if (!$logoUrl) {
-        try {
-            $logoFiles = \Illuminate\Support\Facades\Storage::disk('public')->files('logo');
-            if (!empty($logoFiles)) {
-                $logoUrl = \Illuminate\Support\Facades\Storage::url($logoFiles[0]);
-            }
-        } catch (\Throwable $e) {
-            // ignore storage exception
-        }
-    }
+        // 3. Now classify: external URL vs local storage path.
+        $isExternalUrl = \Illuminate\Support\Str::startsWith(strtolower($logoValue), ['http://', 'https://', '//']);
 
-    // 3. Fallback scan of any image in public storage root
-    if (!$logoUrl) {
-        try {
-            $allPublicFiles = \Illuminate\Support\Facades\Storage::disk('public')->files();
-            foreach ($allPublicFiles as $file) {
-                if (preg_match('/\.(png|jpe?g|svg|webp)$/i', $file)) {
-                    $logoUrl = \Illuminate\Support\Facades\Storage::url($file);
-                    break;
-                }
+        if ($isExternalUrl) {
+            $logoUrl = $logoValue;
+        } else {
+            $cleanPath = preg_replace('#^/?storage/#', '', $logoValue);
+
+            if (\Illuminate\Support\Facades\Storage::disk('public')->exists($cleanPath)) {
+                $logoUrl = \Illuminate\Support\Facades\Storage::disk('public')->url($cleanPath);
             }
-        } catch (\Throwable $e) {
-            // ignore storage exception
         }
     }
 
-    // 4. Hardcoded relative fallback if logo file exists directly in public/storage/logo/
-    if (!$logoUrl && file_exists(public_path('storage/logo/لوجو-02.png'))) {
-        $logoUrl = asset('storage/logo/لوجو-02.png');
+    if (! $logoUrl) {
+        $logoUrl = asset('images/logo-default.png');
     }
+
+    // TEMPORARY DEBUG — uncomment the line below to inspect the raw value
+    // reaching this component if the issue persists after this fix:
+    // dd(['raw_setting_value' => $companyInfo['logo'] ?? 'NULL', 'resolved_logo_value' => $logoValue, 'final_url' => $logoUrl]);
 @endphp
 
-@if ($logoUrl)
-    <img
-        src="{{ $logoUrl }}"
-        alt="{{ config('app.name', __('dashboard.common.foundation_name')) }}"
-        {{ $attributes->merge(['class' => 'w-auto object-contain']) }}
-    />
-@else
-    <span
-        {{ $attributes->merge([
-            'class' => 'flex items-center justify-center rounded-lg bg-[#A38B54] text-sm font-bold text-[#EAEAE9]'
-        ]) }}
-    >
-        أث
-    </span>
-@endif
+<img
+    {{ $attributes->merge(['class' => 'block']) }}
+    src="{{ $logoUrl }}"
+    alt="{{ __('frontend.brand_name') }}"
+    loading="lazy"
+>

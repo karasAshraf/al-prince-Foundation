@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'value' => null,
     'name'  => null,
     'label' => null,

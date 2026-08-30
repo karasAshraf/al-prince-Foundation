@@ -1,4 +1,4 @@
-﻿@if($documents->isEmpty())
+@if($documents->isEmpty())
     <x-tables.empty-state
         title="{{ __('dashboard.governance_documents.no_documents') }}"
         message="{{ __('dashboard.common.empty_state') }}"

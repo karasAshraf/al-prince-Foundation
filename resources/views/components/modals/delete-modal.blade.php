@@ -1,4 +1,4 @@
-﻿<div
+<div
     x-data="{
         open: false,
         action: '',

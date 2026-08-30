@@ -1,4 +1,4 @@
-﻿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', $aboutSection->exists ? 'تعديل قسم عن المؤسسة' : 'إضافة قسم عن المؤسسة')
 

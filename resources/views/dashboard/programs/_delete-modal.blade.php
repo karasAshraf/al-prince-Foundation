@@ -1,4 +1,4 @@
-﻿{{--
+{{--
     Delete Modal — powered by Alpine.js global event bus.
     x-tables.table-actions dispatches: open-delete-modal → { action, label }
     This modal listens, sets the form action, and shows itself.

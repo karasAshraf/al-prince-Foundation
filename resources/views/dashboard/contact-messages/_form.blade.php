@@ -1,4 +1,4 @@
-﻿{{-- Readonly representation for contact message details --}}
+{{-- Readonly representation for contact message details --}}
 <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm space-y-4">
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <x-forms.input name="name" label="الاسم الكامل" :value="$message->name ?? ''" disabled />
