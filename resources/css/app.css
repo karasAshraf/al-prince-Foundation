@@ -1,0 +1,141 @@
+@import './fonts.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none !important;
+}
+
+@layer base {
+    :root {
+        --color-primary: #A38B54;
+        --color-primary-light: #B49C6E;
+        --color-primary-dark: #8A734A;
+        --color-secondary: #766868;
+        --color-secondary-light: #979290;
+        --color-text-primary: #3D342A;
+        --color-text-secondary: #5C5450;
+        --color-text-muted: #979290;
+        --color-surface: #EAEAE9;
+        --color-surface-alt: #AEA19F;
+        --color-border: #B7B5B3;
+        --color-border-light: #C5C2C0;
+        --color-white: #FFFFFF;
+    }
+
+    .dark {
+        --color-primary: #B49C6E;
+        --color-primary-light: #C5AD7F;
+        --color-primary-dark: #A38B54;
+        --color-secondary: #979290;
+        --color-secondary-light: #AEA19F;
+        --color-text-primary: #E8E4DF;
+        --color-text-secondary: #C5C2C0;
+        --color-text-muted: #979290;
+        --color-surface: #2A2520;
+        --color-surface-alt: #3D3530;
+        --color-border: #5C5450;
+        --color-white: #FFFFFF;
+    }
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: clip;
+    }
+
+    body {
+        background-color: var(--color-surface);
+        color: var(--color-text-primary);
+    }
+
+    h1, h2, h3, .heading {
+        @apply font-bold;
+    }
+
+    html[lang="ar"] p,
+    [dir="rtl"] p {
+        line-height: 1.75;
+    }
+
+    /* Custom Modern Slim Scrollbar */
+    html {
+        scrollbar-width: thin;
+        scrollbar-color: #A38B54 transparent;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #A38B54;
+        border-radius: 9999px;
+        border: 2px solid transparent;
+        background-clip: content-box;
+        transition: background-color 0.3s ease;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #B49C6E;
+    }
+}
+
+@layer utilities {
+    .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: #A38B54 transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #A38B54;
+        border-radius: 9999px;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: #B49C6E;
+    }
+
+    .rotate-8 {
+        transform: rotate(8deg);
+    }
+
+    .scale-115 {
+        transform: scale(1.15);
+    }
+
+    @keyframes kenburns {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.08);
+        }
+    }
+
+    .animate-kenburns {
+        animation: kenburns 6s ease-out forwards;
+    }
+
+    /* Sidebar inactive nav item hover state */
+    .hover-sidebar-item:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+}

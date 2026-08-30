@@ -1,0 +1,52 @@
+[
+  {
+    "id": "TC001",
+    "title": "test_authentication_login_and_email_verification",
+    "description": "Verify that users can log in with valid credentials and receive an authenticated session or token, and that email verification with valid and invalid tokens behaves as expected, including access control to protected dashboard endpoints."
+  },
+  {
+    "id": "TC002",
+    "title": "test_news_management_crud_and_media_handling",
+    "description": "Test creating, editing, publishing, and retrieving news stories with media attachments, including validation errors for missing fields and unsupported media types."
+  },
+  {
+    "id": "TC003",
+    "title": "test_program_management_crud_and_status_toggle",
+    "description": "Validate creation, retrieval, and status toggling of programs with proper authorization and handling of invalid or incomplete payloads."
+  },
+  {
+    "id": "TC004",
+    "title": "test_project_management_slug_generation_and_relationships",
+    "description": "Ensure projects can be created with slug generation linked to programs, updated with slug preservation or regeneration, and handle validation errors for duplicates or missing relationships."
+  },
+  {
+    "id": "TC005",
+    "title": "test_service_management_crud_and_authorization",
+    "description": "Verify CRUD operations for services including creation, update, retrieval, validation errors, and authorization enforcement on deletion."
+  },
+  {
+    "id": "TC006",
+    "title": "test_team_members_crud_and_photo_uploads",
+    "description": "Test creating, updating, and retrieving team member profiles with photo uploads, including handling unsupported image formats and authorization on deletion."
+  },
+  {
+    "id": "TC007",
+    "title": "test_governance_documents_upload_and_filtering",
+    "description": "Validate uploading governance documents with categories and files, retrieving documents by category, and handling validation errors for missing or disallowed files."
+  },
+  {
+    "id": "TC008",
+    "title": "test_survey_system_submission_and_throttling",
+    "description": "Test creating surveys, submitting valid and invalid responses, enforcing throttling limits, and retrieving survey analytics."
+  },
+  {
+    "id": "TC009",
+    "title": "test_contact_messages_submission_and_spam_protection",
+    "description": "Verify public contact form submissions with honeypot spam protection, retrieval of messages by admins, and authorization enforcement on deletion."
+  },
+  {
+    "id": "TC010",
+    "title": "test_homepage_sections_and_hero_slides_management",
+    "description": "Test creating and reordering homepage hero slides and sections, including validation errors for missing images and invalid reorder payloads."
+  }
+]
