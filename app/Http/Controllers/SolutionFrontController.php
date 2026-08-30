@@ -10,7 +10,7 @@ class SolutionFrontController extends Controller
     {
         // Retrieve ONLY the 2 professional category cards:
         // 1. حلول المؤسسة التنموية (ID 2)
-        // 2. الحلول الرقمية والفنية (عبر مركز الأثر) (ID 9)
+        // 2. الحلول الرقمية والفنية (عبر مركز الأمير عبد الرحمن) (ID 9)
         $solutions = Solution::whereIn('id', [2, 9])
             ->active()
             ->with('media')

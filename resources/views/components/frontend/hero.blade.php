@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'slides'  => null,
     'section' => null,
     'placement' => null,
@@ -173,14 +173,14 @@
                 <!-- Action CTA Button placed at the bottom area of the slide, centered, above indicators/dots -->
                 <div class="pb-16 sm:pb-20 flex items-center justify-center">
                     @if ($slide->link)
-                        <x-frontend.button :href="$slide->link" variant="secondary" size="lg" class="px-8 py-3.5 font-bold group shadow-md transition-all duration-200 rounded-xl border border-primary-light/30 hover:bg-[#e2e78c] active:bg-[#d5da78] focus-visible:ring-2 focus-visible:ring-secondary-light focus-visible:ring-offset-2">
+                        <x-frontend.button :href="$slide->link" variant="secondary" size="lg" class="px-8 py-3.5 font-bold group shadow-md transition-all duration-200 rounded-xl border border-primary-light/30 hover:bg-surface active:bg-surface/80 focus-visible:ring-2 focus-visible:ring-secondary-light focus-visible:ring-offset-2">
                             <span>{{ __('frontend.explore_our_projects') }}</span>
                             <svg class="w-5 h-5 rtl:rotate-180 inline-block ms-2 transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                             </svg>
                         </x-frontend.button>
                     @else
-                        <x-frontend.button :href="route('projects.index')" variant="secondary" size="lg" class="px-8 py-3.5 font-bold group shadow-md transition-all duration-200 rounded-xl border border-primary-light/30 hover:bg-[#e2e78c] active:bg-[#d5da78] focus-visible:ring-2 focus-visible:ring-secondary-light focus-visible:ring-offset-2">
+                        <x-frontend.button :href="route('projects.index')" variant="secondary" size="lg" class="px-8 py-3.5 font-bold group shadow-md transition-all duration-200 rounded-xl border border-primary-light/30 hover:bg-surface active:bg-surface/80 focus-visible:ring-2 focus-visible:ring-secondary-light focus-visible:ring-offset-2">
                             <span>{{ __('frontend.explore_our_projects') }}</span>
                             <svg class="w-5 h-5 rtl:rotate-180 inline-block ms-2 transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -233,7 +233,7 @@
         </button>
 
         <!-- Pagination Dots Bar -->
-        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 p-1.5 rounded-full bg-black/20 backdrop-blur-sm">
+        <div class="absolute bottom-6 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 z-20 flex items-center gap-2 p-1.5 rounded-full bg-black/20 backdrop-blur-sm">
             @foreach ($slideCollection as $index => $s)
                 <button @click="goTo({{ $index }})"
                         type="button"

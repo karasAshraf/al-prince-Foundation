@@ -1,4 +1,4 @@
-﻿@props(['sections'])
+@props(['sections'])
 
 @php
     $locale = app()->getLocale();
@@ -9,7 +9,7 @@
      Statistics / Counter Section — Full Width Corporate Premium
      ============================================================ --}}
 <section
-    {{ $attributes->merge(['class' => 'relative w-full py-24 md:py-32 overflow-hidden bg-gradient-to-b from-[#EAEAE9] via-white to-[#EAEAE9] dark:from-gray-950 dark:via-gray-900 dark:to-gray-950']) }}
+    {{ $attributes->merge(['class' => 'relative w-full py-16 md:py-20 overflow-hidden bg-[#F5F5F5] dark:bg-gray-900 border-b border-border/10']) }}
     aria-label="{{ __('frontend.statistics_section') ?: 'Statistics' }}"
     x-data="{ sectionInView: false }"
     x-intersect.once="sectionInView = true"
@@ -17,17 +17,10 @@
     {{-- ── Background Glow & Floating Decorations ───────────── --}}
     <div class="absolute inset-0 pointer-events-none -z-10" aria-hidden="true">
         {{-- Radial Top-Start Glow --}}
-        <div class="absolute -top-40 -start-40 w-[500px] h-[500px] bg-gradient-to-br from-[#EAEAE9]/50 via-[#B49C6E]/20 to-transparent rounded-full blur-3xl opacity-70 dark:opacity-20"></div>
+        <div class="absolute -top-40 -start-40 w-[500px] h-[500px] bg-gradient-to-br from-primary-light/10 to-transparent rounded-full blur-3xl opacity-70 dark:opacity-20"></div>
 
         {{-- Radial Bottom-End Glow --}}
-        <div class="absolute -bottom-40 -end-40 w-[500px] h-[500px] bg-gradient-to-tl from-[#B49C6E]/30 via-[#A38B54]/10 to-transparent rounded-full blur-3xl opacity-60 dark:opacity-20"></div>
-
-        {{-- Center Ambient Glow --}}
-        <div class="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#A38B54]/5 dark:bg-[#A38B54]/10 rounded-full blur-3xl"></div>
-
-        {{-- Geometric Floating Shapes --}}
-        <div class="absolute top-12 end-12 w-24 h-24 rounded-3xl border border-[#B49C6E]/30 dark:border-[#A38B54]/30 rotate-12 opacity-40"></div>
-        <div class="absolute bottom-12 start-12 w-16 h-16 rounded-2xl border border-[#A38B54]/20 dark:border-[#B49C6E]/20 -rotate-12 opacity-30"></div>
+        <div class="absolute -bottom-40 -end-40 w-[500px] h-[500px] bg-gradient-to-tl from-primary-light/10 to-transparent rounded-full blur-3xl opacity-60 dark:opacity-20"></div>
     </div>
 
     {{-- ── Container (Max Width 1280px) ───────────────────────── --}}
@@ -79,34 +72,25 @@
                             // Convert Eastern-Arabic numerals (٠١٢٣٤٥٦٧٨٩ → 0-9)
                             const ascii = raw.replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d).toString());
 
-                            const match = ascii.match(/(\d+(?:[.,]\d+)?)/);
-                            if (match) {
-                                this.target = parseFloat(match[1].replace(/,/g, '')) || 0;
-                                const parts = ascii.split(match[1]);
-                                this.prefix = parts[0] || '';
-                                this.suffix = parts[1] || '';
+                            // Extrapolate prefix/suffix
+                            const matches = ascii.match(/^([^\d]*?)(\d[\d,.]*)([^\d]*)$/);
+                            if (matches) {
+                                this.prefix = matches[1] || '';
+                                this.suffix = matches[3] || '';
+                                this.target = parseFloat(matches[2].replace(/,/g, '')) || 0;
                             } else {
-                                this.target = 0;
-                                this.prefix = '';
-                                this.suffix = raw;
+                                this.target = parseFloat(ascii) || 0;
                             }
                         },
 
                         startCounter() {
                             if (this.started) return;
                             this.started = true;
+                            let start = null;
 
-                            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || this.target <= 0) {
-                                this.current   = this.target;
-                                this.completed = true;
-                                return;
-                            }
-
-                            let t0 = null;
-                            const step = (ts) => {
-                                if (!t0) t0 = ts;
-                                const progress = Math.min((ts - t0) / this.duration, 1);
-                                // Ease-out cubic
+                            const step = (timestamp) => {
+                                if (!start) start = timestamp;
+                                const progress = Math.min((timestamp - start) / this.duration, 1);
                                 const eased   = 1 - Math.pow(1 - progress, 3);
                                 this.current  = Math.round(eased * this.target);
                                 if (progress < 1) {
@@ -130,36 +114,34 @@
                            group relative flex flex-col items-center text-center
                            bg-white/80 dark:bg-gray-900/80
                            backdrop-blur-md
-                           border border-[#B49C6E]/30 dark:border-gray-800
+                           border border-border dark:border-gray-800
                            rounded-3xl
                            px-8 py-10
                            h-full min-h-[300px]
-                           shadow-[0_10px_30px_-5px_rgba(66,124,60,0.08)]
-                           dark:shadow-black/30
-                           hover:shadow-[0_25px_50px_-12px_rgba(66,124,60,0.25)]
-                           dark:hover:shadow-black/60
-                           hover:border-[#A38B54] dark:hover:border-[#B49C6E]
+                           shadow-sm
+                           hover:shadow-lg
+                           hover:border-primary dark:hover:border-primary-light
                            hover:-translate-y-2.5 hover:scale-[1.03]
                            cursor-pointer
                            transition-all duration-300 ease-out
-                           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A38B54]/60"
+                           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
                     tabindex="0"
                     role="region"
                     :aria-label="@js($label)"
                 >
                     {{-- Soft Card Hover Background Glow --}}
-                    <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#B49C6E]/10 via-transparent to-[#A38B54]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" aria-hidden="true"></div>
+                    <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-light/10 via-transparent to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" aria-hidden="true"></div>
 
                     {{-- Top Border Highlight Accent --}}
-                    <div class="absolute inset-x-0 top-0 h-1 rounded-t-3xl bg-gradient-to-r from-[#A38B54] via-[#B49C6E] to-[#A38B54] opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+                    <div class="absolute inset-x-0 top-0 h-1 rounded-t-3xl bg-gradient-to-r from-primary via-primary-light to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
 
                     {{-- ── Icon Container ────────────────────────────── --}}
                     <div class="relative mb-8 shrink-0">
                         {{-- Soft Glow Behind Icon --}}
-                        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-[#B49C6E] to-[#A38B54] opacity-30 blur-xl scale-100 group-hover:scale-125 group-hover:opacity-60 transition-all duration-300" aria-hidden="true"></div>
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-primary-light to-primary opacity-30 blur-xl scale-100 group-hover:scale-125 group-hover:opacity-60 transition-all duration-300" aria-hidden="true"></div>
 
                         {{-- Icon Circle (80px) --}}
-                        <div class="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-[#B49C6E] to-[#A38B54] shadow-lg shadow-[#A38B54]/25 group-hover:scale-115 group-hover:rotate-8 transition-transform duration-300 ease-out">
+                        <div class="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary-light to-primary shadow-lg shadow-primary/25 group-hover:scale-115 group-hover:rotate-8 transition-transform duration-300 ease-out">
                             <x-icon
                                 :name="$iconVal"
                                 class="w-10 h-10 text-white"
@@ -170,9 +152,9 @@
 
                     {{-- ── Number & Label Content ────────────────────── --}}
                     <div class="flex-1 flex flex-col items-center justify-center space-y-4 w-full">
-                        {{-- Visual Focus: Counter Number (56px) --}}
+                        {{-- Visual Focus: Counter Number --}}
                         <span
-                            class="block font-black tracking-tight leading-none text-5xl lg:text-[56px] text-[#3D342A] dark:text-white group-hover:text-[#A38B54] dark:group-hover:text-[#B49C6E] group-hover:scale-105 transition-all duration-300 origin-center"
+                            class="block font-black tracking-tight leading-none text-5xl lg:text-[56px] text-text-primary dark:text-white group-hover:text-primary dark:group-hover:text-primary-light group-hover:scale-105 transition-all duration-300 origin-center"
                             x-text="displayValue"
                             aria-live="polite"
                             aria-atomic="true"
@@ -180,20 +162,20 @@
 
                         {{-- Subtle Dot Divider --}}
                         <div class="flex items-center gap-2 w-full justify-center opacity-60" aria-hidden="true">
-                            <span class="h-px w-8 bg-gradient-to-r from-transparent to-[#B49C6E]"></span>
-                            <span class="h-1.5 w-1.5 rounded-full bg-[#A38B54]"></span>
-                            <span class="h-px w-8 bg-gradient-to-l from-transparent to-[#B49C6E]"></span>
+                            <span class="h-px w-8 bg-gradient-to-r from-transparent to-primary-light"></span>
+                            <span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
+                            <span class="h-px w-8 bg-gradient-to-l from-transparent to-primary-light"></span>
                         </div>
 
-                        {{-- Label Underneath (20px) --}}
-                        <span class="block text-[20px] font-semibold text-[#3D342A]/80 dark:text-gray-300 leading-snug group-hover:text-[#3D342A] dark:group-hover:text-white transition-colors duration-300">
+                        {{-- Label Underneath --}}
+                        <span class="block text-[20px] font-semibold text-text-secondary dark:text-gray-300 leading-snug group-hover:text-text-primary dark:group-hover:text-white transition-colors duration-300">
                             {{ $label }}
                         </span>
                     </div>
                 </article>
 
             @empty
-                <div class="col-span-full py-16 text-center text-[#3D342A]/50 dark:text-gray-400 text-base font-medium">
+                <div class="col-span-full py-16 text-center text-text-secondary/50 dark:text-gray-400 text-base font-medium">
                     {{ __('frontend.no_statistics') ?: 'No statistics to display.' }}
                 </div>
             @endforelse

@@ -74,6 +74,7 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('h
 Route::get('/about', [\App\Http\Controllers\AboutController::class, 'index'])->name('about.index');
 Route::get('/about/board', [\App\Http\Controllers\AboutController::class, 'board'])->name('about.board');
 Route::get('/about/executive-team', [\App\Http\Controllers\AboutController::class, 'executiveTeam'])->name('about.executive-team');
+Route::get('/about/organizational-structure', [\App\Http\Controllers\OrganizationalStructureController::class, 'index'])->name('about.organizational-structure');
 
 Route::get('/services', [\App\Http\Controllers\ServiceFrontController::class, 'index'])->name('services.index');
 Route::get('/services/{service:slug}', [\App\Http\Controllers\ServiceFrontController::class, 'show'])->name('services.show');
@@ -186,6 +187,16 @@ Route::middleware(['auth', 'verified'])
 
         Route::get('settings', [SettingController::class, 'edit'])->name('settings.index');
         Route::put('settings', [SettingController::class, 'update'])->name('settings.update');
+
+        // Organizational Structure (admin)
+        Route::get('/organizational-structure', [
+            \App\Http\Controllers\Dashboard\OrganizationalStructureController::class, 'edit'
+        ])->name('organizational-structure.edit');
+
+        Route::put('/organizational-structure', [
+            \App\Http\Controllers\Dashboard\OrganizationalStructureController::class, 'update'
+        ])->name('organizational-structure.update');
+
 
         Route::middleware('role:admin')->group(function () {
             Route::resource('users', \App\Http\Controllers\Dashboard\UserController::class);

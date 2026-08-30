@@ -16,7 +16,7 @@
         }
     }"
     :class="collapsed ? 'lg:w-20' : 'lg:w-[220px]'"
-    class="fixed inset-y-0 start-0 z-40 flex w-[220px] flex-col bg-[#3D342A] transition-all duration-300 lg:static lg:h-full shrink-0"
+    class="fixed inset-y-0 start-0 z-40 flex w-[220px] flex-col bg-[#372828] transition-all duration-300 lg:static lg:h-full shrink-0"
     x-bind:class="sidebarOpen ? 'translate-x-0' : (document.documentElement.dir === 'rtl' ? 'translate-x-full lg:translate-x-0' : '-translate-x-full lg:translate-x-0')"
     aria-label="{{ __('dashboard.common.sidebar_aria') }}"
 >
@@ -25,7 +25,7 @@
         <button
             type="button"
             @click="toggleCollapse()"
-            class="rounded-md p-1.5 text-[#C5C2C0]/60 hover:bg-white/10 hover:text-[#C5C2C0]"
+            class="rounded-md p-1.5 text-[#AC8321] hover:bg-white/5 hover:text-[#B8974F]"
             :aria-label="collapsed ? '{{ __('dashboard.common.sidebar_expand') }}' : '{{ __('dashboard.common.sidebar_collapse') }}'"
         >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform" :class="collapsed ? (document.documentElement.dir === 'rtl' ? '-rotate-180' : 'rotate-180') : (document.documentElement.dir === 'rtl' ? 'rotate-180' : '')" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
@@ -59,6 +59,7 @@
                         ['label' => __('dashboard.sidebar.programs'), 'route' => 'dashboard.programs.index', 'active' => 'dashboard.programs.*', 'icon' => 'folder'],
                         ['label' => __('dashboard.sidebar.projects'), 'route' => 'dashboard.projects.index', 'active' => 'dashboard.projects.*', 'icon' => 'flag'],
                         ['label' => __('dashboard.sidebar.about_us'), 'route' => 'dashboard.about-sections.index', 'active' => 'dashboard.about-sections.*', 'icon' => 'info'],
+                        ['label' => __('dashboard.sidebar.organizational_structure'), 'route' => 'dashboard.organizational-structure.edit', 'active' => 'dashboard.organizational-structure.edit', 'icon' => 'layout'],
                         ['label' => __('dashboard.sidebar.team_members'), 'route' => 'dashboard.team-members.index', 'active' => 'dashboard.team-members.*', 'icon' => 'users'],
                         ['label' => __('dashboard.sidebar.home_sections'), 'route' => 'dashboard.home-sections.index', 'active' => 'dashboard.home-sections.*', 'icon' => 'layout'],
                         ['label' => __('dashboard.sidebar.hero_slides'), 'route' => 'dashboard.hero-slides.index', 'active' => 'dashboard.hero-slides.*', 'icon' => 'layout'],
@@ -113,7 +114,7 @@
                     {{-- Section label — hidden when collapsed on desktop --}}
                     <p
                         x-show="!collapsed"
-                        class="mb-1.5 px-2.5 text-[11px] font-semibold uppercase tracking-wider text-[#979290]"
+                        class="mb-1.5 px-2.5 text-[11px] font-semibold uppercase tracking-wider text-[#B4AEA4]"
                     >
                         {{ $group['label'] }}
                     </p>
@@ -148,13 +149,13 @@
                                         @click="open = !open"
                                         @class([
                                             'group flex w-full items-center justify-between rounded-lg py-[9px] text-[13px] font-medium transition-all duration-200',
-                                            'bg-[#4A4038] text-[#B49C6E]' => $anyChildActive,
-                                            'text-[#C5C2C0] hover:bg-white/8 hover:text-[#E8E0D8]' => !$anyChildActive,
+                                            'bg-[#A5780A] text-[#F5F5F5]' => $anyChildActive,
+                                            'text-[#F5F5F5]/60 hover:bg-white/5 hover:text-[#B8974F]' => !$anyChildActive,
                                         ])
                                         :class="collapsed ? 'justify-center px-[10px]' : 'px-[10px] gap-2'"
                                     >
                                         <div class="flex items-center gap-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-[18px] w-[18px] shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-[18px] w-[18px] shrink-0 text-[#AC8321]" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="{{ $icons[$item['icon']] }}" />
                                             </svg>
                                             <span x-show="!collapsed" class="truncate">{{ $item['label'] }}</span>
@@ -162,7 +163,7 @@
                                         <svg
                                             x-show="!collapsed"
                                             xmlns="http://www.w3.org/2000/svg"
-                                            class="h-3.5 w-3.5 shrink-0 transition-transform duration-200"
+                                            class="h-3.5 w-3.5 shrink-0 text-[#AC8321] transition-transform duration-200"
                                             :class="open ? 'rotate-180' : ''"
                                             fill="none"
                                             viewBox="0 0 24 24"
@@ -186,12 +187,12 @@
                                                     href="{{ route($child['route']) }}"
                                                     @class([
                                                         'group flex items-center gap-2 rounded-lg px-[10px] py-[9px] text-[13px] font-medium transition-all duration-200',
-                                                        'bg-[#4A4038] text-[#B49C6E]' => request()->routeIs($child['active']),
-                                                        'text-[#C5C2C0] hover:bg-white/8 hover:text-[#E8E0D8]' => !request()->routeIs($child['active']),
+                                                        'bg-[#A5780A] text-[#F5F5F5]' => request()->routeIs($child['active']),
+                                                        'text-[#F5F5F5]/60 hover:bg-white/5 hover:text-[#B8974F]' => !request()->routeIs($child['active']),
                                                     ])
                                                     :title="collapsed ? '{{ $child['label'] }}' : null"
                                                 >
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-[18px] w-[18px] shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-[18px] w-[18px] shrink-0 text-[#AC8321]" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="{{ $icons[$child['icon']] }}" />
                                                     </svg>
                                                     <span x-show="!collapsed" class="truncate">{{ $child['label'] }}</span>
@@ -206,13 +207,13 @@
                                         href="{{ route($item['route']) }}"
                                         @class([
                                             'group flex items-center rounded-lg py-[9px] text-[13px] font-medium transition-all duration-200',
-                                            'bg-[#4A4038] text-[#B49C6E]' => request()->routeIs($item['active']),
-                                            'text-[#C5C2C0] hover:bg-white/8 hover:text-[#E8E0D8]' => ! request()->routeIs($item['active']),
+                                            'bg-[#A5780A] text-[#F5F5F5]' => request()->routeIs($item['active']),
+                                            'text-[#F5F5F5]/60 hover:bg-white/5 hover:text-[#B8974F]' => ! request()->routeIs($item['active']),
                                         ])
                                         :class="collapsed ? 'justify-center px-[10px]' : 'px-[10px] gap-2'"
                                         :title="collapsed ? '{{ $item['label'] }}' : null"
                                     >
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-[18px] w-[18px] shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-[18px] w-[18px] shrink-0 text-[#AC8321]" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="{{ $icons[$item['icon']] }}" />
                                         </svg>
                                         <span x-show="!collapsed" class="truncate">{{ $item['label'] }}</span>

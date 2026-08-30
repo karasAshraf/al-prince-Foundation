@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'brandName' => null,
     'siteDescription' => null,
     'copyrightText' => null,
@@ -61,9 +61,9 @@
     }
 @endphp
 
-<footer {{ $attributes->merge(['class' => 'w-full bg-text-primary text-surface dark:bg-gray-950 dark:text-gray-200 mt-auto transition-colors duration-200 relative']) }}>
+<footer {{ $attributes->merge(['class' => 'w-full bg-[#372828] text-[#F5F5F5] mt-auto transition-colors duration-200 relative']) }}>
     <!-- Upper Footer Area -->
-    <div class="border-b border-primary-light/20 py-12 md:py-16">
+    <div class="border-b border-[#695956]/30 py-12 md:py-16">
         <x-frontend.container>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 items-start">
                 <!-- Column 1: Foundation Info (Logo, Name, Description) -->
@@ -83,7 +83,7 @@
                         @endif
                     </div>
                     @if(filled($resolvedDescription))
-                        <p class="text-surface/85 text-sm sm:text-base leading-relaxed max-w-md">
+                        <p class="text-sm sm:text-base leading-relaxed max-w-md" style="color: rgba(245,245,245,0.85)">
                             {{ $resolvedDescription }}
                         </p>
                     @endif
@@ -91,54 +91,54 @@
 
                 <!-- Column 2: Quick Links -->
                 <div class="space-y-4">
-                    <h3 class="text-base font-semibold text-white">
+                    <h3 class="text-base font-bold text-[#A5780A] pb-1.5 border-b border-[#695956]/30 inline-block">
                         {{ __('frontend.quick_links') }}
                     </h3>
-                    <ul class="grid grid-cols-2 gap-x-4 gap-y-2.5 text-sm text-surface/80 list-none">
-                        <li><a href="{{ route('home') }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors">{{ __('frontend.home') }}</a></li>
-                        <li><a href="{{ route('about.index') }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors">{{ __('frontend.about_foundation') }}</a></li>
-                        <li><a href="{{ route('content-services.index') }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors">{{ __('frontend.content_management') }}</a></li>
-                        <li><a href="{{ route('services.index') }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors">{{ __('frontend.services') }}</a></li>
-                        <li><a href="{{ route('activities.index') }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors">{{ __('frontend.activities') }}</a></li>
-                        <li><a href="{{ route('industries.index') }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors">{{ __('frontend.industries') }}</a></li>
-                        <li><a href="{{ route('solutions.index') }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors">{{ __('frontend.solutions') }}</a></li>
-                        <li><a href="{{ route('programs.index') }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors">{{ __('frontend.programs') }}</a></li>
-                        <li><a href="{{ route('projects.index') }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors">{{ __('frontend.projects') }}</a></li>
-                        <li><a href="{{ route('advertising-center.index') }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors">{{ __('frontend.advertising_center') }}</a></li>
-                        <li><a href="{{ route('news.index') }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors">{{ __('frontend.news') }}</a></li>
-                        <li><a href="{{ route('events.index') }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors">{{ __('frontend.events') }}</a></li>
-                        <li><a href="{{ route('media-library.index') }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors">{{ __('frontend.media_library') }}</a></li>
-                        <li><a href="{{ route('governance.index') }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors">{{ __('frontend.governance') }}</a></li>
-                        <li><a href="{{ route('contact.index') }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors">{{ __('frontend.contact') }}</a></li>
+                    <ul class="grid grid-cols-2 gap-x-4 gap-y-2.5 text-sm list-none" style="color: rgba(245,245,245,0.85)">
+                        <li><a href="{{ route('home') }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200">{{ __('frontend.home') }}</a></li>
+                        <li><a href="{{ route('about.index') }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200">{{ __('frontend.about_foundation') }}</a></li>
+                        <li><a href="{{ route('content-services.index') }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200">{{ __('frontend.content_management') }}</a></li>
+                        <li><a href="{{ route('services.index') }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200">{{ __('frontend.services') }}</a></li>
+                        <li><a href="{{ route('activities.index') }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200">{{ __('frontend.activities') }}</a></li>
+                        <li><a href="{{ route('industries.index') }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200">{{ __('frontend.industries') }}</a></li>
+                        <li><a href="{{ route('solutions.index') }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200">{{ __('frontend.solutions') }}</a></li>
+                        <li><a href="{{ route('programs.index') }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200">{{ __('frontend.programs') }}</a></li>
+                        <li><a href="{{ route('projects.index') }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200">{{ __('frontend.projects') }}</a></li>
+                        <li><a href="{{ route('advertising-center.index') }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200">{{ __('frontend.advertising_center') }}</a></li>
+                        <li><a href="{{ route('news.index') }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200">{{ __('frontend.news') }}</a></li>
+                        <li><a href="{{ route('events.index') }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200">{{ __('frontend.events') }}</a></li>
+                        <li><a href="{{ route('media-library.index') }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200">{{ __('frontend.media_library') }}</a></li>
+                        <li><a href="{{ route('governance.index') }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200">{{ __('frontend.governance') }}</a></li>
+                        <li><a href="{{ route('contact.index') }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200">{{ __('frontend.contact') }}</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3: Contact Info & Social Media Links -->
                 <div class="space-y-4">
-                    <h3 class="text-base font-semibold text-white">
+                    <h3 class="text-base font-bold text-[#A5780A] pb-1.5 border-b border-[#695956]/30 inline-block">
                         {{ __('frontend.contact_us') }}
                     </h3>
 
-                    <div class="space-y-3 text-sm text-surface/80">
+                    <div class="space-y-3 text-sm" style="color: rgba(245,245,245,0.85)">
                         @if(filled($resolvedAddress))
                             <div class="flex items-start gap-2.5">
-                                <svg class="w-4 h-4 mt-0.5 shrink-0 text-primary-light fill-none stroke-current stroke-2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                <svg class="w-4 h-4 mt-0.5 shrink-0 text-[#AC8321] fill-none stroke-current stroke-2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                                 <span>{{ $resolvedAddress }}</span>
                             </div>
                         @endif
 
                         @if(filled($resolvedEmail))
                             <div class="flex items-center gap-2.5">
-                                <svg class="w-4 h-4 shrink-0 text-primary-light fill-none stroke-current stroke-2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                                <a href="mailto:{{ $resolvedEmail }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors">{{ $resolvedEmail }}</a>
+                                <svg class="w-4 h-4 shrink-0 text-[#AC8321] fill-none stroke-current stroke-2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                <a href="mailto:{{ $resolvedEmail }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200" style="color: rgba(245,245,245,0.85)">{{ $resolvedEmail }}</a>
                             </div>
                         @endif
 
                         @if(!empty($phoneNumbers))
                             @foreach($phoneNumbers as $phone)
                                 <div class="flex items-center gap-2.5">
-                                    <svg class="w-4 h-4 shrink-0 text-primary-light fill-none stroke-current stroke-2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                                    <a href="tel:{{ preg_replace('/[^\d+]/', '', $phone) }}" class="hover:text-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light rounded transition-colors" dir="ltr">{{ $phone }}</a>
+                                    <svg class="w-4 h-4 shrink-0 text-[#AC8321] fill-none stroke-current stroke-2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                                    <a href="tel:{{ preg_replace('/[^\d+]/', '', $phone) }}" class="hover:text-[#B8974F] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B8974F] rounded transition-colors duration-200" style="color: rgba(245,245,245,0.85)" dir="ltr">{{ $phone }}</a>
                                 </div>
                             @endforeach
                         @endif
@@ -151,7 +151,7 @@
                         @elseif(!empty($socialLinksSettings))
                             @foreach($socialLinksSettings as $platform => $url)
                                 @if(filled($url))
-                                    <a href="{{ $url }}" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-surface/10 hover:bg-primary text-surface hover:text-white flex items-center justify-center transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-light" title="{{ ucfirst($platform) }}">
+                                    <a href="{{ $url }}" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full border border-[#AC8321] bg-transparent hover:bg-[#AC8321] text-[#AC8321] hover:text-[#F5F5F5] hover:scale-105 flex items-center justify-center transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AC8321]" title="{{ ucfirst($platform) }}">
                                         <span class="sr-only">{{ $platform }}</span>
                                         @switch(strtolower($platform))
                                             @case('facebook')
@@ -190,9 +190,9 @@
     </div>
 
     <!-- Bottom Copyright Area -->
-    <div class="py-6 bg-black/20 text-xs text-surface/70">
+    <div class="py-5 text-xs border-t border-[#695956]/25" style="background-color: #372828">
         <x-frontend.container class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-start">
-            <p>
+            <p style="color: rgba(245,245,245,0.70)">
                 {{ $resolvedCopyright }}
             </p>
             <div class="flex items-center gap-4">

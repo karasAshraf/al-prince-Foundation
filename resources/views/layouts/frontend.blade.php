@@ -1,7 +1,7 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"
       dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}"
-      class="h-full scroll-smooth bg-gray-100 dark:bg-gray-950">
+      class="h-full scroll-smooth">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +34,7 @@
         
         // 4. Resolve Keywords
         $seoKeywords = $resolvedSeo ? $resolvedSeo->meta_keywords : null;
-        $globalKeywords = 'مؤسسة, أثر, تنمية, برامج, مشاريع, Al-Athar, Foundation, Development';
+        $globalKeywords = 'مؤسسة, الأمير, عبد الرحمن, برامج, مشاريع, Prince, Abdulrahman, Foundation, Development';
         $pageKeywords = $seoKeywords ?: $metaKeywords ?: $globalKeywords;
         
         // 5. Resolve OG Image
@@ -253,7 +253,7 @@
                     x-transition:leave-end="opacity-0 translate-y-4 scale-90"
                     @click="window.scrollTo({top: 0, behavior: 'smooth'})"
                     type="button"
-                    class="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white shadow-xl hover:bg-[#8A734A] hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-light border border-[#B49C6E]/20"
+                    class="flex items-center justify-center w-12 h-12 rounded-full bg-[#AC8321] text-white shadow-xl hover:bg-[#B8974F] hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-light border border-[#D5D3CE]/20"
                     aria-label="{{ __('frontend.back_to_top') ?: 'Back to Top' }}">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/>

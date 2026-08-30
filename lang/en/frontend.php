@@ -2,10 +2,10 @@
 
 return [
     // Brand & Common
-    'brand_name' => 'Al-Athar Foundation',
+    'brand_name' => 'Prince Abdulrahman Foundation',
     'brand_tagline' => 'Instilling Impact.. Shaping the Future',
     'brand_description' => 'A non-profit organization aiming to empower the community and deliver sustainable development programs and humanitarian initiatives.',
-    'foundation_footer_desc' => 'Al-Athar Foundation strives to deliver its services and programs with the highest standards of quality and transparency. We work to leave a positive and sustainable impact in society.',
+    'foundation_footer_desc' => 'Prince Abdulrahman Foundation strives to deliver its services and programs with the highest standards of quality and transparency. We work to leave a positive and sustainable impact in society.',
     'all_rights_reserved' => 'All rights reserved.',
     'all_rights_reserved_foundation' => 'All rights reserved for the foundation.',
     'partners_badge' => 'Partners in Success',
@@ -24,6 +24,7 @@ return [
     'about_us' => 'About Us',
     'board_of_directors' => 'Board of Directors',
     'executive_team' => 'Executive Team',
+    'organizational_structure' => 'Organizational Structure',
     'dashboard' => 'Dashboard',
     'main_menu' => 'Main Menu',
     'toggle_menu' => 'Toggle Menu',
@@ -91,7 +92,7 @@ return [
     'latest_news_and_activities' => 'Latest News & Activities',
     'news_and_events' => 'Foundation News & Events',
     'news_preview_desc' => 'Follow the latest foundation news, activities, and project updates.',
-    'news_page_desc' => 'Follow the latest updates and news of Al-Athar Foundation programs and projects.',
+    'news_page_desc' => 'Follow the latest updates and news of Prince Abdulrahman Foundation programs and projects.',
 
     'governance_and_transparency' => 'Governance & Transparency',
     'reports_and_policies' => 'Published Reports & Policies',
@@ -101,7 +102,7 @@ return [
     'impact_reports' => 'Achievement & Impact Reports',
     'fiscal_year' => 'Fiscal Year:',
 
-    'about_page_title' => 'About Al-Athar Foundation',
+    'about_page_title' => 'About Prince Abdulrahman Foundation',
     'governance_and_management' => 'Governance & Management',
     'board_members_desc' => 'The board of directors includes distinguished leaders with high experience and qualifications.',
     'executive_structure' => 'Executive Structure',
@@ -179,7 +180,7 @@ return [
     'activities' => 'Activities',
     'our_activities' => 'Our Activities',
     'activities_title' => 'Our Ongoing Activities',
-    'activities_page_desc' => 'Discover our latest activities and workshops held at the Al-Athar Foundation.',
+    'activities_page_desc' => 'Discover our latest activities and workshops held at the Prince Abdulrahman Foundation.',
     'no_activities_available' => 'No activities available at the moment',
     'activities_coming_soon' => 'More activities will be added soon.',
     'activity_details' => 'Activity Details',
@@ -220,7 +221,7 @@ return [
     // Media Library
         'media_library' => 'Media Library',
     'media_library_title' => 'Media Library',
-    'media_library_page_desc' => 'Explore resources, guides, files, videos, and useful links curated by Al-Athar Foundation.',
+    'media_library_page_desc' => 'Explore resources, guides, files, videos, and useful links curated by Prince Abdulrahman Foundation.',
     'no_media_available' => 'No media items available at the moment',
     'media_coming_soon' => 'More media items will be added soon.',
     'search_media' => 'Search by title...',
@@ -257,12 +258,12 @@ return [
     // Content Management & Section Descriptions
     'content_management' => 'Solutions and Services',
     'content_management_title' => 'Solutions and Services',
-    'content_management_description' => 'Solutions, services, activities, sectors, and development solutions of the Athar Development Foundation',
+    'content_management_description' => 'Solutions, services, activities, sectors, and development solutions of the Prince Abdulrahman Foundation',
     'content_services' => 'Solutions and Services',
     'content_services_title' => 'Solutions and Services',
     'content_services_desc' => 'Explore the services, activities, sectors, and solutions provided by the foundation.',
     'services_description' => 'A comprehensive range of community and developmental services designed to create a lasting positive impact.',
-    'activities_description' => 'Stay updated with all the social and community interactive initiatives executed by Al-Athar Foundation.',
+    'activities_description' => 'Stay updated with all the social and community interactive initiatives executed by Prince Abdulrahman Foundation.',
     'industries_description' => 'We operate across multiple key development sectors to maximize positive community footprint.',
     'solutions_description' => 'Discover our bespoke development methodologies and framework solutions designed for community empowerment.',
     'advertising_center_description' => 'Explore the media hub, including news updates, upcoming events, and documents library.',

@@ -7,7 +7,7 @@ return [
     | Foundation Local Timezone
     |--------------------------------------------------------------------------
     |
-    | The operating timezone of the Al-Athar Foundation. Used when admin-entered
+    | The operating timezone of the Prince Abdulrahman Foundation. Used when admin-entered
     | date-only inputs (e.g. survey start/end dates, news publish date) need to
     | be interpreted as local calendar days rather than UTC.
     |

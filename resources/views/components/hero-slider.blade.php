@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'variant' => 'inner', // 'home' or 'inner'
     'placement' => null,
     'title' => null,
@@ -145,9 +145,9 @@
                      x-transition:enter="transition opacity duration-500 ease-in-out"
                      x-transition:enter-start="opacity-0"
                      x-transition:enter-end="opacity-100">
-                    <x-frontend.button :href="$slide->link" variant="secondary" size="lg" class="px-8 py-3.5 font-bold group shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-95 transition-all duration-300 rounded-xl border border-primary-light/30 hover:bg-[#e2e78c] active:bg-[#d5da78] focus-visible:ring-2 focus-visible:ring-secondary-light focus-visible:ring-offset-2">
+                    <x-frontend.button :href="$slide->link" variant="secondary" size="lg" class="px-8 py-3.5 font-bold group shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-95 transition-all duration-300 rounded-xl border border-primary-light/30 hover:bg-surface active:bg-surface/80 focus-visible:ring-2 focus-visible:ring-secondary-light focus-visible:ring-offset-2">
                         <span>{{ $slide->link_text }}</span>
-                        <svg class="w-5 h-5 {{ $locale === 'ar' ? 'rotate-180 group-hover:-translate-x-1' : 'group-hover:translate-x-1' }} inline-block ms-2 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5 rtl:rotate-180 inline-block ms-2 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                         </svg>
                     </x-frontend.button>

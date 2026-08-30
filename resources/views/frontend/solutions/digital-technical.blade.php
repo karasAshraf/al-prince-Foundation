@@ -1,4 +1,4 @@
-﻿@php
+@php
     $locale = app()->getLocale();
     $bgUrl  = asset('storage/backgroundSolution/' . str_replace(' ', '%20', 'solution .JPG.jpeg'));
 
@@ -48,7 +48,7 @@
                        class="inline-flex items-center gap-1.5 text-white/70 hover:text-white text-sm font-medium
                               transition-colors duration-200 rounded-lg px-2 py-1
                               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#EAEAE9] focus-visible:ring-offset-1 focus-visible:ring-offset-transparent">
-                        <svg class="w-4 h-4 {{ $locale === 'ar' ? 'rotate-180' : '' }} shrink-0"
+                        <svg class="w-4 h-4 rtl:rotate-180 shrink-0"
                              fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
@@ -65,7 +65,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                               d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
-                    {{ $locale === 'ar' ? 'مركز الأثر' : 'Al-Athar Center' }}
+                    {{ $locale === 'ar' ? 'مركز الأمير عبد الرحمن' : 'Prince Abdulrahman Center' }}
                 </span>
 
                 {{-- Page Title --}}
@@ -78,8 +78,8 @@
                 {{-- Description --}}
                 <p class="mt-4 text-white/78 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
                     {{ $locale === 'ar'
-                        ? 'يقدم مركز الأثر حلولاً ومنصات رقمية متكاملة وأطراً فنية لقياس وإدارة الأثر وتحسين كفاءة المبادرات.'
-                        : 'Al-Athar Center provides integrated digital solutions, platforms, and technical frameworks to measure and manage impact and enhance initiative efficiency.' }}
+                        ? 'يقدم مركز الأمير عبد الرحمن حلولاً ومنصات رقمية متكاملة وأطراً فنية لقياس وإدارة الأثر وتحسين كفاءة المبادرات.'
+                        : 'Prince Abdulrahman Center provides integrated digital solutions, platforms, and technical frameworks to measure and manage impact and enhance initiative efficiency.' }}
                 </p>
 
                 {{-- Tech indicators --}}
@@ -111,7 +111,7 @@
             </div>
 
             {{-- Bottom fade to page background --}}
-            <div class="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-surface dark:from-gray-900 to-transparent pointer-events-none"></div>
+            <div class="absolute bottom-0 inset-x-0 h-8 bg-gradient-to-t from-surface dark:from-gray-900 to-transparent pointer-events-none"></div>
         </div>
     </x-slot:hero>
 

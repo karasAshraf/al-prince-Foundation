@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'member',           // TeamMember model instance
     'layout' => 'grid', // 'grid' (executive) | 'list' (board)
 ])
@@ -93,7 +93,7 @@
             </div>
 
             {{-- Decorative accent bar --}}
-            <div class="absolute top-0 {{ $isRtl ? 'right-0' : 'left-0' }} h-full w-1 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
+            <div class="absolute top-0 start-0 h-full w-1 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
         </div>
     </article>
 

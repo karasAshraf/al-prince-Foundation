@@ -83,17 +83,20 @@ abstract class BaseService
                 try { $model->clearMediaCollection($collection); } catch (\Throwable) {}
             }
 
+            $extension = $file->getClientOriginalExtension() ?: 'png';
+            $safeFileName = \Illuminate\Support\Str::uuid() . '.' . strtolower($extension);
+
             if (method_exists($model, 'addMedia')) {
                 // Spatie MediaLibrary: store RELATIVE path, NOT the full URL.
                 // MediaHelper::url() calls getFirstMediaUrl() first, so the
                 // image column is a fallback only (needed for legacy records).
-                $media = $model->addMedia($file)->toMediaCollection($collection);
+                $media = $model->addMedia($file)->usingFileName($safeFileName)->toMediaCollection($collection);
 
                 // Spatie default path structure: "{media_id}/{file_name}"
                 $relativePath = $media->id . '/' . $media->file_name;
             } else {
                 // Plain Storage fallback (no Spatie) — path relative to disk root
-                $relativePath = $file->store($collection, 'public');
+                $relativePath = $file->storeAs($collection, $safeFileName, 'public');
             }
 
             if ($this->hasColumn($table, $imageColumn)) {

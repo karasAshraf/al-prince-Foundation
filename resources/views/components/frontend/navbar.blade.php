@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'brandName' => __('frontend.brand_name'),
     'companyInfo' => null,
 ])
@@ -56,14 +56,14 @@
     $advActive = request()->routeIs('advertising-center.*') || request()->routeIs('news.*') || request()->routeIs('events.*') || request()->routeIs('media-library.*');
 @endphp
 
-<header {{ $attributes->merge(['class' => 'w-full bg-surface/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-primary-light/20 sticky top-0 z-50 transition-all duration-200']) }}
+<header {{ $attributes->merge(['class' => 'w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-border/30 sticky top-0 z-50 transition-all duration-200']) }}
         x-data="{ mobileOpen: false, aboutOpen: false, scrolled: false }"
         @scroll.window="scrolled = (window.pageYOffset > 10)"
-        :class="{ 'shadow-md border-primary-light/40 bg-surface/98 dark:bg-gray-900/98': scrolled }"
+        :class="{ 'shadow-md border-border/60 bg-white/98 dark:bg-gray-900/98': scrolled }"
         @keydown.escape.window="mobileOpen = false; aboutOpen = false">
 
     <x-frontend.container>
-        <div class="flex items-center justify-between h-22 sm:h-24 w-full gap-4">
+        <div class="flex items-center justify-between h-20 sm:h-24 w-full gap-4">
 
           
          <!-- Div 1: Brand / Logo -->
@@ -73,7 +73,7 @@
             <img
                 src="{{ $logoUrl }}"
                 alt="{{ $brandName }}"
-                class="h-20 sm:h-32 lg:h-36 w-auto max-w-[850px] object-contain"
+                class="h-16 sm:h-24 lg:h-28 w-auto max-w-[160px] sm:max-w-[200px] lg:max-w-[240px] object-contain"
             >
         @else
             <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary flex items-center justify-center text-secondary-light font-bold text-lg sm:text-xl shadow-md hover:scale-105 transition-transform duration-200 shrink-0">
@@ -128,7 +128,7 @@
                              x-transition:leave-start="opacity-100 translate-y-0"
                              x-transition:leave-end="opacity-0 translate-y-2"
                              @click.outside="open = false"
-                             class="absolute top-full start-1/2 -translate-x-1/2 rtl:translate-x-1/2 pt-2 w-[calc(100vw-2rem)] max-w-[520px] lg:w-[520px] z-50">
+                             class="absolute top-full start-0 pt-2 w-[calc(100vw-2rem)] max-w-[520px] lg:w-[520px] z-50 lg:start-1/2 lg:-translate-x-1/2 rtl:lg:translate-x-1/2">
                             <div class="bg-white dark:bg-gray-805 border border-primary-light/20 rounded-2xl shadow-2xl overflow-hidden grid grid-cols-12" role="menu">
                                 <!-- Featured Panel Column -->
                                 <div class="col-span-5 bg-gradient-to-br from-[#A38B54]/10 via-[#B49C6E]/5 to-transparent p-5 flex flex-col justify-between border-e border-primary-light/10">
@@ -182,7 +182,7 @@
                                                 {{ __('frontend.board_of_directors') }}
                                             </div>
                                             <div class="text-xs text-text-primary/70 dark:text-gray-300 mt-0.5 leading-normal">
-                                                {{ app()->getLocale() === 'ar' ? 'القيادة الإشرافية العليا لمؤسسة الأثر.' : 'The high supervisory leadership of Al-Athar.' }}
+                                                {{ app()->getLocale() === 'ar' ? 'القيادة الإشرافية العليا لمؤسسة الأمير عبد الرحمن.' : 'The high supervisory leadership of Prince Abdulrahman.' }}
                                             </div>
                                         </div>
                                     </a>
@@ -199,6 +199,22 @@
                                             </div>
                                             <div class="text-xs text-text-primary/70 dark:text-gray-300 mt-0.5 leading-normal">
                                                 {{ app()->getLocale() === 'ar' ? 'الكفاءات التي تقود المبادرات اليومية.' : 'The team driving daily initiatives.' }}
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="{{ route('about.organizational-structure') }}" class="group/item flex items-start gap-2.5 p-2 rounded-xl hover:bg-secondary-light/30 transition-all {{ request()->routeIs('about.organizational-structure') ? 'bg-secondary-light/20' : '' }}">
+                                        <span class="shrink-0 mt-0.5 w-6 h-6 rounded-md bg-[#A38B54]/5 text-[#A38B54] dark:bg-gray-800 dark:text-[#B49C6E] flex items-center justify-center group-hover/item:bg-[#A38B54] group-hover/item:text-white transition-colors">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                                            </svg>
+                                        </span>
+                                        <div>
+                                            <div class="text-sm font-semibold text-text-primary dark:text-gray-100 group-hover/item:text-[#A38B54] dark:group-hover/item:text-[#B49C6E] transition-colors">
+                                                {{ __('frontend.organizational_structure') }}
+                                            </div>
+                                            <div class="text-xs text-text-primary/70 dark:text-gray-300 mt-0.5 leading-normal">
+                                                {{ app()->getLocale() === 'ar' ? 'الهيكل التنظيمي للمؤسسة وتقسيم المهام.' : 'The organizational chart and hierarchy of the foundation.' }}
                                             </div>
                                         </div>
                                     </a>
@@ -269,7 +285,7 @@
                              x-transition:leave-start="opacity-100 translate-y-0"
                              x-transition:leave-end="opacity-0 translate-y-2"
                              @click.outside="open = false"
-                             class="absolute top-full start-1/2 -translate-x-1/2 rtl:translate-x-1/2 pt-2 w-[calc(100vw-2rem)] max-w-[660px] lg:w-[660px] z-50">
+                             class="absolute top-full start-0 pt-2 w-[calc(100vw-2rem)] max-w-[660px] lg:w-[660px] z-50 lg:start-1/2 lg:-translate-x-1/2 rtl:lg:translate-x-1/2">
                             <div class="bg-white dark:bg-gray-800 border border-primary-light/20 rounded-2xl shadow-2xl overflow-hidden grid grid-cols-12" role="menu">
                                 <!-- Featured Panel Column -->
                                 <div class="col-span-4 bg-gradient-to-br from-[#A38B54]/10 via-[#B49C6E]/5 to-transparent p-5 flex flex-col justify-between border-e border-primary-light/10">
@@ -416,7 +432,7 @@
                              x-transition:leave-start="opacity-100 translate-y-0"
                              x-transition:leave-end="opacity-0 translate-y-2"
                              @click.outside="open = false"
-                             class="absolute top-full start-1/2 -translate-x-1/2 rtl:translate-x-1/2 pt-2 w-[calc(100vw-2rem)] max-w-[600px] lg:w-[600px] z-50">
+                             class="absolute top-full start-0 pt-2 w-[calc(100vw-2rem)] max-w-[600px] lg:w-[600px] z-50 lg:start-1/2 lg:-translate-x-1/2 rtl:lg:translate-x-1/2">
                             <div class="bg-white dark:bg-gray-800 border border-primary-light/20 rounded-2xl shadow-2xl overflow-hidden grid grid-cols-12" role="menu">
                                 <!-- Featured Panel Column -->
                                 <div class="col-span-4 bg-gradient-to-br from-[#A38B54]/10 via-[#B49C6E]/5 to-transparent p-5 flex flex-col justify-between border-e border-primary-light/10">
@@ -531,20 +547,20 @@
                     <!-- Language Switcher -->
                     @if (app()->getLocale() === 'ar')
                         <a href="{{ route('lang.switch', ['locale' => 'en', 'scope' => 'frontend']) }}"
-                           class="inline-flex items-center gap-1 px-2.5 py-2 rounded-xl border border-primary-light/30 bg-white/60 dark:bg-gray-800/60 font-navbar text-[15px] font-semibold text-text-primary dark:text-gray-200 hover:bg-secondary-light/40 hover:border-primary/40 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                           class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-secondary bg-transparent font-navbar text-[14px] font-semibold text-text-primary dark:text-gray-200 hover:bg-secondary/10 hover:text-primary transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                            title="Switch to English"
                            aria-label="Switch language to English">
-                            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
                             </svg>
                             <span>English</span>
                         </a>
                     @else
                         <a href="{{ route('lang.switch', ['locale' => 'ar', 'scope' => 'frontend']) }}"
-                           class="inline-flex items-center gap-1 px-2.5 py-2 rounded-xl border border-primary-light/30 bg-white/60 dark:bg-gray-800/60 font-navbar text-[15px] font-semibold text-text-primary dark:text-gray-200 hover:bg-secondary-light/40 hover:border-primary/40 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                           class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-secondary bg-transparent font-navbar text-[14px] font-semibold text-text-primary dark:text-gray-200 hover:bg-secondary/10 hover:text-primary transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                            title="التحويل للعربية"
                            aria-label="تغيير اللغة إلى العربية">
-                            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
                             </svg>
                             <span>العربية</span>
@@ -578,7 +594,7 @@
          x-transition:leave="transition ease-in duration-150"
          x-transition:leave-start="opacity-100 translate-y-0"
          x-transition:leave-end="opacity-0 -translate-y-2"
-         class="lg:hidden border-t border-primary-light/20 bg-surface/98 dark:bg-gray-900/98 backdrop-blur-md px-4 pt-3 pb-6 shadow-xl max-h-[calc(100vh-6rem)] overflow-y-auto">
+         class="lg:hidden border-t border-border/30 bg-white/98 dark:bg-gray-900/98 backdrop-blur-md px-4 pt-3 pb-6 shadow-xl max-h-[calc(100vh-6rem)] overflow-y-auto">
 
         <nav class="flex flex-col gap-1 list-none font-navbar" aria-label="{{ __('frontend.main_menu') }}">
             <x-frontend.nav-link :href="route('home')" :active="request()->routeIs('home')" class="w-full justify-start py-3 text-[15px] font-semibold">
@@ -598,6 +614,7 @@
                     <a href="{{ route('about.index') }}" class="px-3 py-2.5 text-[15px] font-semibold rounded-lg text-text-primary/80 dark:text-gray-300 hover:text-primary hover:bg-secondary-light/30 transition-colors {{ request()->routeIs('about.index') ? 'text-primary font-bold bg-secondary-light/30' : '' }}">{{ __('frontend.about_us') }}</a>
                     <a href="{{ route('about.board') }}" class="px-3 py-2.5 text-[15px] font-semibold rounded-lg text-text-primary/80 dark:text-gray-300 hover:text-primary hover:bg-secondary-light/30 transition-colors {{ request()->routeIs('about.board') ? 'text-primary font-bold bg-secondary-light/30' : '' }}">{{ __('frontend.board_of_directors') }}</a>
                     <a href="{{ route('about.executive-team') }}" class="px-3 py-2.5 text-[15px] font-semibold rounded-lg text-text-primary/80 dark:text-gray-300 hover:text-primary hover:bg-secondary-light/30 transition-colors {{ request()->routeIs('about.executive-team') ? 'text-primary font-bold bg-secondary-light/30' : '' }}">{{ __('frontend.executive_team') }}</a>
+                    <a href="{{ route('about.organizational-structure') }}" class="px-3 py-2.5 text-[15px] font-semibold rounded-lg text-text-primary/80 dark:text-gray-300 hover:text-primary hover:bg-secondary-light/30 transition-colors {{ request()->routeIs('about.organizational-structure') ? 'text-primary font-bold bg-secondary-light/30' : '' }}">{{ __('frontend.organizational_structure') }}</a>
                     <a href="{{ route('governance.index') }}" class="px-3 py-2.5 text-[15px] font-semibold rounded-lg text-text-primary/80 dark:text-gray-300 hover:text-primary hover:bg-secondary-light/30 transition-colors {{ request()->routeIs('governance.*') ? 'text-primary font-bold bg-secondary-light/30' : '' }}">{{ __('frontend.governance') }}</a>
                 </div>
             </div>

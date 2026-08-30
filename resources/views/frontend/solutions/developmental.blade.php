@@ -1,4 +1,4 @@
-﻿@php
+@php
     $locale = app()->getLocale();
     $bgUrl  = asset('storage/backgroundSolution/' . str_replace(' ', '%20', 'solution .JPG.jpeg'));
 @endphp
@@ -32,7 +32,7 @@
                        class="inline-flex items-center gap-1.5 text-white/75 hover:text-white text-sm font-medium
                               transition-colors duration-200 rounded-lg px-2 py-1
                               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#EAEAE9] focus-visible:ring-offset-1 focus-visible:ring-offset-transparent">
-                        <svg class="w-4 h-4 {{ $locale === 'ar' ? 'rotate-180' : '' }} shrink-0"
+                        <svg class="w-4 h-4 rtl:rotate-180 shrink-0"
                              fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                   d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
@@ -95,7 +95,7 @@
             </div>
 
             {{-- Bottom fade to page background --}}
-            <div class="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-surface dark:from-gray-900 to-transparent pointer-events-none"></div>
+            <div class="absolute bottom-0 inset-x-0 h-8 bg-gradient-to-t from-surface dark:from-gray-900 to-transparent pointer-events-none"></div>
         </div>
     </x-slot:hero>
 

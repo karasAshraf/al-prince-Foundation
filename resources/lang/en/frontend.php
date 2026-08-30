@@ -2,10 +2,10 @@
 
 return [
     // Brand & Common
-    'brand_name' => 'Development Impact Foundation',
+    'brand_name' => 'Prince Abdulrahman Foundation',
     'brand_tagline' => 'Instilling Impact.. Shaping the Future',
     'brand_description' => 'A non-profit organization aiming to empower the community and deliver sustainable development programs and humanitarian initiatives.',
-    'foundation_footer_desc' => 'Development Impact Foundation strives to deliver its services and programs with the highest standards of quality and transparency. We work to leave a positive and sustainable impact in society.',
+    'foundation_footer_desc' => 'Prince Abdulrahman Foundation strives to deliver its services and programs with the highest standards of quality and transparency. We work to leave a positive and sustainable impact in society.',
     'all_rights_reserved' => 'All rights reserved.',
     'all_rights_reserved_foundation' => 'All rights reserved for the foundation.',
     'partners_badge' => 'Partners in Success',
@@ -24,6 +24,7 @@ return [
     'about_us' => 'About Us',
     'board_of_directors' => 'Board of Directors',
     'executive_team' => 'Executive Team',
+    'organizational_structure' => 'Organizational Structure',
     'dashboard' => 'Dashboard',
     'main_menu' => 'Main Menu',
     'toggle_menu' => 'Toggle Menu',
@@ -188,7 +189,7 @@ return [
     'our_activities' => 'Our Activities',
     'activities' => 'Activities',
     'activities_title' => 'Social & Interactive Activities',
-    'activities_page_desc' => 'Stay updated with all the social and community initiatives executed by Al-Athar Foundation.',
+    'activities_page_desc' => 'Stay updated with all the social and community initiatives executed by Prince Abdulrahman Foundation.',
     'activity_details' => 'Activity Details',
     'no_activities_available' => 'No activities available at the moment.',
     'activities_coming_soon' => 'Activities will be added soon.',
@@ -238,7 +239,7 @@ return [
     'go_to_media_library' => 'Go to Media Library',
     'media_library' => 'Media Library',
     'media_library_title' => 'Media Library',
-    'media_library_page_desc' => 'Explore resources, guides, files, videos, and useful links curated by Al-Athar Foundation.',
+    'media_library_page_desc' => 'Explore resources, guides, files, videos, and useful links curated by Prince Abdulrahman Foundation.',
     'search_media' => 'Search by title...',
     'all_categories' => 'All Categories',
     'preview_media' => 'Preview',

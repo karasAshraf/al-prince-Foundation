@@ -1,4 +1,4 @@
-﻿@props([
+@props([
     'section',
     'index'   => 0,
     'noBadge' => false,
@@ -60,96 +60,94 @@
 @endphp
 
 @if ($title || $desc)
-<section
-    {{ $attributes->merge(['class' => 'py-16 md:py-24 relative overflow-hidden bg-gradient-to-b from-[#EAEAE9] via-[#B49C6E]/5 to-[#EAEAE9] dark:from-[#0F1A0B] dark:via-[#A38B54]/5 dark:to-[#0F1A0B]']) }}
+<x-frontend.section 
+    :index="$index"
+    :align="$img ? 'start' : 'center'"
     x-data="{ inView: false }"
     x-intersect.once="inView = true"
+    class="relative overflow-hidden"
 >
-    <x-frontend.container>
-        <div class="grid grid-cols-1 {{ $img ? 'lg:grid-cols-12' : '' }} gap-12 lg:gap-16 items-center">
+    <div class="grid grid-cols-1 {{ $img ? 'lg:grid-cols-12' : '' }} gap-12 lg:gap-16 items-center">
 
-            {{-- Image Column (Alternates side automatically based on loop index) --}}
-            @if ($img)
-                <div
-                    :class="inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'"
-                    class="{{ $isReverse ? 'lg:col-span-6 lg:order-2' : 'lg:col-span-6 lg:order-1' }} relative group transition-all duration-700 ease-out"
-                >
-                    {{-- Decorative Floating Glow Behind Image --}}
-                    <div class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-[#B49C6E]/10 to-[#A38B54]/10 blur-2xl opacity-40 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none"></div>
-
-                    <div class="relative overflow-hidden rounded-3xl border border-[#B49C6E]/10 dark:border-gray-800/40 shadow-md group-hover:shadow-lg transition-all duration-500">
-                        <img
-                            src="{{ $img }}"
-                            alt="{{ $title ?? '' }}"
-                            loading="lazy"
-                            class="w-full h-[360px] sm:h-[440px] object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                        />
-                    </div>
-
-                    {{-- Person Name: Displayed directly below the photo --}}
-                    @php
-                        $personName = $locale === 'ar' ? $section->person_name_ar : ($section->person_name_en ?? $section->person_name_ar);
-                    @endphp
-                    @if (!empty($personName))
-                        <div class="mt-4 text-center">
-                            <span class="inline-block text-sm sm:text-base font-semibold text-[#3D342A] dark:text-gray-200 bg-[#B49C6E]/10 dark:bg-gray-800/60 px-4 py-1.5 rounded-full border border-[#B49C6E]/20 dark:border-gray-700/40">
-                                {{ $personName }}
-                            </span>
-                        </div>
-                    @endif
-                </div>
-            @endif
-
-            {{-- Content Column --}}
+        {{-- Image Column (Alternates side automatically based on loop index) --}}
+        @if ($img)
             <div
                 :class="inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'"
-                class="{{ $img ? ($isReverse ? 'lg:col-span-6 lg:order-1' : 'lg:col-span-6 lg:order-2') : 'max-w-3xl mx-auto text-center' }} space-y-6 transition-all duration-700 ease-out delay-100"
+                class="{{ $isReverse ? 'lg:col-span-6 lg:order-2' : 'lg:col-span-6 lg:order-1' }} relative group transition-all duration-700 ease-out"
             >
-                @if ($section->label)
-                    <div class="inline-flex items-center gap-2">
-                        <x-frontend.badge variant="secondary" size="md" class="bg-[#A38B54]/10 text-[#A38B54] dark:bg-[#B49C6E]/20 dark:text-[#B49C6E] border border-[#B49C6E]/30 px-4 py-1.5 rounded-full font-bold">
-                            {{ $section->label }}
-                        </x-frontend.badge>
-                    </div>
-                @endif
+                {{-- Decorative Floating Glow Behind Image --}}
+                <div class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary-light/10 to-primary/10 blur-2xl opacity-40 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none"></div>
 
-                @if ($title)
-                    {{-- Heading: clean, using primary text color with no yellow background highlight --}}
-                    <h2 class="text-3xl sm:text-4xl font-bold text-[#3D342A] dark:text-white leading-tight tracking-tight">
-                        {{ $title }}
-                    </h2>
-                @endif
+                <div class="relative overflow-hidden rounded-3xl border border-border dark:border-gray-800/40 shadow-md group-hover:shadow-lg transition-all duration-500">
+                    <img
+                        src="{{ $img }}"
+                        alt="{{ $title ?? '' }}"
+                        loading="lazy"
+                        class="w-full h-[360px] sm:h-[440px] object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                </div>
 
-                @if ($desc)
-                    {{-- Bismillah first-line (Arabic only) — visually distinct, centered, semibold --}}
-                    @if ($bismillahFirstLine)
-                        {{-- Bismillah: styled as a small heading/label above the body — not body text, not the main title --}}
-                        <p class="w-full text-center text-base sm:text-lg font-semibold text-[#A38B54] dark:text-[#B49C6E] tracking-wide mb-5 sm:mb-6 pb-4 border-b border-[#A38B54]/15" dir="rtl">
-                            {{ $bismillahFirstLine }}
-                        </p>
-                    @endif
-
-                    {{-- Body text: flows naturally by container width — no pre-line, no nl2br --}}
-                    @if ($descBody)
-                        <p class="text-base sm:text-lg text-[#3D342A]/80 dark:text-gray-300 leading-relaxed font-normal max-w-prose">
-                            {{ $descBody }}
-                        </p>
-                    @endif
-                @endif
-
-                @if ($link && \App\Helpers\MediaHelper::shouldShowExternalLink($section, $link, 'home_section_images', 'image'))
-                    <div class="pt-4">
-                        <x-frontend.button :href="$link" variant="primary" size="lg" class="shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300 rounded-2xl px-8 py-3.5 font-bold">
-                            {{ __('frontend.discover_more') }}
-                            <svg class="w-5 h-5 rtl:rotate-180 inline-block ms-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                            </svg>
-                        </x-frontend.button>
+                {{-- Person Name: Displayed directly below the photo --}}
+                @php
+                    $personName = $locale === 'ar' ? $section->person_name_ar : ($section->person_name_en ?? $section->person_name_ar);
+                @endphp
+                @if (!empty($personName))
+                    <div class="mt-4 text-center">
+                        <span class="inline-block text-sm sm:text-base font-semibold text-text-primary dark:text-gray-200 bg-primary-light/10 dark:bg-gray-800/60 px-4 py-1.5 rounded-full border border-primary-light/20 dark:border-gray-700/40">
+                            {{ $personName }}
+                        </span>
                     </div>
                 @endif
             </div>
+        @endif
 
+        {{-- Content Column --}}
+        <div
+            :class="inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'"
+            class="{{ $img ? ($isReverse ? 'lg:col-span-6 lg:order-1' : 'lg:col-span-6 lg:order-2') : 'max-w-3xl mx-auto text-center' }} space-y-6 transition-all duration-700 ease-out delay-100"
+        >
+            @if ($section->label)
+                <div class="inline-flex items-center gap-2">
+                    <x-frontend.badge variant="secondary" size="md" class="bg-primary/10 text-primary dark:bg-primary-light/20 dark:text-primary-light border border-primary-light/30 px-4 py-1.5 rounded-full font-bold">
+                        {{ $section->label }}
+                    </x-frontend.badge>
+                </div>
+            @endif
+
+            @if ($title)
+                <h2 class="text-3xl sm:text-4xl font-bold text-text-primary dark:text-white leading-tight tracking-tight">
+                    {{ $title }}
+                </h2>
+            @endif
+
+            @if ($desc)
+                {{-- Bismillah first-line (Arabic only) — visually distinct, centered, semibold --}}
+                @if ($bismillahFirstLine)
+                    <p class="w-full text-center text-base sm:text-lg font-semibold text-primary dark:text-primary-light tracking-wide mb-5 sm:mb-6 pb-4 border-b border-primary/15" dir="rtl">
+                        {{ $bismillahFirstLine }}
+                    </p>
+                @endif
+
+                {{-- Body text: flows naturally by container width --}}
+                @if ($descBody)
+                    <p class="text-base sm:text-lg text-text-secondary dark:text-gray-300 leading-relaxed font-normal max-w-prose">
+                        {{ $descBody }}
+                    </p>
+                @endif
+            @endif
+
+            @if ($link && \App\Helpers\MediaHelper::shouldShowExternalLink($section, $link, 'home_section_images', 'image'))
+                <div class="pt-4">
+                    <x-frontend.button :href="$link" variant="primary" size="lg" class="shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300 rounded-2xl px-8 py-3.5 font-bold">
+                        {{ __('frontend.discover_more') }}
+                        <svg class="w-5 h-5 rtl:rotate-180 inline-block ms-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </x-frontend.button>
+                </div>
+            @endif
         </div>
-    </x-frontend.container>
-</section>
+
+    </div>
+</x-frontend.section>
 @endif

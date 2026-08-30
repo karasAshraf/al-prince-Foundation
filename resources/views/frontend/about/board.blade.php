@@ -1,4 +1,4 @@
-﻿{{-- ╔══════════════════════════════════════════════════════════════════╗ --}}
+{{-- ╔══════════════════════════════════════════════════════════════════╗ --}}
 {{-- ║  Board of Directors Page                                        ║ --}}
 {{-- ║  Data: $boardMembers (TeamMember collection, type=board)        ║ --}}
 {{-- ╚══════════════════════════════════════════════════════════════════╝ --}}
@@ -62,8 +62,8 @@
                  :class="inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
                 
                 {{-- Decorative Shapes --}}
-                <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-gradient-to-br from-white/10 to-transparent blur-2xl pointer-events-none"></div>
-                <div class="absolute -left-10 -bottom-10 w-40 h-40 rounded-full bg-gradient-to-tr from-secondary-light/20 to-transparent blur-2xl pointer-events-none"></div>
+                <div class="absolute -end-10 -top-10 w-40 h-40 rounded-full bg-gradient-to-br from-white/10 to-transparent blur-2xl pointer-events-none"></div>
+                <div class="absolute -start-10 -bottom-10 w-40 h-40 rounded-full bg-gradient-to-tr from-secondary-light/20 to-transparent blur-2xl pointer-events-none"></div>
                 
                 <div class="relative z-10 space-y-4">
                     <span class="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider bg-[#EAEAE9] text-primary rounded-full">
@@ -76,10 +76,10 @@
                 
                 <div class="relative z-10 mt-8 flex justify-between items-center">
                     <span class="text-xs text-white/70">
-                        {{ $isRtl ? 'مؤسسة أثر التنمية' : 'Al-Athar Foundation' }}
+                        {{ $isRtl ? 'مؤسسة الأمير عبد الرحمن' : 'Prince Abdulrahman Foundation' }}
                     </span>
                     <div class="w-10 h-10 rounded-full bg-[#EAEAE9] flex items-center justify-center text-primary font-black shadow-sm">
-                        {{ $isRtl ? 'أثر' : 'A' }}
+                        {{ $isRtl ? 'الأمير' : 'P' }}
                     </div>
                 </div>
             </div>
