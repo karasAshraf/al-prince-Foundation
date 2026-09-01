@@ -22,19 +22,19 @@ class AboutSection extends Model implements HasMedia
         $this->addMediaConversion('thumb')
             ->width(150)
             ->height(150)
-            ->format('webp');
+            ->keepOriginalImageFormat();
 
         // Card/preview: side column in about page (≈640px wide, 4:3 aspect)
         $this->addMediaConversion('card')
             ->width(640)
             ->height(480)
-            ->format('webp');
+            ->keepOriginalImageFormat();
 
         // Detail: full-width section image on about/show pages (max-w-4xl, 4:3)
         $this->addMediaConversion('detail')
             ->width(960)
             ->height(720)
-            ->format('webp');
+            ->keepOriginalImageFormat();
     }
 
     protected $fillable = [

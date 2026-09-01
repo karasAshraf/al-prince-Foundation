@@ -9,8 +9,8 @@ return [
     'all_rights_reserved' => 'All rights reserved.',
     'all_rights_reserved_foundation' => 'All rights reserved for the foundation.',
     'partners_badge' => 'Partners in Success',
-    'partners_title' => 'Our Partners in Impact',
-    'partners_description' => 'We are proud to collaborate with elite partners and institutions to deliver sustainable development solutions.',
+    'partners_title' => 'Together we build a sustainable future',
+    'partners_description' => 'We are proud of our partnerships that unite efforts and expertise, and open new horizons for development and empowerment, towards more capable and sustainable societies.',
  
     // Navigation & Dropdowns
     'home' => 'Home',

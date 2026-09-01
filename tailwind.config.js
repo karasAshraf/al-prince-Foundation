@@ -30,7 +30,7 @@ export default {
             },
             fontFamily: {
                 sans: ['Cairo', 'ui-sans-serif', 'system-ui', ...defaultTheme.fontFamily.sans],
-                navbar: ['"IBM Plex Sans Arabic"', 'sans-serif'],
+                navbar: ['Cairo', 'sans-serif'],
             },
         },
     },

@@ -48,17 +48,6 @@
     }
     $phoneNumbers = array_values(array_filter((array)$rawPhones, fn($p) => is_string($p) && filled(trim($p))));
 
-    // 7. Resolve Logo Path with Storage Fallback (White Logo Priority)
-    $whiteLogoRel = 'logo/لوجوابيض1.png';
-    if (file_exists(public_path('storage/' . $whiteLogoRel))) {
-        $logoPath = asset('storage/' . $whiteLogoRel);
-    } elseif (!empty($companyInfo['logo'])) {
-        $logoPath = asset('storage/' . $companyInfo['logo']);
-    } elseif (file_exists(public_path('storage/1WyMxRZqU0uYwVafYJjSvYoDjD6VF9ebjDJugRBF'))) {
-        $logoPath = asset('storage/1WyMxRZqU0uYwVafYJjSvYoDjD6VF9ebjDJugRBF');
-    } else {
-        $logoPath = null;
-    }
 @endphp
 
 <footer {{ $attributes->merge(['class' => 'w-full bg-[#372828] text-[#F5F5F5] mt-auto transition-colors duration-200 relative']) }}>
@@ -69,18 +58,7 @@
                 <!-- Column 1: Foundation Info (Logo, Name, Description) -->
                 <div class="md:col-span-2 space-y-6 flex flex-col items-center md:items-start text-center md:text-start">
                     <div class="inline-block p-2 rounded-2xl transition-transform duration-300 hover:scale-102">
-                        @if($logoPath)
-                            <img src="{{ $logoPath }}" alt="{{ $resolvedBrandName }}" class="h-20 sm:h-24 md:h-28 w-auto max-w-[280px] sm:max-w-[340px] object-contain drop-shadow-md">
-                        @else
-                            <div class="flex items-center gap-3">
-                                <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-secondary-light font-bold text-2xl shadow">
-                                    {{ $locale === 'ar' ? 'أ' : 'A' }}
-                                </div>
-                                <span class="text-2xl font-bold text-white tracking-wide">
-                                    {{ $resolvedBrandName }}
-                                </span>
-                            </div>
-                        @endif
+                        <x-application-logo class="h-20 sm:h-24 md:h-28 w-auto max-w-[280px] sm:max-w-[340px] object-contain drop-shadow-md" />
                     </div>
                     @if(filled($resolvedDescription))
                         <p class="text-sm sm:text-base leading-relaxed max-w-md" style="color: rgba(245,245,245,0.85)">

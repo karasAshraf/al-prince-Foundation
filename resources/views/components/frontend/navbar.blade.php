@@ -48,6 +48,9 @@
     }
 
     $navItems = [
+        ['label' => __('frontend.services'),    'route' => 'services.index',   'active' => request()->routeIs('services.*')],
+        ['label' => __('frontend.industries'),  'route' => 'industries.index', 'active' => request()->routeIs('industries.*')],
+        ['label' => __('frontend.news'),        'route' => 'news.index',       'active' => request()->routeIs('news.*')],
         ['label' => __('frontend.surveys'),    'route' => 'surveys.index',   'active' => request()->routeIs('surveys.*')],
         ['label' => __('frontend.contact'),    'route' => 'contact.index',   'active' => request()->routeIs('contact.*')],
     ];
@@ -111,7 +114,7 @@
                          @mouseleave="closeWithDelay()">
                         <button @click="open = !open"
                                 type="button"
-                                class="{{ $aboutActive ? 'text-primary dark:text-primary-light bg-primary/10 dark:bg-primary/20' : 'text-text-primary/80 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light hover:bg-secondary-light/40 dark:hover:bg-gray-800/60' }} inline-flex items-center gap-1 px-2.5 py-2 text-[15px] font-semibold rounded-xl transition duration-150 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                                class="{{ $aboutActive ? 'text-primary dark:text-primary-light bg-primary/10 dark:bg-primary/20' : 'text-text-primary/80 dark:text-gray-300 hover:text-primary dark:hover:text-primary-light hover:bg-secondary-light/40 dark:hover:bg-gray-800/60' }} inline-flex items-center gap-1 px-2.5 py-2 text-[15px] font-bold rounded-xl transition duration-150 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                                 :aria-expanded="open.toString()">
                             <span>{{ __('frontend.about_foundation') }}</span>
                             <svg class="w-4 h-4 transition-transform duration-200" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -239,6 +242,7 @@
                         </div>
                     </div>
 
+                    @if(false)
                     <!-- Programs -->
                     <x-frontend.nav-link :href="route('programs.index')" :active="request()->routeIs('programs.*')">
                         {{ __('frontend.programs') }}
@@ -527,6 +531,7 @@
                         </div>
                     </div>
 
+                    @endif
                     <!-- Governance, Surveys, Contact -->
                     @foreach ($navItems as $item)
                         <x-frontend.nav-link :href="route($item['route'])" :active="$item['active']">
@@ -619,6 +624,7 @@
                 </div>
             </div>
 
+            @if(false)
             <!-- Programs -->
             <x-frontend.nav-link :href="route('programs.index')" :active="request()->routeIs('programs.*')" class="w-full justify-start py-3 text-[15px] font-semibold">
                 {{ __('frontend.programs') }}
@@ -664,6 +670,7 @@
                 </div>
             </div>
 
+            @endif
             @foreach ($navItems as $item)
                 <x-frontend.nav-link :href="route($item['route'])" :active="$item['active']" class="w-full justify-start py-3 text-[15px] font-semibold">
                     {{ $item['label'] }}
