@@ -35,14 +35,14 @@
                 @endphp
                 <a href="{{ $detailUrl }}"
                    class="group flex flex-col h-full rounded-2xl overflow-hidden
-                          bg-white dark:bg-gray-800/90
-                          border border-border shadow-sm
+                          bg-background dark:bg-gray-800/90
+                          border border-secondary shadow-sm
                           transition-all duration-300 ease-out
-                          hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/40 hover:bg-[#F5F5F5]/20
-                          active:scale-[0.98] active:duration-150 active:bg-[#F5F5F5]/30
+                          hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/40 hover:bg-background/20
+                          active:scale-[0.98] active:duration-150 active:bg-background/30
                           focus:outline-none
-                          focus-visible:ring-2 focus-visible:ring-[#EAEAE9]
-                          focus-visible:ring-offset-2 focus-visible:ring-offset-[#EAEAE9] dark:focus-visible:ring-offset-gray-900"
+                          focus-visible:ring-2 focus-visible:ring-secondary
+                          focus-visible:ring-offset-2 focus-visible:ring-offset-secondary dark:focus-visible:ring-offset-gray-900"
                    aria-label="{{ $serviceTitle }}">
 
                     @if ($serviceImg)
@@ -55,21 +55,21 @@
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div class="space-y-4">
                             <h3 class="font-semibold text-lg leading-snug
-                                       text-text-primary dark:text-gray-100 line-clamp-2">
+                                       text-text-primary dark:text-background line-clamp-2">
                                 {{ $serviceTitle }}
                             </h3>
                             @if ($serviceDesc)
                                 <p class="font-sans text-sm sm:text-base leading-relaxed
-                                          text-text-secondary dark:text-gray-300 line-clamp-3">
+                                          text-text-primary dark:text-gray-300 line-clamp-3">
                                     {{ $serviceDesc }}
                                 </p>
                             @endif
                         </div>
 
-                        <div class="pt-4 border-t border-border-light shrink-0">
+                        <div class="pt-4 border-t border-secondary shrink-0">
                             <span class="inline-flex items-center gap-1.5 text-sm font-semibold
                                          text-primary transition-colors duration-200
-                                         group-hover:text-primary-light">
+                                         group-hover:text-secondary">
                                 {{ __('frontend.read_more') }}
                                 <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor"
                                      viewBox="0 0 24 24" aria-hidden="true">
@@ -89,33 +89,33 @@
             @foreach ($items as $item)
                 <div tabindex="0" role="button"
                      class="group flex flex-col h-full rounded-2xl overflow-hidden
-                            bg-white dark:bg-gray-800/90
-                            border border-border shadow-sm p-6
+                            bg-background dark:bg-gray-800/90
+                            border border-secondary shadow-sm p-6
                             transition-all duration-300 ease-out
-                            hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/40 hover:bg-[#F5F5F5]/20
-                            active:scale-[0.98] active:duration-150 active:bg-[#F5F5F5]/30
+                            hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/40 hover:bg-background/20
+                            active:scale-[0.98] active:duration-150 active:bg-background/30
                             focus:outline-none
-                            focus-visible:ring-2 focus-visible:ring-[#EAEAE9]
-                            focus-visible:ring-offset-2 focus-visible:ring-offset-[#EAEAE9] dark:focus-visible:ring-offset-gray-900"
+                            focus-visible:ring-2 focus-visible:ring-secondary
+                            focus-visible:ring-offset-2 focus-visible:ring-offset-secondary dark:focus-visible:ring-offset-gray-900"
                      aria-label="{{ $locale === 'ar' ? ($item['title_ar'] ?? $item['title'] ?? '') : ($item['title_en'] ?? $item['title_ar'] ?? $item['title'] ?? '') }}">
                     <div class="space-y-4">
                         @if (!empty($item['icon']))
                             <div aria-hidden="true"
                                  class="w-14 h-14 rounded-xl
-                                        bg-primary-light/15 text-primary text-2xl
+                                        bg-secondary/15 text-primary text-2xl
                                         flex items-center justify-center
                                         transition-all duration-300 ease-out
-                                        group-hover:bg-[#EAEAE9]
+                                        group-hover:bg-secondary
                                         group-hover:scale-110">
                                 {{ $item['icon'] }}
                             </div>
                         @endif
                         <h3 class="font-semibold text-lg leading-snug
-                                   text-text-primary dark:text-gray-100">
+                                   text-text-primary dark:text-background">
                             {{ $locale === 'ar' ? ($item['title_ar'] ?? $item['title'] ?? '') : ($item['title_en'] ?? $item['title_ar'] ?? $item['title'] ?? '') }}
                         </h3>
                         <p class="font-sans text-sm sm:text-base leading-relaxed
-                                  text-text-secondary dark:text-gray-300">
+                                  text-text-primary dark:text-gray-300">
                             {{ $locale === 'ar' ? ($item['desc_ar'] ?? $item['desc'] ?? '') : ($item['desc_en'] ?? $item['desc_ar'] ?? $item['desc'] ?? '') }}
                         </p>
                     </div>

@@ -6,7 +6,7 @@
     <div class="space-y-5 lg:col-span-2">
 
         {{-- Basic Information --}}
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm space-y-4">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 shadow-sm space-y-4">
             <h2 class="text-base font-semibold text-[#3D342A] border-b border-[#B49C6E]/20 pb-3 mb-4">{{ __('dashboard.about_sections.section_title') }}</h2>
 
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -33,7 +33,7 @@
         </div>
 
         {{-- Content Card --}}
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm space-y-5">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 shadow-sm space-y-5">
             <h2 class="text-base font-semibold text-[#3D342A] border-b border-[#B49C6E]/20 pb-3 mb-2">{{ __('dashboard.about_sections.content') }}</h2>
 
             <x-forms.rich-editor
@@ -61,7 +61,7 @@
     <div class="space-y-5">
 
         {{-- Status Card --}}
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm space-y-4">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 shadow-sm space-y-4">
             <h3 class="text-sm font-semibold text-[#3D342A] border-b border-[#B49C6E]/20 pb-3">{{ __('dashboard.common.status') }}</h3>
 
             <x-forms.select

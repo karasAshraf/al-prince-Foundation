@@ -3,7 +3,7 @@
     <!-- Page Header 
     <div class="text-center mb-12">
         <x-frontend.badge variant="secondary">{{ __('frontend.our_programs') }}</x-frontend.badge>
-        <h1 class="text-3xl sm:text-4xl font-bold text-text-primary dark:text-surface mt-3 leading-tight">
+        <h1 class="text-3xl sm:text-4xl font-bold text-text-primary dark:text-background mt-3 leading-tight">
             {{ __('frontend.programs_and_initiatives') }}
         </h1>
         <p class="mt-4 text-text-primary/70 dark:text-gray-400 max-w-xl mx-auto">
@@ -41,18 +41,18 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-[#3D342A]/95 via-[#3D342A]/40 to-transparent pointer-events-none z-0"></div>
 
                     {{-- Status Ribbon --}}
-                    <div class="absolute top-4 -end-2 rotate-12 rtl:-rotate-12 px-4 py-1 text-[10px] font-bold uppercase tracking-wider shadow-md text-white z-10 bg-primary">
+                    <div class="absolute top-4 -end-2 rotate-12 rtl:-rotate-12 px-4 py-1 text-[10px] font-bold uppercase tracking-wider shadow-md text-background z-10 bg-primary">
                         {{ $program->status === 'active' ? ($locale === 'ar' ? 'نشط' : 'Active') : ($locale === 'ar' ? 'غير نشط' : 'Inactive') }}
                     </div>
 
                     {{-- Bottom Content Overlay --}}
                     <div class="absolute bottom-0 start-0 end-0 p-5 sm:p-6 z-10 space-y-2 select-text">
-                        <span class="text-xs uppercase tracking-wide font-semibold text-secondary-light">
+                        <span class="text-xs uppercase tracking-wide font-semibold text-secondary">
                             {{ $locale === 'ar' ? 'برنامج تنموي' : 'Development Program' }}
                         </span>
 
-                        <h3 class="text-white text-lg font-bold leading-snug line-clamp-2">
-                            <a href="{{ $detailUrl }}" class="hover:text-secondary-light transition-colors focus:outline-none focus-visible:underline">
+                        <h3 class="text-background text-lg font-bold leading-snug line-clamp-2">
+                            <a href="{{ $detailUrl }}" class="hover:text-secondary transition-colors focus:outline-none focus-visible:underline">
                                 {{ $title }}
                             </a>
                         </h3>
@@ -60,13 +60,13 @@
                         {{-- Hover-Reveal block --}}
                         <div class="transition-all duration-500 ease-out overflow-hidden max-h-32 opacity-100 md:max-h-0 md:opacity-0 md:group-hover:max-h-32 md:group-hover:opacity-100 md:group-focus-within:max-h-32 md:group-focus-within:opacity-100 space-y-3">
                             @if ($desc)
-                                <p class="text-white/85 text-sm leading-relaxed line-clamp-2 font-sans">
+                                <p class="text-background/85 text-sm leading-relaxed line-clamp-2 font-sans">
                                     {{ $desc }}
                                 </p>
                             @endif
 
                             <div class="pt-1">
-                                <a href="{{ $detailUrl }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-secondary-light hover:text-white transition-colors group/btn">
+                                <a href="{{ $detailUrl }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-secondary hover:text-background transition-colors group/btn">
                                     <span>{{ $locale === 'ar' ? 'التفاصيل' : 'Details' }}</span>
                                     <svg class="w-3.5 h-3.5 transform transition-transform duration-300 group-hover/btn:translate-x-1 rtl:group-hover/btn:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>

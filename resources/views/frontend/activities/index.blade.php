@@ -18,7 +18,7 @@
              TWO-TONE SECTION HEADING
         ═══════════════════════════════════════════════════════════ --}}
         <div class="text-center mb-12 space-y-3">
-            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-light/60 text-primary text-xs font-semibold tracking-widest uppercase">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/60 text-primary text-xs font-semibold tracking-widest uppercase">
                 @if(app()->getLocale() === 'ar')
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                     {{ __('frontend.our_activities') }}
@@ -34,11 +34,11 @@
 
             {{-- Decorative underline bar --}}
             <div class="flex items-center justify-center gap-2 pt-1">
-                <span class="h-px w-12 bg-primary-light/40 rounded-full"></span>
+                <span class="h-px w-12 bg-secondary/40 rounded-full"></span>
                 <span class="w-2 h-2 rounded-full bg-primary"></span>
                 <span class="h-px w-24 bg-primary/60 rounded-full"></span>
                 <span class="w-2 h-2 rounded-full bg-primary"></span>
-                <span class="h-px w-12 bg-primary-light/40 rounded-full"></span>
+                <span class="h-px w-12 bg-secondary/40 rounded-full"></span>
             </div>
         </div>
 
@@ -80,7 +80,7 @@
                          style="transition: opacity 700ms ease, transform 700ms ease; transition-delay: {{ $index * 100 }}ms;">
 
                         {{-- ── Floating Circular Badge ── --}}
-                        <div class="absolute -top-10 start-1/2 -translate-x-1/2 z-10 w-20 h-20 rounded-full border-4 border-surface shadow-lg overflow-hidden ring-2 ring-primary-light/30 transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute -top-10 start-1/2 -translate-x-1/2 z-10 w-20 h-20 rounded-full border-4 border-background shadow-lg overflow-hidden ring-2 ring-primary-light/30 transition-transform duration-300 group-hover:scale-110">
                             <img src="{{ $badgeImg }}"
                                  alt="{{ $title }}"
                                  loading="lazy"
@@ -88,7 +88,7 @@
                         </div>
 
                         {{-- ── Card Body ── --}}
-                        <article class="group rounded-3xl bg-white border border-primary-light/10 shadow-sm
+                        <article class="group rounded-3xl bg-background border border-secondary/10 shadow-sm
                                         hover:shadow-lg hover:-translate-y-1
                                         transition-all duration-300 overflow-hidden flex flex-col h-full">
 
@@ -110,7 +110,7 @@
                             </div>
 
                             {{-- Thin divider --}}
-                            <div class="mx-6 border-t border-primary-light/15"></div>
+                            <div class="mx-6 border-t border-secondary/15"></div>
 
                             {{-- Zone 2: Description + CTA (card "footer") --}}
                             <div class="px-6 pt-4 pb-6 flex flex-col flex-1 gap-4">
@@ -167,7 +167,7 @@
 
             {{-- Modal Wrapper --}}
             <div class="flex min-h-screen items-center justify-center p-4 sm:p-6 md:p-10">
-                <div class="relative bg-white dark:bg-gray-800 border border-primary-light/20 rounded-3xl w-full max-w-4xl shadow-2xl overflow-hidden transition-all duration-300 transform"
+                <div class="relative bg-background dark:bg-gray-800 border border-secondary/20 rounded-3xl w-full max-w-4xl shadow-2xl overflow-hidden transition-all duration-300 transform"
                      x-show="open"
                      x-transition:enter="transition ease-out duration-300"
                      x-transition:enter-start="opacity-0 translate-y-4 scale-95"
@@ -179,7 +179,7 @@
 
                     {{-- Close Button --}}
                     <button @click="closeModal()"
-                            class="absolute top-4 end-4 z-10 p-2 rounded-full bg-black/10 hover:bg-black/20 text-text-primary dark:text-white transition-colors"
+                            class="absolute top-4 end-4 z-10 p-2 rounded-full bg-black/10 hover:bg-black/20 text-text-primary dark:text-background transition-colors"
                             aria-label="{{ app()->getLocale() === 'ar' ? 'إغلاق' : 'Close' }}">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
@@ -195,17 +195,17 @@
                         </template>
 
                         <div class="space-y-4">
-                            <h2 class="text-2xl sm:text-3xl font-bold text-text-primary dark:text-gray-100" x-text="activity.title"></h2>
-                            <p class="text-base text-text-primary/85 dark:text-gray-200 leading-relaxed whitespace-pre-line pt-4 border-t border-primary-light/20" x-text="activity.desc"></p>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-text-primary dark:text-background" x-text="activity.title"></h2>
+                            <p class="text-base text-text-primary/85 dark:text-gray-200 leading-relaxed whitespace-pre-line pt-4 border-t border-secondary/20" x-text="activity.desc"></p>
                         </div>
 
                         {{-- Gallery --}}
                         <template x-if="activity.gallery && activity.gallery.length > 0">
-                            <div class="pt-6 border-t border-primary-light/20">
-                                <h3 class="text-lg font-bold text-text-primary dark:text-gray-100 mb-4">{{ __('frontend.activity_gallery') }}</h3>
+                            <div class="pt-6 border-t border-secondary/20">
+                                <h3 class="text-lg font-bold text-text-primary dark:text-background mb-4">{{ __('frontend.activity_gallery') }}</h3>
                                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                                     <template x-for="mediaItem in activity.gallery" :key="mediaItem.url">
-                                        <a :href="mediaItem.url" target="_blank" class="block aspect-square overflow-hidden rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm group">
+                                        <a :href="mediaItem.url" target="_blank" class="block aspect-square overflow-hidden rounded-xl border border-background dark:border-gray-700 shadow-sm group">
                                             <img :src="mediaItem.thumb" :alt="mediaItem.name" class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
                                         </a>
                                     </template>

@@ -10,7 +10,7 @@
     @if($showUrl)
         <a
             href="{{ $showUrl }}"
-            class="rounded-md p-1.5 text-[#3D342A]/50 transition hover:bg-[#EAEAE9]/50 hover:text-[#A38B54]"
+            class="rounded-md p-1.5 text-[#3D342A]/50 transition hover:bg-secondary/50 hover:text-[#A38B54]"
             title="{{ __('dashboard.common.show') }}"
         >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
@@ -23,7 +23,7 @@
     @if($editUrl)
         <a
             href="{{ $editUrl }}"
-            class="rounded-md p-1.5 text-[#A38B54] transition hover:bg-[#EAEAE9]/50"
+            class="rounded-md p-1.5 text-[#A38B54] transition hover:bg-secondary/50"
             title="{{ __('dashboard.common.edit') }}"
         >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">

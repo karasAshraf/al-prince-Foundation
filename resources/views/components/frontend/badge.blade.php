@@ -7,11 +7,11 @@
 $baseClasses = 'inline-flex items-center gap-1.5 font-semibold rounded-full tracking-wide transition-colors duration-150';
 
 $variantClasses = match ($variant) {
-    'primary' => 'bg-primary text-white',
-    'secondary' => 'bg-secondary-light text-text-primary border border-primary-light/40',
-    'accent' => 'bg-primary-light/30 text-text-primary dark:text-primary-light border border-primary-light/50',
-    'outline' => 'bg-transparent border border-primary text-primary dark:text-primary-light',
-    default => 'bg-primary text-white',
+    'primary' => 'bg-primary text-background',
+    'secondary' => 'bg-secondary text-text-primary border border-secondary/40',
+    'accent' => 'bg-secondary/30 text-text-primary dark:text-secondary border border-secondary/50',
+    'outline' => 'bg-transparent border border-primary text-primary dark:text-secondary',
+    default => 'bg-primary text-background',
 };
 
 $sizeClasses = match ($size) {

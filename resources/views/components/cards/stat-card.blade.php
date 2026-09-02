@@ -19,9 +19,9 @@
     // Spec: white card, 0.5px border #B7B5B3, border-radius 12px, padding 16px
     // Icon: 36x36px rounded square, bg #EAEAE9, icon color #A38B54
     // Number: 22px, weight 500, #3D342A | Label: 12px, #5C5450
-    $cardHtml = '<div class="rounded-xl border border-[#B7B5B3]/60 bg-white p-4 transition-all duration-300 hover:shadow-md">
+    $cardHtml = '<div class="rounded-xl border border-[#B7B5B3]/60 bg-background p-4 transition-all duration-300 hover:shadow-md">
         <div class="flex items-center gap-3">
-            <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#EAEAE9] text-[#A38B54]">
+            <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-secondary text-[#A38B54]">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="' . ($icons[$icon] ?? $icons['chart']) . '" />
                 </svg>

@@ -6,7 +6,7 @@
     <div class="space-y-5 lg:col-span-2">
 
         {{-- Basic Info --}}
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
             <h3 class="mb-4 text-sm font-semibold text-[#3D342A]">{{ __('dashboard.projects.show') }}</h3>
 
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -33,7 +33,7 @@
         </div>
 
         {{-- Description & Goals --}}
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
             <h3 class="mb-4 text-sm font-semibold text-[#3D342A]">{{ __('dashboard.projects.description') }}</h3>
 
             <div class="mb-4">
@@ -73,7 +73,7 @@
     <div class="space-y-5">
 
         {{-- Program & Status --}}
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
             <h3 class="mb-4 text-sm font-semibold text-[#3D342A]">{{ __('dashboard.common.status') }}</h3>
             <div class="space-y-4">
 
@@ -107,7 +107,7 @@
         </div>
 
         {{-- Dates --}}
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
             <h3 class="mb-4 text-sm font-semibold text-[#3D342A]">{{ __('dashboard.projects.start_date') }}</h3>
             <div class="space-y-4">
                 <x-forms.date-picker
@@ -124,7 +124,7 @@
         </div>
 
         {{-- External Link --}}
-       <!-- <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+       <!-- <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
             <x-forms.input
                 name="external_link"
                 label="رابط التوجيه الخارجي (اختياري)"

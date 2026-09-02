@@ -19,11 +19,11 @@
     </div>
 
     {{-- Filters --}}
-    <div class="mb-6 rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-4 shadow-sm">
+    <div class="mb-6 rounded-xl border border-[#B49C6E]/20 bg-secondary p-4 shadow-sm">
         <form method="GET" action="{{ route('dashboard.hero-slides.index') }}" class="flex flex-wrap items-center gap-4">
             <div class="flex flex-col gap-1 min-w-[200px]">
                 <label class="text-xs font-semibold text-[#3D342A]/70">{{ __('dashboard.hero_slides.filter_placement') }}</label>
-                <select name="placement" onchange="this.form.submit()" class="rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] px-3 py-1.5 text-xs text-[#3D342A] focus:border-[#A38B54] focus:outline-none">
+                <select name="placement" onchange="this.form.submit()" class="rounded-lg border border-[#B49C6E]/40 bg-secondary px-3 py-1.5 text-xs text-[#3D342A] focus:border-[#A38B54] focus:outline-none">
                     <option value="">{{ __('dashboard.hero_slides.all_pages') }}</option>
                     @foreach($placements as $key => $label)
                         <option value="{{ $key }}" {{ request('placement') === $key ? 'selected' : '' }}>{{ $label }}</option>

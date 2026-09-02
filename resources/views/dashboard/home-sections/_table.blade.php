@@ -23,7 +23,7 @@
                     ];
                 @endphp
                 <td class="px-4 py-3 text-sm">
-                    <span class="rounded-full bg-[#EAEAE9]/60 px-2.5 py-1 text-xs font-medium text-[#3D342A]">
+                    <span class="rounded-full bg-secondary/60 px-2.5 py-1 text-xs font-medium text-[#3D342A]">
                         {{ $typeLabels[$item->type] ?? $item->type }}
                     </span>
                 </td>

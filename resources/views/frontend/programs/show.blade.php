@@ -22,7 +22,7 @@
         </div>
 
         <!-- Program Main Card -->
-        <article class="bg-white dark:bg-gray-800 border border-primary-light/20 rounded-3xl p-6 sm:p-10 space-y-6 shadow-sm">
+        <article class="bg-background dark:bg-gray-800 border border-secondary/20 rounded-3xl p-6 sm:p-10 space-y-6 shadow-sm">
             @if ($img)
                 <div class="overflow-hidden rounded-2xl aspect-video">
                     <img src="{{ $img }}" alt="{{ $title }}" loading="lazy" class="w-full h-full object-cover">
@@ -31,7 +31,7 @@
 
             <div class="space-y-4">
                 <x-frontend.badge variant="secondary">{{ __('frontend.development_program') }}</x-frontend.badge>
-                <h1 class="text-2xl sm:text-3xl font-bold text-text-primary dark:text-gray-100">
+                <h1 class="text-2xl sm:text-3xl font-bold text-text-primary dark:text-background">
                     {{ $title }}
                 </h1>
 
@@ -53,7 +53,7 @@
 
         <!-- Program Projects Section -->
         <div class="space-y-6">
-            <h2 class="text-2xl font-bold text-text-primary dark:text-gray-100">
+            <h2 class="text-2xl font-bold text-text-primary dark:text-background">
                 {{ __('frontend.program_projects') }} ({{ $projects->count() }})
             </h2>
 
@@ -73,7 +73,7 @@
                                         <img src="{{ $projImg }}" alt="{{ $projTitle }}" loading="lazy" class="w-full h-full object-cover">
                                     </div>
                                 @endif
-                                <h3 class="text-lg font-bold text-text-primary dark:text-gray-100">
+                                <h3 class="text-lg font-bold text-text-primary dark:text-background">
                                     {{ $projTitle }}
                                 </h3>
                                 @if ($projDesc)

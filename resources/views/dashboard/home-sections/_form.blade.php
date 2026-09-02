@@ -14,7 +14,7 @@
         {{-- ============ MAIN COLUMN ============ --}}
         <div class="space-y-5 lg:col-span-2">
 
-            <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm space-y-4">
+            <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 shadow-sm space-y-4">
                 <h2 class="text-base font-semibold text-[#3D342A] border-b border-[#B49C6E]/20 pb-3 mb-4">{{ __('dashboard.common.details') }}</h2>
 
                 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -26,7 +26,7 @@
                             name="type"
                             x-model="type"
                             required
-                            class="w-full rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] px-3.5 py-2.5 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none"
+                            class="w-full rounded-lg border border-[#B49C6E]/40 bg-secondary px-3.5 py-2.5 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none"
                         >
                            
                             
@@ -150,7 +150,7 @@
         {{-- ============ SIDEBAR COLUMN ============ --}}
         <div class="space-y-5">
 
-            <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm space-y-4">
+            <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 shadow-sm space-y-4">
                 <h3 class="text-sm font-semibold text-[#3D342A] border-b border-[#B49C6E]/20 pb-3">{{ __('dashboard.common.status') }}</h3>
 
                 <x-forms.input

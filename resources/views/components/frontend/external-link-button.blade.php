@@ -14,9 +14,9 @@
 @endphp
 
 @if ($shouldShow && $targetLink)
-    <div {{ $attributes->merge(['class' => 'pt-6 border-t border-primary-light/20']) }}>
+    <div {{ $attributes->merge(['class' => 'pt-6 border-t border-secondary/20']) }}>
         <a href="{{ $targetLink }}" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center gap-2.5 px-6 py-3 text-sm font-bold rounded-xl bg-primary text-white hover:bg-[#8A734A] hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 {{ $class }}">
+           class="inline-flex items-center gap-2.5 px-6 py-3 text-sm font-bold rounded-xl bg-primary text-background hover:bg-[#8A734A] hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5 {{ $class }}">
             <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.6 9h16.8M3.6 15h16.8" />

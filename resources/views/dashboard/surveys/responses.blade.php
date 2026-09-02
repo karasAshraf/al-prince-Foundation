@@ -81,7 +81,7 @@
                                                 }
                                             }
                                         @endphp
-                                        <div class="rounded bg-[#EAEAE9] border border-[#B49C6E]/20 p-2 text-xs">
+                                        <div class="rounded bg-secondary border border-[#B49C6E]/20 p-2 text-xs">
                                             <span class="font-semibold text-[#A38B54]">{{ $questionLabel }}:</span>
                                             <span class="text-[#3D342A]">{{ $ansText }}</span>
                                         </div>

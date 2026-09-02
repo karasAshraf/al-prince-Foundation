@@ -272,7 +272,7 @@
             }
         }
     }"
-    class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm space-y-4"
+    class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 shadow-sm space-y-4"
 >
     {{-- Single Mode Hidden Removal Input --}}
     <input type="hidden" name="{{ $removeMediaName }}" :value="isRemoved ? '1' : '0'">
@@ -287,11 +287,11 @@
         <h3 class="text-sm font-semibold text-[#3D342A]">{{ $displayLabel }}</h3>
 
         @if($allowExternal)
-            <div class="inline-flex rounded-lg bg-[#EAEAE9]/50 p-1 border border-[#B49C6E]/30">
+            <div class="inline-flex rounded-lg bg-secondary/50 p-1 border border-[#B49C6E]/30">
                 <button
                     type="button"
                     @click="switchSource('upload')"
-                    :class="sourceMode === 'upload' ? 'bg-[#A38B54] text-[#EAEAE9] shadow-sm' : 'text-[#3D342A]/70 hover:text-[#3D342A]'"
+                    :class="sourceMode === 'upload' ? 'bg-[#A38B54] text-secondary shadow-sm' : 'text-[#3D342A]/70 hover:text-[#3D342A]'"
                     class="flex items-center gap-1.5 rounded-md px-3 py-1 text-xs font-semibold transition"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -303,7 +303,7 @@
                 <button
                     type="button"
                     @click="switchSource('url')"
-                    :class="sourceMode === 'url' ? 'bg-[#A38B54] text-[#EAEAE9] shadow-sm' : 'text-[#3D342A]/70 hover:text-[#3D342A]'"
+                    :class="sourceMode === 'url' ? 'bg-[#A38B54] text-secondary shadow-sm' : 'text-[#3D342A]/70 hover:text-[#3D342A]'"
                     class="flex items-center gap-1.5 rounded-md px-3 py-1 text-xs font-semibold transition"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -328,7 +328,7 @@
             @dragover.prevent="isDragging = true"
             @dragleave.prevent="isDragging = false"
             @drop.prevent="isDragging = false; handleFileSelect($event)"
-            :class="isDragging ? 'border-[#A38B54] bg-[#EAEAE9]/40' : 'border-[#B49C6E]/40 bg-[#EAEAE9]'"
+            :class="isDragging ? 'border-[#A38B54] bg-secondary/40' : 'border-[#B49C6E]/40 bg-secondary'"
             class="relative flex flex-col items-center justify-center rounded-xl border-2 border-dashed p-6 transition"
         >
             <input
@@ -346,7 +346,7 @@
                 @click="$refs.fileInput.click()"
                 class="flex flex-col items-center justify-center cursor-pointer space-y-2 py-3 text-center w-full"
             >
-                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[#EAEAE9]/60 text-[#A38B54]">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-secondary/60 text-[#A38B54]">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                     </svg>
@@ -403,7 +403,7 @@
                     x-model="externalUrl"
                     @input.debounce.400ms="handleExternalUrlChange()"
                     placeholder="https://example.com/file.pdf"
-                    class="w-full rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] px-3.5 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none"
+                    class="w-full rounded-lg border border-[#B49C6E]/40 bg-secondary px-3.5 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none"
                 >
             </div>
         </template>
@@ -414,7 +414,7 @@
                     type="url"
                     x-model="linkInput"
                     placeholder="أدخل الرابط الخارجي واضغط إضافة..."
-                    class="flex-1 rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] px-3.5 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none"
+                    class="flex-1 rounded-lg border border-[#B49C6E]/40 bg-secondary px-3.5 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none"
                 >
                 <x-buttons.primary type="button" @click="addMultiLink()">إضافة</x-buttons.primary>
             </div>
@@ -459,7 +459,7 @@
             <h4 class="text-xs font-semibold text-[#3D342A] mb-3">الوسائط والمستندات المضافة:</h4>
             <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
                 <template x-for="(item, idx) in items" :key="idx">
-                    <div class="relative rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9]/20 p-3 text-center flex flex-col justify-between items-center group h-40">
+                    <div class="relative rounded-xl border border-[#B49C6E]/20 bg-secondary/20 p-3 text-center flex flex-col justify-between items-center group h-40">
                         {{-- Remove button --}}
                         <button
                             type="button"

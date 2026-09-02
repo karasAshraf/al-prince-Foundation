@@ -17,24 +17,24 @@
             
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 {{-- Eyebrow --}}
-                <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-secondary-light mb-3 block">
+                <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-secondary mb-3 block">
                     {{ __('frontend.governance_and_management') }}
                 </span>
 
                 {{-- Page title --}}
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight mb-4">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-background leading-tight tracking-tight mb-4">
                     {{ __('frontend.board_of_directors') }}
                 </h1>
 
                 {{-- Subtle decorative brand element --}}
                 <div class="flex items-center justify-center gap-2 mt-4 mb-6" aria-hidden="true">
-                    <div class="h-0.5 w-12 bg-secondary-light/35 rounded-full"></div>
-                    <div class="w-2 h-2 rounded-full bg-secondary-light"></div>
-                    <div class="h-0.5 w-12 bg-secondary-light/35 rounded-full"></div>
+                    <div class="h-0.5 w-12 bg-secondary/35 rounded-full"></div>
+                    <div class="w-2 h-2 rounded-full bg-secondary"></div>
+                    <div class="h-0.5 w-12 bg-secondary/35 rounded-full"></div>
                 </div>
 
                 {{-- Description --}}
-                <p class="mt-4 text-base sm:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+                <p class="mt-4 text-base sm:text-lg text-background/90 max-w-2xl mx-auto leading-relaxed">
                     {{ __('frontend.board_members_desc') }}
                 </p>
             </div>
@@ -48,7 +48,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
             {{-- Right / Content Area (RTL: appears on the right on desktop, visually first. Mobile: second) --}}
-            <div class="order-2 lg:order-1 lg:col-span-7 flex flex-col justify-center bg-white dark:bg-gray-800 border border-primary-light/15 dark:border-gray-700/60 p-6 sm:p-8 md:p-10 rounded-3xl shadow-sm transition-all duration-700 transform"
+            <div class="order-2 lg:order-1 lg:col-span-7 flex flex-col justify-center bg-background dark:bg-gray-800 border border-secondary/15 dark:border-gray-700/60 p-6 sm:p-8 md:p-10 rounded-3xl shadow-sm transition-all duration-700 transform"
                  :class="inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
                 <div class="space-y-4 max-w-2xl">
                     <p class="text-base sm:text-lg text-text-primary/80 dark:text-gray-300 leading-relaxed font-medium text-justify">
@@ -58,7 +58,7 @@
             </div>
 
             {{-- Left / Primary Card (RTL: appears on the left on desktop, visually second. Mobile: first) --}}
-            <div class="order-1 lg:order-2 lg:col-span-5 relative overflow-hidden bg-primary text-white p-6 sm:p-8 md:p-10 rounded-3xl shadow-sm flex flex-col justify-between transition-all duration-700 transform delay-200"
+            <div class="order-1 lg:order-2 lg:col-span-5 relative overflow-hidden bg-primary text-background p-6 sm:p-8 md:p-10 rounded-3xl shadow-sm flex flex-col justify-between transition-all duration-700 transform delay-200"
                  :class="inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
                 
                 {{-- Decorative Shapes --}}
@@ -66,7 +66,7 @@
                 <div class="absolute -start-10 -bottom-10 w-40 h-40 rounded-full bg-gradient-to-tr from-secondary-light/20 to-transparent blur-2xl pointer-events-none"></div>
                 
                 <div class="relative z-10 space-y-4">
-                    <span class="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider bg-[#EAEAE9] text-primary rounded-full">
+                    <span class="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider bg-secondary text-primary rounded-full">
                         {{ $isRtl ? 'الهيكل القيادي' : 'Leadership Structure' }}
                     </span>
                     <h3 class="text-2xl sm:text-3xl font-extrabold leading-tight">
@@ -75,10 +75,10 @@
                 </div>
                 
                 <div class="relative z-10 mt-8 flex justify-between items-center">
-                    <span class="text-xs text-white/70">
+                    <span class="text-xs text-background/70">
                         {{ $isRtl ? 'مؤسسة الأمير عبد الرحمن' : 'Prince Abdulrahman Foundation' }}
                     </span>
-                    <div class="w-10 h-10 rounded-full bg-[#EAEAE9] flex items-center justify-center text-primary font-black shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary font-black shadow-sm">
                         {{ $isRtl ? 'الأمير' : 'P' }}
                     </div>
                 </div>
@@ -88,9 +88,9 @@
 
         {{-- Responsibilities Header --}}
         <div class="text-center pt-4">
-            <h3 class="inline-flex flex-col items-center text-lg sm:text-xl lg:text-2xl font-bold text-text-primary dark:text-surface gap-2">
+            <h3 class="inline-flex flex-col items-center text-lg sm:text-xl lg:text-2xl font-bold text-text-primary dark:text-background gap-2">
                 <span>{{ $isRtl ? 'ويؤدي المجلس دوراً محورياً في:' : 'The Board plays a pivotal role in:' }}</span>
-                <span class="w-20 h-1 bg-[#EAEAE9] rounded-full"></span>
+                <span class="w-20 h-1 bg-secondary rounded-full"></span>
             </h3>
         </div>
 
@@ -161,7 +161,7 @@
             <label for="board-role-select" class="block text-sm font-bold text-text-primary dark:text-gray-300 mb-2">
                 {{ $isRtl ? 'اختر أحد أدوار مجلس الأمناء:' : 'Select one of the Board roles:' }}
             </label>
-            <select id="board-role-select" x-model.number="activeTab" class="w-full p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700/60 rounded-2xl text-text-primary dark:text-gray-100 font-bold focus:outline-none focus:ring-2 focus:ring-primary">
+            <select id="board-role-select" x-model.number="activeTab" class="w-full p-4 bg-background dark:bg-gray-800 border border-gray-200 dark:border-gray-700/60 rounded-2xl text-text-primary dark:text-background font-bold focus:outline-none focus:ring-2 focus:ring-primary">
                 @foreach ($responsibilities as $index => $resp)
                     <option value="{{ $index }}">{{ $isRtl ? $resp['title_ar'] : $resp['title_en'] }}</option>
                 @endforeach
@@ -173,11 +173,11 @@
             @foreach ($responsibilities as $index => $resp)
                 <button @click="activeTab = {{ $index }}"
                         class="px-5 py-3 rounded-xl font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm flex items-center gap-2"
-                        :class="activeTab === {{ $index }} ? 'bg-primary text-white ring-2 ring-[#EAEAE9]/50' : 'bg-white dark:bg-gray-800 text-text-primary dark:text-gray-300 border border-gray-200/80 dark:border-gray-700/60 hover:bg-gray-50 dark:hover:bg-gray-700/40'">
+                        :class="activeTab === {{ $index }} ? 'bg-primary text-background ring-2 ring-secondary/50' : 'bg-background dark:bg-gray-800 text-text-primary dark:text-gray-300 border border-gray-200/80 dark:border-gray-700/60 hover:bg-background dark:hover:bg-gray-700/40'">
                     
                     {{-- Small dot indicator on active --}}
                     <span class="w-2 h-2 rounded-full transition-all duration-200"
-                          :class="activeTab === {{ $index }} ? 'bg-[#EAEAE9]' : 'bg-gray-300 dark:bg-gray-600'"></span>
+                          :class="activeTab === {{ $index }} ? 'bg-secondary' : 'bg-gray-300 dark:bg-gray-600'"></span>
                           
                     <span>{{ $isRtl ? $resp['title_ar'] : $resp['title_en'] }}</span>
                 </button>
@@ -185,7 +185,7 @@
         </div>
 
         {{-- Active Responsibility Content Panel --}}
-        <div class="relative bg-white dark:bg-gray-800 border border-primary-light/15 dark:border-gray-700/60 p-8 sm:p-10 rounded-3xl shadow-sm text-center max-w-3xl mx-auto overflow-hidden">
+        <div class="relative bg-background dark:bg-gray-800 border border-secondary/15 dark:border-gray-700/60 p-8 sm:p-10 rounded-3xl shadow-sm text-center max-w-3xl mx-auto overflow-hidden">
             @foreach ($responsibilities as $index => $resp)
                 <div x-show="activeTab === {{ $index }}"
                      x-transition:enter="transition ease-out duration-300 transform"
@@ -194,7 +194,7 @@
                      class="space-y-6 flex flex-col items-center">
                     
                     {{-- Icon Container --}}
-                    <div class="w-16 h-16 rounded-2xl bg-[#EAEAE9] text-primary flex items-center justify-center shadow-sm shrink-0">
+                    <div class="w-16 h-16 rounded-2xl bg-secondary text-primary flex items-center justify-center shadow-sm shrink-0">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="{{ $resp['icon'] }}"/>
                         </svg>
@@ -202,7 +202,7 @@
 
                     {{-- Title and Explanation --}}
                     <div class="space-y-3 max-w-xl">
-                        <h4 class="text-xl sm:text-2xl font-black text-primary dark:text-primary-light">
+                        <h4 class="text-xl sm:text-2xl font-black text-primary dark:text-secondary">
                             {{ $isRtl ? $resp['title_ar'] : $resp['title_en'] }}
                         </h4>
                         <p class="text-base text-text-primary/75 dark:text-gray-300 leading-relaxed font-medium">

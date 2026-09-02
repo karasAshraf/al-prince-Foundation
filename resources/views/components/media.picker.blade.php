@@ -30,7 +30,7 @@
 
     {{-- Current selection preview --}}
     <div class="flex items-center gap-3">
-        <div class="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[#B49C6E]/30 bg-[#EAEAE9]/20">
+        <div class="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[#B49C6E]/30 bg-secondary/20">
             <template x-if="selected">
                 <img :src="selected" class="h-full w-full object-cover">
             </template>
@@ -42,7 +42,7 @@
         <button
             type="button"
             @click="open = true; loadMedia()"
-            class="rounded-lg border border-[#A38B54] px-4 py-2 text-sm font-medium text-[#A38B54] hover:bg-[#EAEAE9]/40"
+            class="rounded-lg border border-[#A38B54] px-4 py-2 text-sm font-medium text-[#A38B54] hover:bg-secondary/40"
         >
             اختيار من الملفات
         </button>
@@ -60,7 +60,7 @@
         <div
             @click.outside="open = false"
             x-transition
-            class="max-h-[80vh] w-full max-w-2xl overflow-hidden rounded-xl bg-[#EAEAE9] shadow-xl"
+            class="max-h-[80vh] w-full max-w-2xl overflow-hidden rounded-xl bg-secondary shadow-xl"
         >
             {{-- Modal header --}}
             <div class="flex items-center justify-between border-b border-[#B49C6E]/30 px-5 py-3">

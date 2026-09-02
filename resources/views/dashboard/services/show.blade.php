@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-6 space-y-4">
+    <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-6 space-y-4">
         <div>
             <h3 class="text-xs text-[#3D342A]/50">اسم الخدمة بالإنجليزية</h3>
             <p class="text-base font-medium text-[#3D342A]">{{ $service->title_en ?? '—' }}</p>

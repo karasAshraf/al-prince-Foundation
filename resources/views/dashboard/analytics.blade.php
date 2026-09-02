@@ -41,7 +41,7 @@
     <div class="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         
         {{-- Content Publishing Trend --}}
-        <div class="rounded-2xl border border-[#B49C6E]/20 bg-white p-6 shadow-sm">
+        <div class="rounded-2xl border border-[#B49C6E]/20 bg-background p-6 shadow-sm">
             <h3 class="text-sm font-bold text-[#3D342A] mb-4 flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#A38B54]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.003 9.003 0 1020.945 13H11V3.055z" />
@@ -55,7 +55,7 @@
         </div>
 
         {{-- Survey Responses Trend --}}
-        <div class="rounded-2xl border border-[#B49C6E]/20 bg-white p-6 shadow-sm">
+        <div class="rounded-2xl border border-[#B49C6E]/20 bg-background p-6 shadow-sm">
             <h3 class="text-sm font-bold text-[#3D342A] mb-4 flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#A38B54]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h2a2 2 0 002-2zm12 0v-3a2 2 0 00-2-2h-2a2 2 0 00-2 2v3a2 2 0 002 2h2a2 2 0 002-2zm0 0v-7a2 2 0 00-2-2h-2a2 2 0 00-2 2v9a2 2 0 002 2h2a2 2 0 002-2z" />

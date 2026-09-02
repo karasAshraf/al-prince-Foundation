@@ -28,7 +28,7 @@
                     {{ $item->position_ar }}
                 </td>
                 <td class="px-4 py-3 text-sm">
-                    <span class="rounded-full bg-[#EAEAE9]/60 px-2.5 py-1 text-xs font-medium text-[#3D342A]">
+                    <span class="rounded-full bg-secondary/60 px-2.5 py-1 text-xs font-medium text-[#3D342A]">
                         {{ $item->type === 'board' ? __('dashboard.team_members.type_board') : __('dashboard.team_members.type_executive') }}
                     </span>
                 </td>

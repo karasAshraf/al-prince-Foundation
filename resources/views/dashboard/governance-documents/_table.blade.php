@@ -23,7 +23,7 @@
                     </a>
                 </td>
                 <td class="px-4 py-3 text-sm">
-                    <span class="rounded-full bg-[#EAEAE9]/60 px-2.5 py-1 text-xs font-medium text-[#3D342A]">
+                    <span class="rounded-full bg-secondary/60 px-2.5 py-1 text-xs font-medium text-[#3D342A]">
                         @if($item->category === 'policies') {{ __('dashboard.governance_documents.categories.policies') }}
                         @elseif($item->category === 'financial_reports') {{ __('dashboard.governance_documents.categories.financial_reports') }}
                         @else {{ __('dashboard.governance_documents.categories.achievement_reports') }} @endif

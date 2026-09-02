@@ -15,15 +15,19 @@
     }">
 
         <!-- Page Header -->
+        @php
+            $hasServicesHero = \App\Models\HeroSlide::active()->where('placement', 'services')->exists();
+        @endphp
+
+        @if(!$hasServicesHero)
         <div class="text-center mb-12">
             <x-frontend.badge variant="secondary">{{ __('frontend.our_services') }}</x-frontend.badge>
-            <h1 class="text-3xl sm:text-4xl font-bold text-text-primary dark:text-surface mt-3 leading-tight">
+            <h1 class="text-3xl sm:text-4xl font-bold text-text-primary dark:text-background mt-3 leading-tight">
                 {{ __('frontend.services_and_programs') }}
             </h1>
-            <p class="mt-4 text-text-primary/70 dark:text-gray-400 max-w-xl mx-auto">
-                {{ __('frontend.services_page_desc') }}
-            </p>
+            
         </div>
+        @endif
 
         @if ($services->count() > 0)
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
@@ -36,11 +40,11 @@
                     @endphp
 
                     <div class="group flex flex-col text-start h-full rounded-2xl overflow-hidden
-                                   bg-white dark:bg-gray-800/90
-                                   border border-primary-light/20
+                                   bg-background dark:bg-gray-800/90
+                                   border border-secondary/20
                                    shadow-sm
                                    transition-all duration-300 ease-out
-                                   hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-[#A38B54]/10 hover:border-[#A38B54]/40 hover:bg-[#EAEAE9]/20">
+                                   hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:shadow-[#A38B54]/10 hover:border-[#A38B54]/40 hover:bg-secondary/20">
 
                         {{-- Hero image --}}
                         @if ($img)
@@ -56,17 +60,17 @@
                                 @if ($service->icon)
                                     <div aria-hidden="true"
                                          class="w-14 h-14 rounded-xl
-                                                bg-primary-light/15 text-primary text-2xl
+                                                bg-secondary/15 text-primary text-2xl
                                                 flex items-center justify-center
                                                 transition-all duration-300 ease-out
-                                                group-hover:bg-[#EAEAE9]
+                                                group-hover:bg-secondary
                                                 group-hover:scale-110">
                                         {{ $service->icon }}
                                     </div>
                                 @endif
 
                                 <h3 class="font-semibold text-lg leading-snug
-                                           text-text-primary dark:text-gray-100
+                                           text-text-primary dark:text-background
                                            line-clamp-2">
                                     {{ $title }}
                                 </h3>
@@ -107,7 +111,7 @@
 
             <!-- Modal Wrapper -->
             <div class="flex min-h-screen items-center justify-center p-4 sm:p-6 md:p-10">
-                <div class="relative bg-white dark:bg-gray-800 border border-primary-light/20 rounded-3xl w-full max-w-4xl shadow-2xl overflow-hidden transition-all duration-300 transform"
+                <div class="relative bg-background dark:bg-gray-800 border border-secondary/20 rounded-3xl w-full max-w-4xl shadow-2xl overflow-hidden transition-all duration-300 transform"
                      x-show="open"
                      x-transition:enter="transition ease-out duration-300"
                      x-transition:enter-start="opacity-0 translate-y-4 scale-95"
@@ -119,7 +123,7 @@
                     
                     <!-- Close Button -->
                     <button @click="closeModal()"
-                            class="absolute top-4 end-4 z-10 p-2 rounded-full bg-black/10 hover:bg-black/20 text-text-primary dark:text-white transition-colors"
+                            class="absolute top-4 end-4 z-10 p-2 rounded-full bg-black/10 hover:bg-black/20 text-text-primary dark:text-background transition-colors"
                             aria-label="{{ app()->getLocale() === 'ar' ? 'إغلاق' : 'Close' }}">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
@@ -139,7 +143,7 @@
                                 <template x-if="service.icon">
                                     <span class="text-3xl" x-text="service.icon"></span>
                                 </template>
-                                <h2 class="text-2xl sm:text-3xl font-bold text-text-primary dark:text-gray-100" x-text="service.title"></h2>
+                                <h2 class="text-2xl sm:text-3xl font-bold text-text-primary dark:text-background" x-text="service.title"></h2>
                             </div>
 
                             <p class="text-base text-text-primary/80 dark:text-gray-300 leading-relaxed whitespace-pre-line" x-text="service.desc"></p>
@@ -147,9 +151,9 @@
 
                         <!-- External Link -->
                         <template x-if="service.shouldShowLink && service.externalLink">
-                            <div class="pt-6 border-t border-primary-light/20">
+                            <div class="pt-6 border-t border-secondary/20">
                                 <a :href="service.externalLink" target="_blank" rel="noopener noreferrer"
-                                   class="inline-flex items-center gap-2.5 px-6 py-3 text-sm font-bold rounded-xl bg-primary text-white hover:bg-[#8A734A] hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5">
+                                   class="inline-flex items-center gap-2.5 px-6 py-3 text-sm font-bold rounded-xl bg-primary text-background hover:bg-[#8A734A] hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5">
                                     <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.6 9h16.8M3.6 15h16.8" />

@@ -16,7 +16,7 @@
 
     <div class="space-y-6 max-w-2xl">
         {{-- Profile Information Card --}}
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm space-y-4">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 shadow-sm space-y-4">
             <h3 class="text-sm font-bold text-[#3D342A] pb-2 border-b border-[#B49C6E]/10">
                 {{ __('dashboard.profile.info') }}
             </h3>
@@ -53,7 +53,7 @@
         </div>
 
         {{-- Password Update Card --}}
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm space-y-4">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 shadow-sm space-y-4">
             <h3 class="text-sm font-bold text-[#3D342A] pb-2 border-b border-[#B49C6E]/10">
                 {{ __('dashboard.profile.update_password') }}
             </h3>

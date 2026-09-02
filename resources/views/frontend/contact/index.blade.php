@@ -22,7 +22,7 @@
                 </div>
             @endif
 
-            <form action="{{ route('contact.store') }}" method="POST" class="bg-white border border-[#B49C6E]/20 rounded-3xl p-6 sm:p-10 space-y-6 shadow-sm flex-1 flex flex-col justify-between">
+            <form action="{{ route('contact.store') }}" method="POST" class="bg-background border border-[#B49C6E]/20 rounded-3xl p-6 sm:p-10 space-y-6 shadow-sm flex-1 flex flex-col justify-between">
                 @csrf
 
                 <!-- Honeypot -->
@@ -37,7 +37,7 @@
                             </label>
                             <input type="text" name="name" id="name" required value="{{ old('name') }}"
                                    placeholder="{{ __('frontend.enter_full_name') }}"
-                                   class="w-full px-4 py-3 rounded-xl border border-[#B49C6E]/30 bg-[#EAEAE9]/50 focus:outline-none focus:ring-2 focus:ring-[#A38B54] focus:border-transparent text-sm transition-all">
+                                   class="w-full px-4 py-3 rounded-xl border border-[#B49C6E]/30 bg-secondary/50 focus:outline-none focus:ring-2 focus:ring-[#A38B54] focus:border-transparent text-sm transition-all">
                             @error('name')
                                 <p class="text-xs text-red-500 mt-1" role="alert">{{ $message }}</p>
                             @enderror
@@ -50,7 +50,7 @@
                             </label>
                             <input type="email" name="email" id="email" required value="{{ old('email') }}"
                                    placeholder="example@domain.com"
-                                   class="w-full px-4 py-3 rounded-xl border border-[#B49C6E]/30 bg-[#EAEAE9]/50 focus:outline-none focus:ring-2 focus:ring-[#A38B54] focus:border-transparent text-sm transition-all">
+                                   class="w-full px-4 py-3 rounded-xl border border-[#B49C6E]/30 bg-secondary/50 focus:outline-none focus:ring-2 focus:ring-[#A38B54] focus:border-transparent text-sm transition-all">
                             @error('email')
                                 <p class="text-xs text-red-500 mt-1" role="alert">{{ $message }}</p>
                             @enderror
@@ -65,7 +65,7 @@
                             </label>
                             <input type="text" name="phone" id="phone" value="{{ old('phone') }}"
                                    placeholder="0500000000"
-                                   class="w-full px-4 py-3 rounded-xl border border-[#B49C6E]/30 bg-[#EAEAE9]/50 focus:outline-none focus:ring-2 focus:ring-[#A38B54] focus:border-transparent text-sm transition-all">
+                                   class="w-full px-4 py-3 rounded-xl border border-[#B49C6E]/30 bg-secondary/50 focus:outline-none focus:ring-2 focus:ring-[#A38B54] focus:border-transparent text-sm transition-all">
                             @error('phone')
                                 <p class="text-xs text-red-500 mt-1" role="alert">{{ $message }}</p>
                             @enderror
@@ -77,7 +77,7 @@
                                 {{ __('frontend.message_type') }}
                             </label>
                             <select name="type" id="type"
-                                    class="w-full px-4 py-3 rounded-xl border border-[#B49C6E]/30 bg-[#EAEAE9]/50 focus:outline-none focus:ring-2 focus:ring-[#A38B54] focus:border-transparent text-sm transition-all">
+                                    class="w-full px-4 py-3 rounded-xl border border-[#B49C6E]/30 bg-secondary/50 focus:outline-none focus:ring-2 focus:ring-[#A38B54] focus:border-transparent text-sm transition-all">
                                 <option value="general" {{ old('type') === 'general' ? 'selected' : '' }}>{{ __('frontend.general_inquiry') }}</option>
                                 <option value="complaint" {{ old('type') === 'complaint' ? 'selected' : '' }}>{{ __('frontend.complaint_suggestion') }}</option>
                             </select>
@@ -94,7 +94,7 @@
                         </label>
                         <input type="text" name="subject" id="subject" value="{{ old('subject') }}"
                                placeholder="{{ __('frontend.enter_subject') }}"
-                               class="w-full px-4 py-3 rounded-xl border border-[#B49C6E]/30 bg-[#EAEAE9]/50 focus:outline-none focus:ring-2 focus:ring-[#A38B54] focus:border-transparent text-sm transition-all">
+                               class="w-full px-4 py-3 rounded-xl border border-[#B49C6E]/30 bg-secondary/50 focus:outline-none focus:ring-2 focus:ring-[#A38B54] focus:border-transparent text-sm transition-all">
                         @error('subject')
                             <p class="text-xs text-red-500 mt-1" role="alert">{{ $message }}</p>
                         @enderror
@@ -107,7 +107,7 @@
                         </label>
                         <textarea name="message" id="message" rows="5" required
                                   placeholder="{{ __('frontend.write_message_here') }}"
-                                  class="w-full px-4 py-3 rounded-xl border border-[#B49C6E]/30 bg-[#EAEAE9]/50 focus:outline-none focus:ring-2 focus:ring-[#A38B54] focus:border-transparent text-sm transition-all">{{ old('message') }}</textarea>
+                                  class="w-full px-4 py-3 rounded-xl border border-[#B49C6E]/30 bg-secondary/50 focus:outline-none focus:ring-2 focus:ring-[#A38B54] focus:border-transparent text-sm transition-all">{{ old('message') }}</textarea>
                         @error('message')
                             <p class="text-xs text-red-500 mt-1" role="alert">{{ $message }}</p>
                         @enderror
@@ -124,7 +124,7 @@
 
         <!-- Live Map & Info Card Side (Column 2 - 5/12 width) -->
         <div class="lg:col-span-5 flex flex-col">
-            <div class="bg-white border border-[#B49C6E]/20 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col h-full justify-between gap-6">
+            <div class="bg-background border border-[#B49C6E]/20 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col h-full justify-between gap-6">
                 
                 <!-- Map Header & Name -->
                 <div>
@@ -138,7 +138,7 @@
                 </div>
 
                 <!-- Google Map Container -->
-                <div class="relative w-full h-72 sm:h-80 md:h-96 lg:flex-1 rounded-2xl overflow-hidden border border-[#B49C6E]/20 shadow-inner bg-gray-50">
+                <div class="relative w-full h-72 sm:h-80 md:h-96 lg:flex-1 rounded-2xl overflow-hidden border border-[#B49C6E]/20 shadow-inner bg-background">
                     <iframe
                         src="{{ $mapIframeUrl }}"
                         class="absolute inset-0 w-full h-full border-0"
@@ -187,7 +187,7 @@
                 @if($googleMapsUrl)
                     <div class="pt-2 border-t border-[#B49C6E]/10">
                         <a href="{{ $googleMapsUrl }}" target="_blank" rel="noopener noreferrer" 
-                           class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#A38B54] px-5 py-3 text-xs font-bold text-[#EAEAE9] hover:bg-[#3D342A] shadow-sm transition-all"
+                           class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#A38B54] px-5 py-3 text-xs font-bold text-secondary hover:bg-[#3D342A] shadow-sm transition-all"
                            aria-label="{{ __('frontend.open_in_google_maps') }}">
                             <span>🗺️</span>
                             <span>{{ __('frontend.open_in_google_maps') }}</span>

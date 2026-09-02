@@ -12,7 +12,7 @@
             @if($paginator->onFirstPage())
                 <span class="rounded-md px-3 py-1.5 text-sm text-[#3D342A]/30">السابق</span>
             @else
-                <a href="{{ $paginator->previousPageUrl() }}" class="rounded-md px-3 py-1.5 text-sm text-[#3D342A] hover:bg-[#EAEAE9]/40">السابق</a>
+                <a href="{{ $paginator->previousPageUrl() }}" class="rounded-md px-3 py-1.5 text-sm text-[#3D342A] hover:bg-secondary/40">السابق</a>
             @endif
 
             {{-- Page numbers --}}
@@ -21,8 +21,8 @@
                     href="{{ $url }}"
                     @class([
                         'rounded-md px-3 py-1.5 text-sm',
-                        'bg-[#A38B54] text-[#EAEAE9]' => $page == $paginator->currentPage(),
-                        'text-[#3D342A] hover:bg-[#EAEAE9]/40' => $page != $paginator->currentPage(),
+                        'bg-[#A38B54] text-secondary' => $page == $paginator->currentPage(),
+                        'text-[#3D342A] hover:bg-secondary/40' => $page != $paginator->currentPage(),
                     ])
                 >
                     {{ $page }}
@@ -31,7 +31,7 @@
 
             {{-- Next --}}
             @if($paginator->hasMorePages())
-                <a href="{{ $paginator->nextPageUrl() }}" class="rounded-md px-3 py-1.5 text-sm text-[#3D342A] hover:bg-[#EAEAE9]/40">التالي</a>
+                <a href="{{ $paginator->nextPageUrl() }}" class="rounded-md px-3 py-1.5 text-sm text-[#3D342A] hover:bg-secondary/40">التالي</a>
             @else
                 <span class="rounded-md px-3 py-1.5 text-sm text-[#3D342A]/30">التالي</span>
             @endif

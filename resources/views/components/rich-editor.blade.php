@@ -45,7 +45,7 @@
     {{-- Quill renders its editor UI here --}}
     <div
         x-ref="editorEl"
-        class="min-h-[200px] rounded-b-lg border border-t-0 border-[#B49C6E]/40 bg-[#EAEAE9] text-sm text-[#3D342A]"
+        class="min-h-[200px] rounded-b-lg border border-t-0 border-[#B49C6E]/40 bg-secondary text-sm text-[#3D342A]"
     ></div>
 
     {{-- Hidden real input — this is what actually gets submitted with the form --}}

@@ -4,7 +4,7 @@
          TWO-TONE SECTION HEADING
     ═══════════════════════════════════════════════════════════════ --}}
     <div class="text-center mb-12 space-y-3">
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-light/60 text-primary text-xs font-semibold tracking-widest uppercase">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/60 text-primary text-xs font-semibold tracking-widest uppercase">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
@@ -28,11 +28,11 @@
 
         {{-- Decorative underline bar --}}
         <div class="flex items-center justify-center gap-2 pt-1">
-            <span class="h-px w-12 bg-primary-light/40 rounded-full"></span>
+            <span class="h-px w-12 bg-secondary/40 rounded-full"></span>
             <span class="w-2 h-2 rounded-full bg-primary"></span>
             <span class="h-px w-24 bg-primary/60 rounded-full"></span>
             <span class="w-2 h-2 rounded-full bg-primary"></span>
-            <span class="h-px w-12 bg-primary-light/40 rounded-full"></span>
+            <span class="h-px w-12 bg-secondary/40 rounded-full"></span>
         </div>
     </div>
 
@@ -72,14 +72,14 @@
                 @endphp
 
                 {{-- Ticket Card --}}
-                <div class="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md
-                            transition-all duration-300 border border-primary-light/10
+                <div class="group rounded-2xl overflow-hidden bg-background shadow-sm hover:shadow-md
+                            transition-all duration-300 border border-secondary/10
                             flex flex-col sm:flex-row"
                      :class="inView ? 'opacity-100 translate-x-0' : 'opacity-0 {{ app()->getLocale() === 'ar' ? '-translate-x-8' : 'translate-x-8' }}'"
                      style="transition: opacity 700ms ease, transform 700ms ease; transition-delay: {{ $index * 120 }}ms;">
 
                     {{-- ── DATE STUB (LEFT on desktop, TOP on mobile) ── --}}
-                    <div class="relative sm:w-28 shrink-0 bg-primary text-white
+                    <div class="relative sm:w-28 shrink-0 bg-primary text-background
                                 flex sm:flex-col flex-row
                                 items-center justify-center
                                 sm:py-6 sm:px-4
@@ -88,7 +88,7 @@
 
                         {{-- Pulse ring when "new" --}}
                         @if($isNew)
-                            <span class="absolute inset-0 rounded-none sm:rounded-s-2xl animate-pulse bg-primary-light/10 pointer-events-none"></span>
+                            <span class="absolute inset-0 rounded-none sm:rounded-s-2xl animate-pulse bg-secondary/10 pointer-events-none"></span>
                         @endif
 
                         <span class="text-4xl sm:text-5xl font-extrabold leading-none tabular-nums">
@@ -101,11 +101,11 @@
                         {{-- Dashed perforation line — desktop only --}}
                         <div class="hidden sm:block absolute top-0 end-0 bottom-0 w-px">
                             {{-- Top cutout circle --}}
-                            <span class="absolute -top-3 -end-2.5 w-5 h-5 rounded-full bg-surface border border-primary-light/10 shadow-inner z-10"></span>
+                            <span class="absolute -top-3 -end-2.5 w-5 h-5 rounded-full bg-background border border-secondary/10 shadow-inner z-10"></span>
                             {{-- Dashed line --}}
-                            <span class="absolute inset-y-3 end-0 w-px border-dashed border-e-2 border-primary-light/30"></span>
+                            <span class="absolute inset-y-3 end-0 w-px border-dashed border-e-2 border-secondary/30"></span>
                             {{-- Bottom cutout circle --}}
-                            <span class="absolute -bottom-3 -end-2.5 w-5 h-5 rounded-full bg-surface border border-primary-light/10 shadow-inner z-10"></span>
+                            <span class="absolute -bottom-3 -end-2.5 w-5 h-5 rounded-full bg-background border border-secondary/10 shadow-inner z-10"></span>
                         </div>
                     </div>
 
@@ -115,13 +115,13 @@
                         {{-- Top row: category pill + optional "New" badge --}}
                         <div class="flex items-center gap-2 flex-wrap">
                             <span class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-semibold
-                                         bg-secondary-light/50 text-primary border border-secondary-light">
+                                         bg-secondary/50 text-primary border border-secondary">
                                 {{ $categoryLabel }}
                             </span>
 
                             @if($isNew)
                                 <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold
-                                             bg-primary-light/20 text-primary border border-primary-light/40">
+                                             bg-secondary/20 text-primary border border-secondary/40">
                                     <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
                                     {{ $newLabel }}
                                 </span>
@@ -146,7 +146,7 @@
                         </div>
 
                         {{-- CTA row --}}
-                        <div class="flex items-center justify-between pt-2 border-t border-primary-light/10">
+                        <div class="flex items-center justify-between pt-2 border-t border-secondary/10">
                             <a href="{{ $detailUrl }}"
                                class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary
                                       hover:text-primary/80 transition-colors duration-200

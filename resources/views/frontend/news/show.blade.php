@@ -21,7 +21,7 @@
         </div>
 
         <!-- Article Card -->
-        <article class="bg-white dark:bg-gray-800 border border-primary-light/20 rounded-3xl p-6 sm:p-10 space-y-6 shadow-sm">
+        <article class="bg-background dark:bg-gray-800 border border-secondary/20 rounded-3xl p-6 sm:p-10 space-y-6 shadow-sm">
             @if ($img)
                 <div class="overflow-hidden rounded-2xl aspect-video">
                     <img src="{{ $img }}" alt="{{ $title }}" loading="lazy" class="w-full h-full object-cover">
@@ -29,37 +29,44 @@
             @endif
 
             <div class="space-y-4">
-                <div class="flex items-center gap-3 text-sm text-primary dark:text-primary-light font-semibold">
+                <div class="flex items-center gap-3 text-sm text-primary dark:text-secondary font-semibold">
                     <span>📅 {{ $news->published_at?->translatedFormat('d F Y') }}</span>
                     @if ($news->author)
                         <span>• ✍️ {{ $news->author->name }}</span>
                     @endif
                 </div>
 
-                <h1 class="text-2xl sm:text-4xl font-bold text-text-primary dark:text-gray-100 leading-tight">
+                <h1 class="text-2xl sm:text-4xl font-bold text-text-primary dark:text-background leading-tight">
                     {{ $title }}
                 </h1>
 
                 @if ($excerpt)
-                    <p class="text-lg text-text-primary/80 dark:text-gray-300 font-medium leading-relaxed italic p-4 rounded-xl bg-secondary-light/20 border-start-4 border-primary">
+                    <p class="text-lg text-text-primary/80 dark:text-gray-300 font-medium leading-relaxed italic p-4 rounded-xl bg-secondary/20 border-start-4 border-primary">
                         {{ $excerpt }}
                     </p>
                 @endif
 
                 @if ($content)
-                    <div class="text-base text-text-primary/85 dark:text-gray-200 leading-relaxed space-y-4 prose max-w-none pt-4 border-t border-primary-light/20">
+                    <div class="text-base text-text-primary/85 dark:text-gray-200 leading-relaxed space-y-4 prose max-w-none pt-4 border-t border-secondary/20">
                         {!! nl2br(e($content)) !!}
                     </div>
                 @endif
             </div>
 
-            @if ($extLink && \App\Helpers\MediaHelper::shouldShowExternalLink($news, $extLink, 'news_images', 'image'))
-                <div class="pt-6 border-t border-primary-light/20">
+            <div class="pt-6 border-t border-secondary/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                @if ($extLink && \App\Helpers\MediaHelper::shouldShowExternalLink($news, $extLink, 'news_images', 'image'))
                     <x-frontend.button :href="$extLink" variant="primary" size="md" target="_blank" rel="noopener">
                         {{ __('frontend.source_details_link') }} ↗
                     </x-frontend.button>
+                @else
+                    <div></div>
+                @endif
+                
+                <div class="flex items-center gap-3 self-end sm:self-auto bg-background dark:bg-gray-800/50 p-2 rounded-2xl border border-background dark:border-gray-700">
+                    <span class="text-sm font-bold text-text-primary dark:text-gray-400 px-2">{{ app()->getLocale() === 'ar' ? 'مشاركة:' : 'Share:' }}</span>
+                    <x-frontend.share-buttons :url="url(route('news.show', $news->slug))" :title="$title" />
                 </div>
-            @endif
+            </div>
         </article>
     </div>
 

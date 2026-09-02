@@ -9,7 +9,7 @@
         align="center"
         x-data="{ shown: false }"
         x-intersect.once="shown = true"
-        class="border-t border-border/10 overflow-hidden"
+        class="border-t border-secondary/30 overflow-hidden pb-12 lg:pb-20"
     >
         <x-frontend.section-title
             title="{{ __('frontend.partners_title') }}"
@@ -53,26 +53,26 @@
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 @endif
-                                class="group flex flex-col items-center justify-between bg-white dark:bg-gray-800/90 border border-border dark:border-gray-700/60 rounded-2xl p-4 w-48 sm:w-52 md:w-56 h-36 sm:h-40 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 transform hover:-translate-y-1 text-center"
+                                class="group flex flex-col items-center justify-between bg-background dark:bg-gray-800/90 border border-secondary dark:border-gray-700/60 rounded-2xl p-5 w-[220px] h-[190px] shadow-sm hover:border-secondary hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 text-center"
                                 title="{{ $partnerName }}">
                                 
                                 <!-- Logo Box -->
-                                <div class="flex-1 w-full flex items-center justify-center p-1.5 overflow-hidden">
+                                <div class="w-full h-[100px] flex items-center justify-center p-1">
                                     @if($logoUrl)
                                         <img src="{{ $logoUrl }}" 
                                              alt="{{ $partnerName }}" 
                                              loading="lazy"
-                                             class="max-h-16 md:max-h-20 w-auto max-w-full object-contain filter grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105">
+                                             class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105">
                                     @else
-                                        <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-lg">
+                                        <div class="w-14 h-14 rounded-full bg-secondary/10 text-secondary flex items-center justify-center font-bold text-xl">
                                             {{ mb_substr($partnerName, 0, 1) }}
                                         </div>
                                     @endif
                                 </div>
 
                                 <!-- Partner Name -->
-                                <div class="w-full pt-2 border-t border-gray-100 dark:border-gray-700/50 mt-1">
-                                    <h4 class="text-xs sm:text-sm font-bold text-text-primary dark:text-gray-200 group-hover:text-primary dark:group-hover:text-primary-light transition-colors duration-300 line-clamp-2 leading-tight">
+                                <div class="w-full pt-4 mt-2 border-t border-secondary/40 dark:border-gray-700/50">
+                                    <h4 class="text-[13px] font-medium text-text-primary dark:text-gray-300 transition-colors duration-300 line-clamp-2 leading-snug">
                                         {{ $partnerName }}
                                     </h4>
                                 </div>

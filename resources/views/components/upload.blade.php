@@ -27,7 +27,7 @@
 
     {{-- Show current file if editing an existing record --}}
     @if($currentUrl)
-        <div class="mb-2 flex items-center gap-2 rounded-lg border border-[#B49C6E]/30 bg-[#EAEAE9]/30 px-3 py-2 text-sm text-[#3D342A]">
+        <div class="mb-2 flex items-center gap-2 rounded-lg border border-[#B49C6E]/30 bg-secondary/30 px-3 py-2 text-sm text-[#3D342A]">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
@@ -41,8 +41,8 @@
         @dragover.prevent="dragging = true"
         @dragleave.prevent="dragging = false"
         @drop.prevent="dragging = false; $refs.fileInput.files = $event.dataTransfer.files; handleFile($event.dataTransfer.files[0])"
-        :class="dragging ? 'border-[#A38B54] bg-[#EAEAE9]/40' : 'border-[#B49C6E]/40'"
-        class="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed px-4 py-6 text-center transition-colors hover:bg-[#EAEAE9]/20"
+        :class="dragging ? 'border-[#A38B54] bg-secondary/40' : 'border-[#B49C6E]/40'"
+        class="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed px-4 py-6 text-center transition-colors hover:bg-secondary/20"
     >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#A38B54]" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9m0 0l-3.75 3.75M12 9l3.75 3.75M3 17.25V19.5A2.25 2.25 0 005.25 21.75h13.5A2.25 2.25 0 0021 19.5v-2.25" />

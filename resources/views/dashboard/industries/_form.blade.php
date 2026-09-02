@@ -3,7 +3,7 @@
 <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
     {{-- Main Fields Column (2/3 width) --}}
     <div class="space-y-5 lg:col-span-2">
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <x-forms.input
                     name="title_ar"
@@ -49,7 +49,7 @@
     {{-- Sidebar Column (1/3 width) --}}
     <div class="space-y-5">
         {{-- Details Card --}}
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 space-y-4">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 space-y-4">
             <h3 class="text-sm font-semibold text-[#3D342A]">{{ __('dashboard.common.details') }}</h3>
 
             <x-forms.input

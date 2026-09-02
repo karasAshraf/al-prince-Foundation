@@ -65,7 +65,8 @@
         }
         
         $hasActiveSlides = false;
-        if (!isset($hero) && $currentPlacement) {
+        $isHeroEmpty = !isset($hero) || (is_object($hero) && method_exists($hero, 'isEmpty') && $hero->isEmpty());
+        if ($isHeroEmpty && $currentPlacement) {
             $hasActiveSlides = \App\Models\HeroSlide::active()
                 ->where('placement', $currentPlacement)
                 ->exists();
@@ -155,10 +156,10 @@
     @stack('preload')
     @stack('styles')
 </head>
-<body class="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-950 text-text-primary font-sans antialiased selection:bg-secondary-light selection:text-text-primary transition-colors duration-200">
+<body class="min-h-screen flex flex-col bg-background dark:bg-gray-950 text-text-primary font-sans antialiased selection:bg-secondary selection:text-text-primary transition-colors duration-200">
     
     <!-- Widescreen Centered Wrapper -->
-    <div class="w-full mx-auto flex flex-col min-h-screen bg-surface dark:bg-gray-900 shadow-2xl relative overflow-x-clip">
+    <div class="w-full mx-auto flex flex-col min-h-screen bg-background dark:bg-gray-900 shadow-2xl relative overflow-x-clip">
         
         <!-- Navbar (Full Width) -->
         <x-frontend.navbar :brand-name="$brandName ?? null">
@@ -188,7 +189,7 @@
         </x-frontend.navbar>
 
         <!-- Full-Width Hero Slot (outside container, zero padding) -->
-        @if(isset($hero))
+        @if(isset($hero) && (is_object($hero) ? !$hero->isEmpty() : (string) $hero !== ''))
             <div class="w-full">
                 {{ $hero }}
             </div>
@@ -202,7 +203,8 @@
         @if ($slot->isNotEmpty())
             @php
                 $mainClasses = 'flex-grow';
-                if (isset($hero) || $hasActiveSlides) {
+                $hasHeroContent = isset($hero) && (is_object($hero) ? !$hero->isEmpty() : (string) $hero !== '');
+                if ($hasHeroContent || $hasActiveSlides) {
                     if ($currentPlacement === 'home') {
                         $mainClasses .= '';
                     } else {
@@ -253,7 +255,7 @@
                     x-transition:leave-end="opacity-0 translate-y-4 scale-90"
                     @click="window.scrollTo({top: 0, behavior: 'smooth'})"
                     type="button"
-                    class="flex items-center justify-center w-12 h-12 rounded-full bg-[#AC8321] text-white shadow-xl hover:bg-[#B8974F] hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-light border border-[#D5D3CE]/20"
+                    class="flex items-center justify-center w-12 h-12 rounded-full bg-primary text-background shadow-xl hover:bg-secondary hover:scale-110 active:scale-95 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-light border border-secondary/20"
                     aria-label="{{ __('frontend.back_to_top') ?: 'Back to Top' }}">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/>

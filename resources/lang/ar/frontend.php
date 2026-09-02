@@ -282,4 +282,6 @@ return [
     'go_to_activities' => 'اذهب للأنشطة',
     'go_to_industries' => 'اذهب للقطاعات',
     'go_to_solutions' => 'اذهب للحلول',
+    'viewfullsecreen' => 'عرض بملء الشاشة',
+    'pinchtozoom' => 'قرص للتكبير',
 ];

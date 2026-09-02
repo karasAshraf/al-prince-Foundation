@@ -25,7 +25,7 @@
 
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div class="space-y-5 lg:col-span-2">
-            <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-6 shadow-sm">
+            <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-6 shadow-sm">
                 <div class="flex items-start gap-5">
                     <x-forms.image-preview :url="\App\Helpers\MediaHelper::url($item, 'team_photos', 'image')" size="lg" />
                     <div>
@@ -56,7 +56,7 @@
         </div>
 
         <div class="space-y-5">
-            <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm">
+            <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 shadow-sm">
                 <h3 class="mb-4 text-sm font-semibold text-[#3D342A] border-b border-[#B49C6E]/20 pb-2">{{ __('dashboard.common.details') }}</h3>
                 <dl class="space-y-3 text-sm">
                     <div class="flex justify-between">

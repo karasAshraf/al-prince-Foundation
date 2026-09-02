@@ -2,7 +2,7 @@
     'seoMeta' => null, // the related SeoMeta model, or null if none saved yet
 ])
 
-<div class="rounded-xl border border-[#B49C6E]/30 bg-[#EAEAE9]/10 p-5">
+<div class="rounded-xl border border-[#B49C6E]/30 bg-secondary/10 p-5">
 
     <h3 class="mb-4 flex items-center gap-2 text-sm font-semibold text-[#3D342A]">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#A38B54]" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">

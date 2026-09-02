@@ -26,14 +26,14 @@
         <label class="block text-sm font-medium text-[#3D342A]">{{ $label }}</label>
     @endif
 
-    <div class="relative flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-[#B49C6E]/40 bg-[#EAEAE9] p-4 text-center transition hover:border-[#A38B54]">
+    <div class="relative flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-[#B49C6E]/40 bg-secondary p-4 text-center transition hover:border-[#A38B54]">
         <template x-if="previewUrl">
             <div class="relative w-full overflow-hidden rounded-lg">
                 <img :src="previewUrl" class="h-44 w-full object-cover rounded-lg border border-[#B49C6E]/20">
                 <button
                     type="button"
                     @click="removeImage()"
-                    class="absolute top-2 left-2 rounded-full bg-red-600/80 p-1.5 text-white hover:bg-red-700 transition"
+                    class="absolute top-2 left-2 rounded-full bg-red-600/80 p-1.5 text-background hover:bg-red-700 transition"
                     title="حذف الصورة"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

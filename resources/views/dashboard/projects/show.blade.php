@@ -32,7 +32,7 @@
         <div class="space-y-5 lg:col-span-2">
 
             {{-- Cover Image + Content --}}
-            <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+            <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
 
                 @php $projectCoverUrl = \App\Helpers\MediaHelper::url($project, 'project_images', 'image'); @endphp
                 @if($projectCoverUrl)
@@ -84,7 +84,7 @@
         <div class="space-y-5">
 
             {{-- Metadata Card --}}
-            <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+            <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
                 <h3 class="mb-4 text-sm font-semibold text-[#3D342A]">{{ __('dashboard.projects.show') }}</h3>
                 <dl class="space-y-3 text-sm">
 
@@ -109,7 +109,7 @@
                             <span @class([
                                 'rounded-full px-2.5 py-1 text-xs font-medium',
                                 'bg-[#B49C6E]/30 text-[#A38B54]'    => $project->status === 'published',
-                                'bg-[#EAEAE9]/60 text-[#3D342A]/70' => $project->status === 'draft',
+                                'bg-secondary/60 text-[#3D342A]/70' => $project->status === 'draft',
                             ])>
                                 {{ $project->status === 'published' ? __('dashboard.common.published') : __('dashboard.common.draft') }}
                             </span>

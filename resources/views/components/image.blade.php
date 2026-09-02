@@ -27,7 +27,7 @@
     <div class="flex flex-col gap-3 sm:flex-row sm:items-start">
 
         {{-- Preview thumbnail --}}
-        <div class="flex h-28 w-28 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[#B49C6E]/30 bg-[#EAEAE9]/20">
+        <div class="flex h-28 w-28 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-[#B49C6E]/30 bg-secondary/20">
             <template x-if="preview">
                 <img :src="preview" alt="معاينة الصورة" class="h-full w-full object-cover">
             </template>
@@ -42,7 +42,7 @@
         <div class="flex-1">
             <label
                 for="{{ $name }}"
-                class="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-[#B49C6E]/40 px-4 py-6 text-center transition-colors hover:bg-[#EAEAE9]/20"
+                class="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-[#B49C6E]/40 px-4 py-6 text-center transition-colors hover:bg-secondary/20"
             >
                 <span class="text-sm text-[#3D342A]">
                     اسحب الصورة هنا أو <span class="font-medium text-[#A38B54]">اختر من جهازك</span>

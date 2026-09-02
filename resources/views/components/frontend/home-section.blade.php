@@ -78,7 +78,7 @@
                 {{-- Decorative Floating Glow Behind Image --}}
                 <div class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary-light/10 to-primary/10 blur-2xl opacity-40 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none"></div>
 
-                <div class="relative overflow-hidden rounded-3xl border border-border dark:border-gray-800/40 shadow-md group-hover:shadow-lg transition-all duration-500">
+                <div class="relative overflow-hidden rounded-3xl border border-secondary dark:border-gray-800/40 shadow-md group-hover:shadow-lg transition-all duration-500">
                     <img
                         src="{{ $img }}"
                         alt="{{ $title ?? '' }}"
@@ -93,7 +93,7 @@
                 @endphp
                 @if (!empty($personName))
                     <div class="mt-4 text-center">
-                        <span class="inline-block text-sm sm:text-base font-semibold text-text-primary dark:text-gray-200 bg-primary-light/10 dark:bg-gray-800/60 px-4 py-1.5 rounded-full border border-primary-light/20 dark:border-gray-700/40">
+                        <span class="inline-block text-sm sm:text-base font-semibold text-text-primary dark:text-gray-200 bg-secondary/10 dark:bg-gray-800/60 px-4 py-1.5 rounded-full border border-secondary/20 dark:border-gray-700/40">
                             {{ $personName }}
                         </span>
                     </div>
@@ -108,14 +108,14 @@
         >
             @if ($section->label)
                 <div class="inline-flex items-center gap-2">
-                    <x-frontend.badge variant="secondary" size="md" class="bg-primary/10 text-primary dark:bg-primary-light/20 dark:text-primary-light border border-primary-light/30 px-4 py-1.5 rounded-full font-bold">
+                    <x-frontend.badge variant="secondary" size="md" class="bg-primary/10 text-primary dark:bg-secondary/20 dark:text-secondary border border-secondary/30 px-4 py-1.5 rounded-full font-bold">
                         {{ $section->label }}
                     </x-frontend.badge>
                 </div>
             @endif
 
             @if ($title)
-                <h2 class="text-3xl sm:text-4xl font-bold text-text-primary dark:text-white leading-tight tracking-tight">
+                <h2 class="text-3xl sm:text-4xl font-bold text-text-primary dark:text-background leading-tight tracking-tight">
                     {{ $title }}
                 </h2>
             @endif
@@ -123,14 +123,14 @@
             @if ($desc)
                 {{-- Bismillah first-line (Arabic only) — visually distinct, centered, semibold --}}
                 @if ($bismillahFirstLine)
-                    <p class="w-full text-center text-base sm:text-lg font-semibold text-primary dark:text-primary-light tracking-wide mb-5 sm:mb-6 pb-4 border-b border-primary/15" dir="rtl">
+                    <p class="w-full text-center text-base sm:text-lg font-semibold text-primary dark:text-secondary tracking-wide mb-5 sm:mb-6 pb-4 border-b border-primary/15" dir="rtl">
                         {{ $bismillahFirstLine }}
                     </p>
                 @endif
 
                 {{-- Body text: flows naturally by container width --}}
                 @if ($descBody)
-                    <p class="text-base sm:text-lg text-text-secondary dark:text-gray-300 leading-relaxed font-normal max-w-prose">
+                    <p class="text-base sm:text-lg text-text-primary dark:text-gray-300 leading-relaxed font-normal max-w-prose">
                         {{ $descBody }}
                     </p>
                 @endif

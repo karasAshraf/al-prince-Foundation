@@ -19,7 +19,7 @@
         </div>
 
         <!-- Article Card -->
-        <article class="bg-white dark:bg-gray-800 border border-primary-light/20 rounded-3xl p-6 sm:p-10 space-y-6 shadow-sm">
+        <article class="bg-background dark:bg-gray-800 border border-secondary/20 rounded-3xl p-6 sm:p-10 space-y-6 shadow-sm">
             @if ($img)
                 <div class="overflow-hidden rounded-2xl aspect-video">
                     <img src="{{ $img }}" alt="{{ $title }}" width="800" height="600" loading="lazy" class="w-full h-full object-cover">
@@ -27,12 +27,12 @@
             @endif
 
             <div class="space-y-4">
-                <h1 class="text-2xl sm:text-3xl font-bold text-text-primary dark:text-gray-100">
+                <h1 class="text-2xl sm:text-3xl font-bold text-text-primary dark:text-background">
                     {{ $title }}
                 </h1>
 
                 @if ($desc)
-                    <div class="text-base text-text-primary/80 dark:text-gray-300 leading-relaxed space-y-4 whitespace-pre-line border-t border-primary-light/20 pt-6">
+                    <div class="text-base text-text-primary/80 dark:text-gray-300 leading-relaxed space-y-4 whitespace-pre-line border-t border-secondary/20 pt-6">
                         {{ $desc }}
                     </div>
                 @endif

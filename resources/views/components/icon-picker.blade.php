@@ -32,7 +32,7 @@
     {{-- Trigger Box with Live Preview --}}
     <div
         @click="openModal()"
-        class="group relative flex items-center justify-between rounded-xl border border-[#B49C6E]/40 bg-[#EAEAE9] dark:bg-gray-800 dark:border-gray-700 px-4 py-3 shadow-xs transition-all duration-200 hover:border-[#A38B54] hover:shadow-md cursor-pointer"
+        class="group relative flex items-center justify-between rounded-xl border border-[#B49C6E]/40 bg-secondary dark:bg-gray-800 dark:border-gray-700 px-4 py-3 shadow-xs transition-all duration-200 hover:border-[#A38B54] hover:shadow-md cursor-pointer"
     >
         {{-- Selected Icon Preview + Label --}}
         <div class="flex items-center gap-3 overflow-hidden">
@@ -43,7 +43,7 @@
             </template>
 
             <template x-if="!selectedIcon">
-                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gray-100 dark:bg-gray-700 text-gray-400">
+                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-background dark:bg-gray-700 text-gray-400">
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                     </svg>
@@ -51,8 +51,8 @@
             </template>
 
             <div class="truncate min-w-0">
-                <p x-show="selectedIconObj" class="text-sm font-bold text-[#3D342A] dark:text-gray-100 truncate" x-text="selectedIconObj ? selectedIconObj.name_ar + ' (' + selectedIconObj.id + ')' : ''"></p>
-                <p x-show="!selectedIconObj && selectedIcon" class="text-sm font-bold text-[#3D342A] dark:text-gray-100 truncate" x-text="selectedIcon"></p>
+                <p x-show="selectedIconObj" class="text-sm font-bold text-[#3D342A] dark:text-background truncate" x-text="selectedIconObj ? selectedIconObj.name_ar + ' (' + selectedIconObj.id + ')' : ''"></p>
+                <p x-show="!selectedIconObj && selectedIcon" class="text-sm font-bold text-[#3D342A] dark:text-background truncate" x-text="selectedIcon"></p>
                 <p x-show="!selectedIcon" class="text-sm text-gray-400 dark:text-gray-500" x-text="@js($placeholder)"></p>
             </div>
         </div>
@@ -74,7 +74,7 @@
 
             <button
                 type="button"
-                class="px-3 py-1.5 text-xs font-bold rounded-lg bg-[#A38B54]/10 text-[#A38B54] dark:bg-gray-700 dark:text-gray-200 group-hover:bg-[#A38B54] group-hover:text-white transition-colors"
+                class="px-3 py-1.5 text-xs font-bold rounded-lg bg-[#A38B54]/10 text-[#A38B54] dark:bg-gray-700 dark:text-gray-200 group-hover:bg-[#A38B54] group-hover:text-background transition-colors"
             >
                 <span x-text="selectedIcon ? 'تغيير' : 'اختر'"></span>
             </button>
@@ -121,12 +121,12 @@
                 x-transition:leave-start="opacity-100 scale-100 translate-y-0"
                 x-transition:leave-end="opacity-0 scale-95 translate-y-3"
                 @keydown.escape.window="cancel()"
-                class="relative w-full max-w-5xl overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-2xl dark:border-gray-700 dark:bg-gray-800 flex flex-col max-h-[85vh]"
+                class="relative w-full max-w-5xl overflow-hidden rounded-2xl border border-gray-200 bg-background shadow-2xl dark:border-gray-700 dark:bg-gray-800 flex flex-col max-h-[85vh]"
             >
                 {{-- Header --}}
-                <div class="flex items-center justify-between border-b border-gray-100 dark:border-gray-700 px-6 py-4 bg-[#EAEAE9] dark:bg-gray-800 shrink-0">
+                <div class="flex items-center justify-between border-b border-background dark:border-gray-700 px-6 py-4 bg-secondary dark:bg-gray-800 shrink-0">
                     <div>
-                        <h3 class="text-lg font-bold text-[#3D342A] dark:text-gray-100 flex items-center gap-2">
+                        <h3 class="text-lg font-bold text-[#3D342A] dark:text-background flex items-center gap-2">
                             <span>اختيار أيقونة (Lucide Icon Picker)</span>
                             <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[#B49C6E]/20 text-[#A38B54] dark:text-[#B49C6E]" x-text="totalCount + ' أيقونة'"></span>
                         </h3>
@@ -136,7 +136,7 @@
                     <button
                         type="button"
                         @click="cancel()"
-                        class="rounded-xl p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-700 transition-colors"
+                        class="rounded-xl p-2 text-gray-400 hover:bg-background hover:text-gray-600 dark:hover:bg-gray-700 transition-colors"
                     >
                         <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -145,7 +145,7 @@
                 </div>
 
                 {{-- Search & Categories Toolbar --}}
-                <div class="p-4 bg-gray-50/70 dark:bg-gray-900/40 border-b border-gray-100 dark:border-gray-700 space-y-3 shrink-0">
+                <div class="p-4 bg-background/70 dark:bg-gray-900/40 border-b border-background dark:border-gray-700 space-y-3 shrink-0">
                     {{-- Search Input --}}
                     <div class="relative">
                         <input
@@ -154,7 +154,7 @@
                             x-ref="searchInput"
                             @input="page = 1"
                             placeholder="🔍 ابحث بالاسم أو الرمز (Search e.g. users, heart, award, trophy, globe)..."
-                            class="w-full rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 pe-10 ps-10 py-2.5 text-sm text-gray-800 dark:text-gray-100 placeholder-gray-400 focus:border-[#A38B54] focus:ring-2 focus:ring-[#A38B54]/20 focus:outline-none"
+                            class="w-full rounded-xl border border-gray-300 dark:border-gray-600 bg-background dark:bg-gray-800 pe-10 ps-10 py-2.5 text-sm text-gray-800 dark:text-background placeholder-gray-400 focus:border-[#A38B54] focus:ring-2 focus:ring-[#A38B54]/20 focus:outline-none"
                         />
                         <div class="absolute inset-y-0 start-0 ps-3.5 flex items-center pointer-events-none text-gray-400">
                             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -180,8 +180,8 @@
                                 type="button"
                                 @click="activeCategory = catId; page = 1"
                                 :class="activeCategory === catId
-                                    ? 'bg-[#A38B54] text-white font-bold shadow-xs'
-                                    : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700'"
+                                    ? 'bg-[#A38B54] text-background font-bold shadow-xs'
+                                    : 'bg-background dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-background dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700'"
                                 class="px-3.5 py-1.5 rounded-lg whitespace-nowrap transition-colors"
                                 x-text="catName"
                             ></button>
@@ -199,7 +199,7 @@
                                 :title="iconItem.name_ar + ' (' + iconItem.id + ')'"
                                 :class="tempIcon === iconItem.id
                                     ? 'border-[#A38B54] bg-[#A38B54]/10 dark:bg-[#B49C6E]/20 ring-2 ring-[#A38B54] text-[#A38B54] dark:text-[#B49C6E] font-bold shadow-xs scale-102'
-                                    : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:border-[#A38B54]/60 hover:bg-[#EAEAE9] dark:hover:bg-gray-700 hover:-translate-y-0.5 hover:shadow-xs text-gray-700 dark:text-gray-200'"
+                                    : 'border-gray-200 dark:border-gray-700 bg-background dark:bg-gray-800 hover:border-[#A38B54]/60 hover:bg-secondary dark:hover:bg-gray-700 hover:-translate-y-0.5 hover:shadow-xs text-gray-700 dark:text-gray-200'"
                                 class="relative flex flex-col items-center justify-center p-3 rounded-xl border transition-all duration-150 cursor-pointer group aspect-square"
                             >
                                 {{-- SVG Icon --}}
@@ -222,7 +222,7 @@
                                 <span class="text-[11px] font-semibold text-center truncate w-full text-gray-600 dark:text-gray-300 group-hover:text-[#A38B54]" x-text="iconItem.name_ar"></span>
 
                                 {{-- Active Highlight Badge --}}
-                                <div x-show="tempIcon === iconItem.id" class="absolute top-1.5 end-1.5 bg-[#A38B54] text-white rounded-full p-0.5 shadow-xs">
+                                <div x-show="tempIcon === iconItem.id" class="absolute top-1.5 end-1.5 bg-[#A38B54] text-background rounded-full p-0.5 shadow-xs">
                                     <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                     </svg>
@@ -236,7 +236,7 @@
                         <button
                             type="button"
                             @click="loadMore()"
-                            class="px-5 py-2 text-xs font-bold rounded-xl border border-[#B49C6E] bg-[#EAEAE9] text-[#A38B54] hover:bg-[#A38B54] hover:text-white transition-colors"
+                            class="px-5 py-2 text-xs font-bold rounded-xl border border-[#B49C6E] bg-secondary text-[#A38B54] hover:bg-[#A38B54] hover:text-background transition-colors"
                         >
                             عرض المزيد من الأيقونات...
                         </button>
@@ -244,7 +244,7 @@
 
                     {{-- Empty Search State --}}
                     <div x-show="filteredIcons.length === 0" class="py-12 text-center space-y-3">
-                        <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700 text-gray-400">
+                        <div class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-background dark:bg-gray-700 text-gray-400">
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                             </svg>
@@ -255,12 +255,12 @@
                 </div>
 
                 {{-- Modal Footer with Selected Icon Live Preview & Controls --}}
-                <div class="flex flex-col sm:flex-row items-center justify-between border-t border-gray-100 dark:border-gray-700 px-6 py-4 bg-gray-50/80 dark:bg-gray-900/40 gap-3 shrink-0">
+                <div class="flex flex-col sm:flex-row items-center justify-between border-t border-background dark:border-gray-700 px-6 py-4 bg-background/80 dark:bg-gray-900/40 gap-3 shrink-0">
                     {{-- Selected Icon Live Preview --}}
                     <div class="flex items-center gap-2 text-xs text-gray-600 dark:text-gray-300 w-full sm:w-auto">
                         <span class="font-medium">المعاينـة الحالية:</span>
                         <template x-if="tempIconObj">
-                            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 font-bold text-[#A38B54] dark:text-[#B49C6E] shadow-2xs">
+                            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-background dark:bg-gray-800 border border-gray-200 dark:border-gray-700 font-bold text-[#A38B54] dark:text-[#B49C6E] shadow-2xs">
                                 <template x-if="tempIconObj.svg">
                                     <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" :d="tempIconObj.svg" />
@@ -270,7 +270,7 @@
                             </div>
                         </template>
                         <template x-if="!tempIconObj && tempIcon">
-                            <span class="font-bold text-gray-800 dark:text-gray-100" x-text="tempIcon"></span>
+                            <span class="font-bold text-gray-800 dark:text-background" x-text="tempIcon"></span>
                         </template>
                         <template x-if="!tempIcon">
                             <span class="text-gray-400 italic">لم يتم اختيار أيقونة</span>
@@ -296,7 +296,7 @@
                         <button
                             type="button"
                             @click="confirmSelection()"
-                            class="px-5 py-2 text-xs font-bold text-white bg-[#A38B54] hover:bg-[#8A734A] rounded-xl shadow-xs transition-colors"
+                            class="px-5 py-2 text-xs font-bold text-background bg-[#A38B54] hover:bg-[#8A734A] rounded-xl shadow-xs transition-colors"
                         >
                             تأكيد الاختيار
                         </button>

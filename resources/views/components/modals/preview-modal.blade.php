@@ -28,7 +28,7 @@
     <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" @click="open = false" aria-hidden="true"></div>
 
     <div
-        class="relative w-full max-w-3xl rounded-2xl border border-[#B49C6E]/20 bg-[#EAEAE9] shadow-2xl"
+        class="relative w-full max-w-3xl rounded-2xl border border-[#B49C6E]/20 bg-secondary shadow-2xl"
         x-transition:enter="ease-out duration-200"
         x-transition:enter-start="opacity-0 scale-95"
         x-transition:enter-end="opacity-100 scale-100"

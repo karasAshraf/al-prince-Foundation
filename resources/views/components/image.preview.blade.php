@@ -12,7 +12,7 @@
     };
 @endphp
 
-<div class="{{ $sizeClasses }} shrink-0 overflow-hidden rounded-lg border border-[#B49C6E]/30 bg-[#EAEAE9]/20">
+<div class="{{ $sizeClasses }} shrink-0 overflow-hidden rounded-lg border border-[#B49C6E]/30 bg-secondary/20">
     @if($url)
         <img src="{{ $url }}" alt="{{ $alt }}" class="h-full w-full object-cover">
     @else

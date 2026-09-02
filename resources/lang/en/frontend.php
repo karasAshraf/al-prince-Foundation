@@ -282,4 +282,6 @@ return [
     'go_to_activities' => 'Go to Activities',
     'go_to_industries' => 'Go to Sectors',
     'go_to_solutions' => 'Go to Solutions',
+    'viewfullsecreen' => 'View Fullscreen',
+    'pinchtozoom' => 'Pinch to Zoom',
 ];

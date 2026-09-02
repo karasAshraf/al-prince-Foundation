@@ -26,7 +26,7 @@
 
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div class="space-y-5 lg:col-span-2">
-            <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-6 shadow-sm">
+            <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-6 shadow-sm">
                 <div class="flex items-center gap-4">
                     <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-red-100 text-red-600">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -42,7 +42,7 @@
                 </div>
 
                 @if($item->file_path)
-                    <div class="mt-6 rounded-xl border border-[#B49C6E]/30 bg-[#EAEAE9]/20 p-4 flex items-center justify-between">
+                    <div class="mt-6 rounded-xl border border-[#B49C6E]/30 bg-secondary/20 p-4 flex items-center justify-between">
                         <div>
                             <p class="text-sm font-semibold text-[#3D342A]">{{ __('dashboard.common.file') }}</p>
                             <p class="text-xs text-[#3D342A]/60">{{ $item->file_size ? number_format($item->file_size / 1024, 1) . ' KB' : '—' }}</p>
@@ -56,7 +56,7 @@
         </div>
 
         <div class="space-y-5">
-            <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm">
+            <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 shadow-sm">
                 <h3 class="mb-4 text-sm font-semibold text-[#3D342A] border-b border-[#B49C6E]/20 pb-2">{{ __('dashboard.common.details') }}</h3>
                 <dl class="space-y-3 text-sm">
                     <div class="flex justify-between">

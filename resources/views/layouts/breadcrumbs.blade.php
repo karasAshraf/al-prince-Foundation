@@ -10,7 +10,7 @@
         ];
     @endphp
 --}}
-<nav class="flex-none shrink-0 z-10 border-b border-[#B7B5B3]/50 bg-white px-4 py-3 sm:px-6 lg:px-8" aria-label="مسار التنقل">
+<nav class="flex-none shrink-0 z-10 border-b border-[#B7B5B3]/50 bg-background px-4 py-3 sm:px-6 lg:px-8" aria-label="مسار التنقل">
     <ol class="flex flex-wrap items-center gap-2 text-sm text-[#5C5450]">
         <li class="flex items-center gap-2">
             <a href="{{ route('dashboard.home') }}" class="flex items-center gap-1 hover:text-[#A38B54]">

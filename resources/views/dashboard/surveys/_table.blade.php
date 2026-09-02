@@ -8,7 +8,7 @@
 @else
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         @foreach($surveys as $item)
-            <div class="flex flex-col justify-between rounded-2xl border border-[#B49C6E]/20 bg-white p-6 shadow-sm hover:shadow-md transition-all duration-300">
+            <div class="flex flex-col justify-between rounded-2xl border border-[#B49C6E]/20 bg-background p-6 shadow-sm hover:shadow-md transition-all duration-300">
                 <div class="space-y-4">
                     {{-- Title and Type badge --}}
                     <div class="flex items-start justify-between gap-3">
@@ -25,7 +25,7 @@
                             @endif
                         </div>
                         @if($item->type)
-                            <span class="shrink-0 rounded-full bg-[#EAEAE9]/60 px-2.5 py-0.5 text-xs font-semibold text-[#3D342A]">
+                            <span class="shrink-0 rounded-full bg-secondary/60 px-2.5 py-0.5 text-xs font-semibold text-[#3D342A]">
                                 {{ $item->type }}
                             </span>
                         @endif
@@ -81,7 +81,7 @@
                 <div class="mt-6 flex items-center justify-between gap-3 border-t border-[#B49C6E]/10 pt-4">
                     {{-- Prominent Survey Analysis detail link --}}
                     <a href="{{ route('dashboard.surveys.analysis', $item) }}" 
-                       class="inline-flex items-center gap-1.5 rounded-xl bg-[#A38B54] px-3.5 py-2 text-xs font-bold text-white hover:bg-[#8A734A] transition-colors shadow-sm">
+                       class="inline-flex items-center gap-1.5 rounded-xl bg-[#A38B54] px-3.5 py-2 text-xs font-bold text-background hover:bg-[#8A734A] transition-colors shadow-sm">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h2a2 2 0 002-2zm12 0v-3a2 2 0 00-2-2h-2a2 2 0 00-2 2v3a2 2 0 002 2h2a2 2 0 002-2zm0 0v-7a2 2 0 00-2-2h-2a2 2 0 00-2 2v9a2 2 0 002 2h2a2 2 0 002-2z" />
                         </svg>

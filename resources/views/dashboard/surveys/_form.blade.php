@@ -6,7 +6,7 @@
     <div class="space-y-5 lg:col-span-2">
 
         {{-- Survey General Info --}}
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm space-y-4">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 shadow-sm space-y-4">
             <h2 class="text-base font-semibold text-[#3D342A] border-b border-[#B49C6E]/20 pb-3 mb-4">{{ __('dashboard.surveys.title') }}</h2>
 
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -115,7 +115,7 @@
                     this.questions[qIndex].options.splice(optIndex, 1);
                 }
             }"
-            class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm space-y-5"
+            class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 shadow-sm space-y-5"
         >
             <div class="flex items-center justify-between border-b border-[#B49C6E]/20 pb-3">
                 <div>
@@ -125,7 +125,7 @@
                 <button
                     type="button"
                     @click="addQuestion()"
-                    class="inline-flex items-center gap-1.5 rounded-lg bg-[#A38B54] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#3D342A] transition"
+                    class="inline-flex items-center gap-1.5 rounded-lg bg-[#A38B54] px-3 py-1.5 text-xs font-semibold text-background hover:bg-[#3D342A] transition"
                 >
                     {{ __('dashboard.surveys.add_question') }}
                 </button>
@@ -133,9 +133,9 @@
 
             <div class="space-y-4">
                 <template x-for="(q, qIndex) in questions" :key="q.id || qIndex">
-                    <div class="rounded-xl border border-[#B49C6E]/30 bg-[#EAEAE9]/10 p-4 space-y-3 relative">
+                    <div class="rounded-xl border border-[#B49C6E]/30 bg-secondary/10 p-4 space-y-3 relative">
                         <div class="flex items-start justify-between gap-3">
-                            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#A38B54] text-xs font-bold text-white mt-2" x-text="qIndex + 1"></span>
+                            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#A38B54] text-xs font-bold text-background mt-2" x-text="qIndex + 1"></span>
 
                             <input type="hidden" :name="`questions[${qIndex}][id]`" :value="q.id || `q_${qIndex}`">
 
@@ -146,14 +146,14 @@
                                     x-model="q.label_ar"
                                     placeholder="{{ __('dashboard.surveys.question_title') }} (AR)"
                                     required
-                                    class="w-full rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] px-3 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none"
+                                    class="w-full rounded-lg border border-[#B49C6E]/40 bg-secondary px-3 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none"
                                 >
                                 <input
                                     type="text"
                                     :name="`questions[${qIndex}][label_en]`"
                                     x-model="q.label_en"
                                     placeholder="{{ __('dashboard.surveys.question_title') }} (EN)"
-                                    class="w-full rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] px-3 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none"
+                                    class="w-full rounded-lg border border-[#B49C6E]/40 bg-secondary px-3 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none"
                                 >
                             </div>
 
@@ -161,7 +161,7 @@
                                 <select
                                     :name="`questions[${qIndex}][type]`"
                                     x-model="q.type"
-                                    class="w-full rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] px-3 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none"
+                                    class="w-full rounded-lg border border-[#B49C6E]/40 bg-secondary px-3 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none"
                                 >
                                     <option value="text">{{ __('dashboard.surveys.type_text') }}</option>
                                     <option value="rating">{{ __('dashboard.surveys.type_rating') }}</option>
@@ -193,14 +193,14 @@
                                                 x-model="opt.ar"
                                                 placeholder="{{ __('dashboard.surveys.option_placeholder') }} (AR)"
                                                 required
-                                                class="w-full rounded-lg border border-[#B49C6E]/30 bg-[#EAEAE9] px-3 py-1.5 text-xs text-[#3D342A]"
+                                                class="w-full rounded-lg border border-[#B49C6E]/30 bg-secondary px-3 py-1.5 text-xs text-[#3D342A]"
                                             >
                                             <input
                                                 type="text"
                                                 :name="`questions[${qIndex}][options][${optIndex}][en]`"
                                                 x-model="opt.en"
                                                 placeholder="{{ __('dashboard.surveys.option_placeholder') }} (EN)"
-                                                class="w-full rounded-lg border border-[#B49C6E]/30 bg-[#EAEAE9] px-3 py-1.5 text-xs text-[#3D342A]"
+                                                class="w-full rounded-lg border border-[#B49C6E]/30 bg-secondary px-3 py-1.5 text-xs text-[#3D342A]"
                                             >
                                         </div>
                                         <button
@@ -236,7 +236,7 @@
     {{-- ============ SIDEBAR COLUMN ============ --}}
     <div class="space-y-5">
 
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm space-y-4">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 shadow-sm space-y-4">
             <h3 class="text-sm font-semibold text-[#3D342A] border-b border-[#B49C6E]/20 pb-3">{{ __('dashboard.surveys.timing_and_status') }}</h3>
 
             <div class="space-y-3">

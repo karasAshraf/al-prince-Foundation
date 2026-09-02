@@ -24,7 +24,7 @@
         placeholder="{{ $placeholder }}"
         {{ $required ? 'required' : '' }}
         {{ $attributes->merge([
-            'class' => 'w-full rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] px-3 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none focus:ring-1 focus:ring-[#A38B54]'
+            'class' => 'w-full rounded-lg border border-[#B49C6E]/40 bg-secondary px-3 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none focus:ring-1 focus:ring-[#A38B54]'
         ]) }}
     >{{ old($name, $value) }}</textarea>
 

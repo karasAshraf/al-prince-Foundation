@@ -22,7 +22,7 @@ $alignClasses = match ($align) {
     @endif
 
     @if ($title || isset($titleSlot))
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary dark:text-surface tracking-tight leading-tight">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary dark:text-background tracking-tight leading-tight">
             {{ $title ?? $titleSlot }}
         </h2>
     @endif

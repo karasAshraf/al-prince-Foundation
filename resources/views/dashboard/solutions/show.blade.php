@@ -25,7 +25,7 @@
 
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div class="space-y-5 lg:col-span-2">
-            <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 space-y-4">
+            <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 space-y-4">
                 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div>
                         <p class="text-xs font-semibold uppercase text-[#3D342A]/50">{{ __('dashboard.solutions.solution_title') }} (AR)</p>
@@ -57,7 +57,7 @@
         </div>
 
         <div class="space-y-5">
-            <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 space-y-3">
+            <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 space-y-3">
                 <h3 class="text-sm font-semibold text-[#3D342A]">{{ __('dashboard.common.details') }}</h3>
                 <div class="flex items-center justify-between">
                     <span class="text-xs text-[#3D342A]/60">{{ __('dashboard.common.status') }}</span>
@@ -73,7 +73,7 @@
 
             @php $image = \App\Helpers\MediaHelper::url($solution, 'solution_images', 'image'); @endphp
             @if($image)
-                <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+                <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
                     <h3 class="mb-3 text-sm font-semibold text-[#3D342A]">{{ __('dashboard.solutions.image') }}</h3>
                     <img src="{{ $image }}" alt="{{ $solution->title_ar }}" class="w-full rounded-lg object-cover border border-[#B49C6E]/20">
                 </div>

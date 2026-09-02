@@ -18,9 +18,9 @@
             message="{{ __('dashboard.common.empty_state') }}"
         />
     @else
-        <div class="overflow-x-auto rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9]">
+        <div class="overflow-x-auto rounded-xl border border-[#B49C6E]/20 bg-secondary">
             <table class="w-full text-start">
-                <thead class="bg-[#EAEAE9]/30">
+                <thead class="bg-secondary/30">
                     <tr>
                         <th class="px-4 py-3 text-start text-xs font-semibold text-[#3D342A]/60">{{ __('dashboard.contact_messages.sender_name') }}</th>
                         <th class="px-4 py-3 text-start text-xs font-semibold text-[#3D342A]/60">{{ __('dashboard.contact_messages.sender_email') }}</th>
@@ -33,7 +33,7 @@
                 </thead>
                 <tbody>
                     @foreach($messages as $msg)
-                        <tr class="border-b border-[#B49C6E]/10 hover:bg-[#EAEAE9]/10">
+                        <tr class="border-b border-[#B49C6E]/10 hover:bg-secondary/10">
                             <td class="px-4 py-3 text-sm font-medium text-[#3D342A]">{{ $msg->name }}</td>
                             <td class="px-4 py-3 text-sm text-[#3D342A]/80">{{ $msg->email }}</td>
                             <td class="px-4 py-3 text-sm text-[#3D342A]/80">{{ $msg->phone ?? '—' }}</td>

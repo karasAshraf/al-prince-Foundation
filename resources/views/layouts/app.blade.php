@@ -65,9 +65,9 @@
 --}}
 <body
     x-data="{ sidebarOpen: false }"
-    class="h-full bg-[#EAEAE9] text-[#3D342A] font-sans antialiased overflow-hidden"
+    class="h-full bg-secondary text-[#3D342A] font-sans antialiased overflow-hidden"
 >
-    <div class="h-screen flex flex-col overflow-hidden bg-[#EAEAE9]">
+    <div class="h-screen flex flex-col overflow-hidden bg-secondary">
 
         {{-- ============ NAVBAR ============ --}}
         @include('layouts.navbar')
@@ -110,7 +110,7 @@
                                 x-show="show"
                                 x-init="setTimeout(() => show = false, 4000)"
                                 x-transition
-                                class="mb-6 flex items-start justify-between gap-3 rounded-lg border border-[#B49C6E] bg-[#EAEAE9]/60 px-4 py-3 text-sm text-[#3D342A]"
+                                class="mb-6 flex items-start justify-between gap-3 rounded-lg border border-[#B49C6E] bg-secondary/60 px-4 py-3 text-sm text-[#3D342A]"
                                 role="alert"
                             >
                                 <span>{{ session('success') }}</span>

@@ -14,7 +14,7 @@
 
     <div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-[#B49C6E]/20 pb-4">
         <div>
-            <span class="inline-block rounded-full bg-[#EAEAE9]/60 px-3 py-1 text-xs font-bold text-[#3D342A] mb-2">
+            <span class="inline-block rounded-full bg-secondary/60 px-3 py-1 text-xs font-bold text-[#3D342A] mb-2">
                 {{ $survey->type ?: '—' }}
             </span>
             <h1 class="text-2xl font-bold text-[#3D342A]">{{ $survey->title }}</h1>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="flex items-center gap-2">
-            <a href="{{ route('dashboard.surveys.index') }}" class="inline-flex items-center gap-1.5 rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-xs font-bold text-gray-700 hover:bg-gray-50 transition-all">
+            <a href="{{ route('dashboard.surveys.index') }}" class="inline-flex items-center gap-1.5 rounded-xl border border-gray-300 bg-background px-4 py-2.5 text-xs font-bold text-gray-700 hover:bg-background transition-all">
                 {{ app()->getLocale() === 'ar' ? 'عودة للاستبيانات' : 'Back to Surveys' }}
             </a>
             <a href="{{ route('dashboard.surveys.responses', $survey) }}" class="inline-flex items-center gap-1.5 rounded-xl bg-[#A38B54]/10 px-4 py-2.5 text-xs font-bold text-[#A38B54] hover:bg-[#A38B54]/20 transition-all">
@@ -33,18 +33,18 @@
 
     {{-- ============ STAT CARDS ============ --}}
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
-        <div class="rounded-2xl border border-[#B49C6E]/20 bg-white p-5 shadow-sm">
+        <div class="rounded-2xl border border-[#B49C6E]/20 bg-background p-5 shadow-sm">
             <p class="text-xs font-bold text-[#3D342A]/40 uppercase tracking-wider">{{ app()->getLocale() === 'ar' ? 'إجمالي الردود المستلمة' : 'Total Responses Received' }}</p>
             <p class="text-3xl font-extrabold text-[#A38B54] mt-2">{{ $survey->responses_count }}</p>
         </div>
-        <div class="rounded-2xl border border-[#B49C6E]/20 bg-white p-5 shadow-sm">
+        <div class="rounded-2xl border border-[#B49C6E]/20 bg-background p-5 shadow-sm">
             <p class="text-xs font-bold text-[#3D342A]/40 uppercase tracking-wider">{{ app()->getLocale() === 'ar' ? 'عدد الأسئلة' : 'Number of Questions' }}</p>
             <p class="text-3xl font-extrabold text-[#3D342A] mt-2">{{ count($questions) }}</p>
         </div>
-        <div class="rounded-2xl border border-[#B49C6E]/20 bg-white p-5 shadow-sm">
+        <div class="rounded-2xl border border-[#B49C6E]/20 bg-background p-5 shadow-sm">
             <p class="text-xs font-bold text-[#3D342A]/40 uppercase tracking-wider">{{ app()->getLocale() === 'ar' ? 'حالة الاستبيان' : 'Survey Status' }}</p>
             <div class="mt-3">
-                <span class="rounded-full px-3 py-1 text-xs font-bold {{ $survey->is_active ? 'bg-[#EAEAE9] text-[#766868]' : 'bg-red-50 text-red-700' }}">
+                <span class="rounded-full px-3 py-1 text-xs font-bold {{ $survey->is_active ? 'bg-secondary text-[#766868]' : 'bg-red-50 text-red-700' }}">
                     {{ $survey->is_active ? __('dashboard.common.active') : __('dashboard.common.inactive') }}
                 </span>
             </div>
@@ -61,7 +61,7 @@
                 $qType = $q['type'] ?? 'text';
             @endphp
 
-            <div class="rounded-2xl border border-[#B49C6E]/20 bg-white p-6 shadow-sm overflow-hidden">
+            <div class="rounded-2xl border border-[#B49C6E]/20 bg-background p-6 shadow-sm overflow-hidden">
                 <div class="flex items-start gap-3 mb-4">
                     <span class="flex items-center justify-center shrink-0 w-6 h-6 rounded-full bg-[#A38B54]/10 text-[#A38B54] text-xs font-bold">
                         {{ $index + 1 }}
@@ -85,7 +85,7 @@
                                 @endphp
                                 <div class="flex items-center justify-between gap-3">
                                     <span class="w-12 font-bold text-[#3D342A]">⭐ {{ $val }}</span>
-                                    <div class="flex-grow bg-gray-100 h-2.5 rounded-full overflow-hidden">
+                                    <div class="flex-grow bg-background h-2.5 rounded-full overflow-hidden">
                                         <div class="bg-[#A38B54] h-full rounded-full" style="width: {{ $percent }}%"></div>
                                     </div>
                                     <span class="w-16 text-end text-[#3D342A]/80 font-semibold">{{ $count }} ({{ $percent }}%)</span>
@@ -105,7 +105,7 @@
                                 @endphp
                                 <div class="flex items-center justify-between gap-3">
                                     <span class="w-32 sm:w-48 truncate font-bold text-[#3D342A]" title="{{ $opt }}">{{ $opt }}</span>
-                                    <div class="flex-grow bg-gray-100 h-2.5 rounded-full overflow-hidden">
+                                    <div class="flex-grow bg-background h-2.5 rounded-full overflow-hidden">
                                         <div class="bg-[#B49C6E] h-full rounded-full" style="width: {{ $percent }}%"></div>
                                     </div>
                                     <span class="w-16 text-end text-[#3D342A]/80 font-semibold">{{ $count }} ({{ $percent }}%)</span>
@@ -116,7 +116,7 @@
 
                 {{-- Text answer or others list --}}
                 @else
-                    <div class="border-t border-gray-100 pt-3 space-y-2 max-h-48 overflow-y-auto custom-scrollbar">
+                    <div class="border-t border-background pt-3 space-y-2 max-h-48 overflow-y-auto custom-scrollbar">
                         @php
                             $textAnswers = [];
                             foreach($survey->responses as $resp) {
@@ -131,7 +131,7 @@
                         @endphp
 
                         @forelse($textAnswers as $ta)
-                            <div class="bg-gray-50 dark:bg-gray-900/40 p-3 rounded-xl">
+                            <div class="bg-background dark:bg-gray-900/40 p-3 rounded-xl">
                                 <div class="flex items-center justify-between mb-1">
                                     <span class="text-[10px] font-bold text-[#A38B54]">{{ $ta['name'] }}</span>
                                 </div>
@@ -151,7 +151,7 @@
     </div>
 
     {{-- ============ RESPONDENT CONTACT INFO ============ --}}
-    <div class="mt-8 rounded-2xl border border-[#B49C6E]/20 bg-white p-6 shadow-sm">
+    <div class="mt-8 rounded-2xl border border-[#B49C6E]/20 bg-background p-6 shadow-sm">
         <h2 class="text-sm font-bold text-[#3D342A] mb-4 pb-2 border-b border-[#B49C6E]/10 flex items-center gap-2">
             {{ app()->getLocale() === 'ar' ? 'معلومات المشاركين وجهات الاتصال' : 'Participants & Contact Information' }}
         </h2>

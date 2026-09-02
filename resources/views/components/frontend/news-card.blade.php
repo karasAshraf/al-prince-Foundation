@@ -14,7 +14,7 @@
     $pubDate = $news->published_at ?? $news->created_at;
 @endphp
 
-<article class="flex flex-col h-full bg-[#F5F5F5] dark:bg-gray-800 border border-[#D5D3CE] rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group">
+<article class="flex flex-col h-full bg-background dark:bg-gray-800 border border-secondary rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group">
     {{-- Image aspect ratio locked to 16:9 --}}
     <div class="relative overflow-hidden shrink-0 aspect-[16/9] bg-gray-150">
         <a href="{{ $articleUrl }}" class="block w-full h-full">
@@ -26,23 +26,23 @@
     {{-- Content Area --}}
     <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
         <div class="space-y-3">
-            <span class="text-xs font-semibold text-[#AC8321]">
+            <span class="text-xs font-semibold text-primary">
                 {{ $pubDate?->translatedFormat('d M Y') }}
             </span>
-            <h3 class="text-lg font-bold text-[#372828] dark:text-gray-100 line-clamp-2 leading-snug">
-                <a href="{{ $articleUrl }}" class="hover:text-[#AC8321] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md">
+            <h3 class="text-lg font-bold text-text-primary dark:text-background line-clamp-2 leading-snug">
+                <a href="{{ $articleUrl }}" class="hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md">
                     {{ $title }}
                 </a>
             </h3>
             @if ($excerpt)
-                <p class="text-sm text-[#695956] dark:text-gray-300 leading-relaxed line-clamp-2">
+                <p class="text-sm text-text-primary dark:text-gray-300 leading-relaxed line-clamp-2">
                     {{ $excerpt }}
                 </p>
             @endif
         </div>
 
-        <div class="pt-4 border-t border-gray-100 dark:border-gray-700/50 mt-auto">
-            <a href="{{ $articleUrl }}" class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#AC8321] hover:text-[#B8974F] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md">
+        <div class="pt-4 border-t border-background dark:border-gray-700/50 mt-auto">
+            <a href="{{ $articleUrl }}" class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md">
                 <span>{{ __('frontend.read_more') }}</span>
                 <svg class="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>

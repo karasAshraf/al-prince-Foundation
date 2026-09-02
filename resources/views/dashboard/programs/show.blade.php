@@ -24,7 +24,7 @@
         {{-- ============ MAIN COLUMN ============ --}}
         <div class="space-y-5 lg:col-span-2">
 
-            <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+            <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
                 @php
                     $programImageUrl = \App\Helpers\MediaHelper::url($program, 'program_images', 'image')
                         ?? \App\Helpers\MediaHelper::resolveUrl($program->external_link ?? null);
@@ -66,7 +66,7 @@
 
             {{-- Related Projects --}}
             @if($program->projects->isNotEmpty())
-                <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+                <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
                     <h3 class="mb-4 text-sm font-semibold text-[#3D342A]">
                         المشاريع المرتبطة ({{ $projectCount }})
                     </h3>
@@ -90,7 +90,7 @@
         {{-- ============ SIDEBAR COLUMN ============ --}}
         <div class="space-y-5">
 
-            <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+            <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
                 <dl class="space-y-3 text-sm">
                     <div>
                         <dt class="text-[#3D342A]/50">الحالة</dt>
@@ -98,7 +98,7 @@
                             <span @class([
                                 'rounded-full px-2.5 py-1 text-xs font-medium',
                                 'bg-[#B49C6E]/30 text-[#A38B54]' => $program->status === 'active',
-                                'bg-[#EAEAE9]/60 text-[#3D342A]/70' => $program->status === 'inactive',
+                                'bg-secondary/60 text-[#3D342A]/70' => $program->status === 'inactive',
                             ])>
                                 {{ $program->status === 'active' ? 'نشط' : 'غير نشط' }}
                             </span>

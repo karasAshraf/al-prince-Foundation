@@ -8,12 +8,12 @@
 ])
 
 @php
-    $bgClass = 'bg-surface';
+    $bgClass = 'bg-background';
 @endphp
 
 <section 
     @if($id) id="{{ $id }}" @endif
-    {{ $attributes->merge(['class' => "py-16 md:py-20 border-b border-border/10 transition-colors duration-200 {$bgClass}"]) }}
+    {{ $attributes->merge(['class' => "py-16 md:py-20 border-b border-secondary/10 transition-colors duration-200 {$bgClass}"]) }}
 >
     <x-frontend.container>
         @if($badge || $title || $description)

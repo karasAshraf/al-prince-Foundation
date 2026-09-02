@@ -19,13 +19,13 @@
     {{-- ─── LIST LAYOUT (Board of Directors) ─────────────────────────────── --}}
     <article
         x-data="{ expanded: false }"
-        {{ $attributes->merge(['class' => 'group relative bg-white dark:bg-gray-800/40 border border-[#A38B54]/10 dark:border-[#B49C6E]/10 rounded-2xl overflow-hidden shadow-[0_2px_8px_rgba(30,53,23,0.03)] transition-all duration-300 hover:shadow-[0_12px_24px_rgba(30,53,23,0.06)] hover:border-[#A38B54]/35 dark:hover:border-[#B49C6E]/35 hover:-translate-y-0.5 focus-within:ring-2 focus-within:ring-primary/40 motion-reduce:transition-none motion-reduce:transform-none']) }}
+        {{ $attributes->merge(['class' => 'group relative bg-background dark:bg-gray-800/40 border border-[#A38B54]/10 dark:border-[#B49C6E]/10 rounded-2xl overflow-hidden shadow-[0_2px_8px_rgba(30,53,23,0.03)] transition-all duration-300 hover:shadow-[0_12px_24px_rgba(30,53,23,0.06)] hover:border-[#A38B54]/35 dark:hover:border-[#B49C6E]/35 hover:-translate-y-0.5 focus-within:ring-2 focus-within:ring-primary/40 motion-reduce:transition-none motion-reduce:transform-none']) }}
     >
         <div class="flex flex-col sm:flex-row items-start gap-6 p-6 sm:p-8">
 
             {{-- Avatar --}}
             <div class="relative shrink-0 mx-auto sm:mx-0">
-                <div class="relative w-24 h-24 sm:w-28 sm:h-28 md:w-[7.5rem] md:h-[7.5rem] rounded-full overflow-hidden ring-4 ring-offset-2 ring-primary-light/20 dark:ring-primary-light/10 group-hover:ring-primary/40 group-hover:scale-[1.02] transition-all duration-300 bg-secondary-light/10 shrink-0">
+                <div class="relative w-24 h-24 sm:w-28 sm:h-28 md:w-[7.5rem] md:h-[7.5rem] rounded-full overflow-hidden ring-4 ring-offset-2 ring-primary-light/20 dark:ring-primary-light/10 group-hover:ring-primary/40 group-hover:scale-[1.02] transition-all duration-300 bg-secondary/10 shrink-0">
                     @if ($img)
                         <img
                             src="{{ $img }}"
@@ -46,16 +46,16 @@
             {{-- Info --}}
             <div class="flex-1 min-w-0 space-y-2 text-center sm:text-start">
                 {{-- Name --}}
-                <h3 class="text-xl font-bold text-[#3D342A] dark:text-gray-100 leading-snug break-words">
+                <h3 class="text-xl font-bold text-[#3D342A] dark:text-background leading-snug break-words">
                     {{ $name }}
                 </h3>
 
                 {{-- Divider --}}
-                <div class="w-12 h-[2px] bg-primary-light/40 rounded-full my-1.5 mx-auto sm:mx-0 transition-all duration-300 group-hover:w-20 group-hover:bg-primary" aria-hidden="true"></div>
+                <div class="w-12 h-[2px] bg-secondary/40 rounded-full my-1.5 mx-auto sm:mx-0 transition-all duration-300 group-hover:w-20 group-hover:bg-primary" aria-hidden="true"></div>
 
                 {{-- Position --}}
                 @if ($position)
-                    <p class="text-sm font-semibold text-primary dark:text-primary-light tracking-wide">
+                    <p class="text-sm font-semibold text-primary dark:text-secondary tracking-wide">
                         {{ $position }}
                     </p>
                 @endif
@@ -79,7 +79,7 @@
                                     @click="expanded = !expanded"
                                     :aria-expanded="expanded"
                                     :aria-controls="'{{ $bioId }}'"
-                                    class="mt-1.5 text-xs font-semibold text-primary dark:text-primary-light hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+                                    class="mt-1.5 text-xs font-semibold text-primary dark:text-secondary hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
                                 >
                                     <span x-show="!expanded">{{ app()->getLocale() === 'ar' ? 'اقرأ المزيد ↓' : 'Read more ↓' }}</span>
                                     <span x-show="expanded" x-cloak>{{ app()->getLocale() === 'ar' ? 'أخفِ ↑' : 'Show less ↑' }}</span>
@@ -100,7 +100,7 @@
 @else
     {{-- ─── GRID LAYOUT (Executive Team) ──────────────────────────────────── --}}
     <article
-        {{ $attributes->merge(['class' => 'group relative flex flex-col items-center text-center bg-white dark:bg-gray-800/40 border border-[#A38B54]/10 dark:border-[#B49C6E]/10 rounded-2xl overflow-hidden shadow-[0_2px_8px_rgba(30,53,23,0.03)] transition-all duration-300 hover:shadow-[0_12px_24px_rgba(30,53,23,0.06)] hover:border-[#A38B54]/35 dark:hover:border-[#B49C6E]/35 hover:-translate-y-1 focus-within:ring-2 focus-within:ring-primary/40 motion-reduce:transition-none motion-reduce:transform-none h-full']) }}
+        {{ $attributes->merge(['class' => 'group relative flex flex-col items-center text-center bg-background dark:bg-gray-800/40 border border-[#A38B54]/10 dark:border-[#B49C6E]/10 rounded-2xl overflow-hidden shadow-[0_2px_8px_rgba(30,53,23,0.03)] transition-all duration-300 hover:shadow-[0_12px_24px_rgba(30,53,23,0.06)] hover:border-[#A38B54]/35 dark:hover:border-[#B49C6E]/35 hover:-translate-y-1 focus-within:ring-2 focus-within:ring-primary/40 motion-reduce:transition-none motion-reduce:transform-none h-full']) }}
     >
         {{-- Top decorative gradient band --}}
         <div class="w-full h-1 bg-gradient-to-r from-primary via-primary-light to-secondary-light opacity-70 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true"></div>
@@ -109,7 +109,7 @@
 
             {{-- Avatar --}}
             <div class="relative mb-5 shrink-0">
-                <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden ring-4 ring-offset-2 ring-primary-light/15 dark:ring-primary-light/10 group-hover:ring-primary/30 transition-all duration-300 bg-secondary-light/10 mx-auto">
+                <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden ring-4 ring-offset-2 ring-primary-light/15 dark:ring-primary-light/10 group-hover:ring-primary/30 transition-all duration-300 bg-secondary/10 mx-auto">
                     @if ($img)
                         <img
                             src="{{ $img }}"
@@ -128,16 +128,16 @@
             </div>
 
             {{-- Name --}}
-            <h3 class="text-xl font-bold text-[#3D342A] dark:text-gray-100 leading-snug break-words w-full px-1">
+            <h3 class="text-xl font-bold text-[#3D342A] dark:text-background leading-snug break-words w-full px-1">
                 {{ $name }}
             </h3>
 
             {{-- Divider --}}
-            <div class="w-12 h-[2px] bg-primary-light/40 rounded-full my-2.5 mx-auto transition-all duration-300 group-hover:w-20 group-hover:bg-primary" aria-hidden="true"></div>
+            <div class="w-12 h-[2px] bg-secondary/40 rounded-full my-2.5 mx-auto transition-all duration-300 group-hover:w-20 group-hover:bg-primary" aria-hidden="true"></div>
 
             {{-- Position --}}
             @if ($position)
-                <p class="text-sm font-semibold text-primary dark:text-primary-light tracking-wide mb-3 break-words px-1">
+                <p class="text-sm font-semibold text-primary dark:text-secondary tracking-wide mb-3 break-words px-1">
                     {{ $position }}
                 </p>
             @endif
@@ -160,7 +160,7 @@
                                 id="{{ $btnId }}"
                                 @click="expanded = !expanded"
                                 :aria-expanded="expanded"
-                                class="mt-2 text-xs font-semibold text-primary dark:text-primary-light hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
+                                class="mt-2 text-xs font-semibold text-primary dark:text-secondary hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded"
                             >
                                 <span x-show="!expanded">{{ $isRtl ? 'اقرأ المزيد ↓' : 'Read more ↓' }}</span>
                                 <span x-show="expanded" x-cloak>{{ $isRtl ? 'أخفِ ↑' : 'Show less ↑' }}</span>

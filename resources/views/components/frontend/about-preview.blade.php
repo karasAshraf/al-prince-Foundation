@@ -56,9 +56,9 @@
                 {{-- Real photo from media library with gold overlay border --}}
                 <div class="relative group">
                     {{-- Decorative gold glow behind image --}}
-                    <div class="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-[#A5780A]/20 to-[#B8974F]/15 blur-xl opacity-60 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none"></div>
+                    <div class="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-primary/20 to-secondary/15 blur-xl opacity-60 group-hover:opacity-90 transition-opacity duration-500 pointer-events-none"></div>
 
-                    <div class="relative overflow-hidden rounded-3xl border-2 border-[#A5780A]/30 shadow-lg group-hover:shadow-xl group-hover:border-[#A5780A]/50 transition-all duration-500">
+                    <div class="relative overflow-hidden rounded-3xl border-2 border-primary/30 shadow-lg group-hover:shadow-xl group-hover:border-primary/50 transition-all duration-500">
                         <img
                             src="{{ $img }}"
                             alt="{{ $title ?? '' }}"
@@ -66,33 +66,33 @@
                             class="w-full h-[340px] sm:h-[400px] object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
                         />
                         {{-- Subtle gold gradient overlay at bottom --}}
-                        <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#372828]/40 to-transparent pointer-events-none"></div>
+                        <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-text-primary/40 to-transparent pointer-events-none"></div>
                     </div>
                 </div>
             @else
                 {{-- OPTION B fallback: geometric pattern in approved palette — no illustrations, no green/blue --}}
-                <div class="relative overflow-hidden rounded-3xl border-2 border-[#A5780A]/30 bg-gradient-to-br from-[#372828] to-[#4a3a2a] shadow-lg p-10 min-h-[300px] flex flex-col justify-between">
+                <div class="relative overflow-hidden rounded-3xl border-2 border-primary/30 bg-gradient-to-br from-text-primary to-[#4a3a2a] shadow-lg p-10 min-h-[300px] flex flex-col justify-between">
                     {{-- Decorative large circle --}}
-                    <div class="absolute -top-12 -end-12 w-52 h-52 rounded-full bg-[#A5780A]/10 pointer-events-none"></div>
-                    <div class="absolute -bottom-8 -start-8 w-36 h-36 rounded-full bg-[#B8974F]/10 pointer-events-none"></div>
+                    <div class="absolute -top-12 -end-12 w-52 h-52 rounded-full bg-primary/10 pointer-events-none"></div>
+                    <div class="absolute -bottom-8 -start-8 w-36 h-36 rounded-full bg-secondary/10 pointer-events-none"></div>
 
                     {{-- Foundation initial monogram --}}
-                    <div class="relative z-10 w-16 h-16 rounded-2xl bg-[#A5780A] flex items-center justify-center text-[#F5F5F5] font-bold text-3xl shadow-md">
+                    <div class="relative z-10 w-16 h-16 rounded-2xl bg-primary flex items-center justify-center text-background font-bold text-3xl shadow-md">
                         {{ $locale === 'ar' ? 'م' : 'P' }}
                     </div>
 
                     {{-- Title inside card --}}
                     @if ($title)
                         <div class="relative z-10 mt-auto">
-                            <p class="text-[#B8974F] text-xs font-semibold uppercase tracking-widest mb-2">
+                            <p class="text-secondary text-xs font-semibold uppercase tracking-widest mb-2">
                                 {{ $locale === 'ar' ? 'عن المؤسسة' : 'About Us' }}
                             </p>
-                            <h3 class="text-xl font-bold text-[#F5F5F5] leading-snug">{{ $title }}</h3>
+                            <h3 class="text-xl font-bold text-background leading-snug">{{ $title }}</h3>
                         </div>
                     @endif
 
                     {{-- Decorative divider line --}}
-                    <div class="relative z-10 mt-6 h-px w-16 bg-[#AC8321]"></div>
+                    <div class="relative z-10 mt-6 h-px w-16 bg-primary"></div>
                 </div>
             @endif
         </div>
@@ -103,14 +103,14 @@
 
             {{-- Badge --}}
             <div class="inline-flex items-center gap-2">
-                <span class="inline-block bg-[#A5780A] text-[#F5F5F5] text-xs font-bold px-4 py-1.5 rounded-full tracking-wide">
+                <span class="inline-block bg-primary text-background text-xs font-bold px-4 py-1.5 rounded-full tracking-wide">
                     {{ __('frontend.about_foundation') }}
                 </span>
             </div>
 
             {{-- Heading --}}
             @if ($title)
-                <h2 class="text-3xl sm:text-4xl font-bold text-[#372828] leading-tight tracking-tight">
+                <h2 class="text-3xl sm:text-4xl font-bold text-text-primary leading-tight tracking-tight">
                     {{ $title }}
                 </h2>
             @endif
@@ -119,7 +119,7 @@
             @if (count($paragraphs))
                 <div class="space-y-4">
                     @foreach ($paragraphs as $para)
-                        <p class="text-base sm:text-lg text-[#695956] leading-relaxed">
+                        <p class="text-base sm:text-lg text-text-primary leading-relaxed">
                             {{ $para }}
                         </p>
                     @endforeach
@@ -130,8 +130,8 @@
             <ul class="space-y-2.5 pt-1">
                 @foreach ($highlights as $point)
                     <li class="flex items-start gap-3">
-                        <span class="mt-1.5 w-2 h-2 rounded-full bg-[#A5780A] shrink-0"></span>
-                        <span class="text-sm sm:text-base text-[#695956] font-medium">{{ $point }}</span>
+                        <span class="mt-1.5 w-2 h-2 rounded-full bg-primary shrink-0"></span>
+                        <span class="text-sm sm:text-base text-text-primary font-medium">{{ $point }}</span>
                     </li>
                 @endforeach
             </ul>

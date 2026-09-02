@@ -16,7 +16,7 @@
 <div class="relative {{ $isTech ? 'max-w-4xl' : 'max-w-5xl' }} mx-auto py-12 px-4 sm:px-6 overflow-hidden">
     
     <!-- Central vertical connecting line -->
-    <div class="absolute top-0 bottom-0 start-12 -translate-x-1/2 rtl:translate-x-1/2 md:start-1/2 md:-translate-x-1/2 md:rtl:translate-x-1/2 w-0.5 bg-primary-light/25"></div>
+    <div class="absolute top-0 bottom-0 start-12 -translate-x-1/2 rtl:translate-x-1/2 md:start-1/2 md:-translate-x-1/2 md:rtl:translate-x-1/2 w-0.5 bg-secondary/25"></div>
 
     <div class="space-y-16 md:space-y-24">
 
@@ -43,7 +43,7 @@
                  x-intersect.once="inView = true">
                  
                 <!-- Number Circle Badge -->
-                <div class="w-14 h-14 rounded-full bg-primary text-white font-bold text-lg flex items-center justify-center shadow-md absolute z-20 start-12 -translate-x-1/2 rtl:translate-x-1/2 md:start-1/2 md:-translate-x-1/2 md:rtl:translate-x-1/2 top-12 -translate-y-1/2 md:top-1/2 md:-translate-y-1/2 transition-transform duration-500 scale-0 motion-reduce:transition-none"
+                <div class="w-14 h-14 rounded-full bg-primary text-background font-bold text-lg flex items-center justify-center shadow-md absolute z-20 start-12 -translate-x-1/2 rtl:translate-x-1/2 md:start-1/2 md:-translate-x-1/2 md:rtl:translate-x-1/2 top-12 -translate-y-1/2 md:top-1/2 md:-translate-y-1/2 transition-transform duration-500 scale-0 motion-reduce:transition-none"
                      :class="inView ? 'scale-100' : 'scale-0'"
                      style="transition-delay: 100ms;">
                     {{ $numDisplay }}
@@ -74,7 +74,7 @@
                                 {{ $numEyebrow }}
                             </span>
                             @if ($isTech)
-                                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold tracking-wide bg-[#3D342A]/85 text-[#EAEAE9] border border-[#EAEAE9]/20">
+                                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold tracking-wide bg-[#3D342A]/85 text-secondary border border-secondary/20">
                                     {{ $locale === 'ar' ? 'رقمي' : 'Digital' }}
                                 </span>
                             @endif
@@ -98,7 +98,7 @@
                                 {{ $numEyebrow }}
                             </span>
                             @if ($isTech)
-                                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold tracking-wide bg-[#3D342A]/85 text-[#EAEAE9] border border-[#EAEAE9]/20">
+                                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold tracking-wide bg-[#3D342A]/85 text-secondary border border-secondary/20">
                                     {{ $locale === 'ar' ? 'رقمي' : 'Digital' }}
                                 </span>
                             @endif

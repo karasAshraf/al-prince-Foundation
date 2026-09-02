@@ -9,7 +9,7 @@
 @php
     $colorClasses = match($color) {
         'accent' => 'bg-[#B49C6E]/20 text-[#A38B54]',
-        'secondary' => 'bg-[#EAEAE9]/40 text-[#3D342A]',
+        'secondary' => 'bg-secondary/40 text-[#3D342A]',
         default => 'bg-[#A38B54]/10 text-[#A38B54]',
     };
 
@@ -27,7 +27,7 @@
 @php $content = null; @endphp
 @php ob_start(); @endphp
 
-<div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 transition-shadow hover:shadow-sm">
+<div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 transition-shadow hover:shadow-sm">
     <div class="flex items-center gap-4">
         <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg {{ $colorClasses }}">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">

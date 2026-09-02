@@ -20,7 +20,7 @@
     @endphp
 
     <!-- Search & Filter Bar -->
-    <div class="max-w-5xl mx-auto -mt-2 sm:-mt-3 md:-mt-4 relative z-10 mb-8 bg-white p-2 rounded-xl sm:rounded-full border border-primary-light/20 shadow-sm hover:shadow-md transition-shadow duration-200 focus-within:ring-2 focus-within:ring-primary/20">
+    <div class="max-w-5xl mx-auto -mt-2 sm:-mt-3 md:-mt-4 relative z-10 mb-8 bg-background p-2 rounded-xl sm:rounded-full border border-secondary/20 shadow-sm hover:shadow-md transition-shadow duration-200 focus-within:ring-2 focus-within:ring-primary/20">
         <form method="GET" action="{{ route('governance.index') }}" class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
             
             {{-- Search Input with Custom Autocomplete Suggestions --}}
@@ -60,11 +60,11 @@
                 {{-- Autocomplete Suggestions Dropdown --}}
                 <div x-show="showSuggestions && filteredSuggestions.length > 0"
                      x-cloak
-                     class="absolute z-30 mt-2 w-full bg-white border border-primary-light/20 rounded-xl shadow-lg py-1 start-0 overflow-hidden">
+                     class="absolute z-30 mt-2 w-full bg-background border border-secondary/20 rounded-xl shadow-lg py-1 start-0 overflow-hidden">
                     <template x-for="(suggestion, idx) in filteredSuggestions" :key="idx">
                         <button type="button" 
                                 @click="selectSuggestion(suggestion)"
-                                class="w-full text-start px-4 py-2.5 text-xs sm:text-sm text-text-primary hover:bg-[#EAEAE9] transition-colors font-medium">
+                                class="w-full text-start px-4 py-2.5 text-xs sm:text-sm text-text-primary hover:bg-secondary transition-colors font-medium">
                             <span x-text="suggestion"></span>
                         </button>
                     </template>
@@ -80,7 +80,7 @@
                 {{-- Category Filter --}}
                 <div class="relative flex-1 sm:flex-initial sm:min-w-[160px]">
                     <select name="category" onchange="this.form.submit()"
-                            class="appearance-none w-full ps-4 pe-10 py-2 bg-white border border-gray-200 rounded-lg text-sm text-text-primary font-medium focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 hover:border-primary/40 transition-colors duration-150 cursor-pointer shadow-sm">
+                            class="appearance-none w-full ps-4 pe-10 py-2 bg-background border border-gray-200 rounded-lg text-sm text-text-primary font-medium focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 hover:border-primary/40 transition-colors duration-150 cursor-pointer shadow-sm">
                         <option value="">{{ app()->getLocale() === 'ar' ? 'جميع التصنيفات' : 'All Categories' }}</option>
                         @foreach ($categoryNames as $key => $name)
                             <option value="{{ $key }}" {{ request('category') == $key ? 'selected' : '' }}>
@@ -88,7 +88,7 @@
                             </option>
                         @endforeach
                     </select>
-                    <div class="absolute inset-y-0 end-3 flex items-center pointer-events-none text-text-muted">
+                    <div class="absolute inset-y-0 end-3 flex items-center pointer-events-none text-text-primary">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                 {{-- Year Filter --}}
                 <div class="relative flex-1 sm:flex-initial sm:min-w-[120px]">
                     <select name="year" onchange="this.form.submit()"
-                            class="w-full ps-4 pe-10 py-2 bg-white border border-gray-200 rounded-lg text-sm text-text-primary font-medium focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 hover:border-primary/40 transition-colors duration-150 appearance-none cursor-pointer shadow-sm">
+                            class="w-full ps-4 pe-10 py-2 bg-background border border-gray-200 rounded-lg text-sm text-text-primary font-medium focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 hover:border-primary/40 transition-colors duration-150 appearance-none cursor-pointer shadow-sm">
                         <option value="">{{ app()->getLocale() === 'ar' ? 'جميع السنوات' : 'All Years' }}</option>
                         @foreach ($availableYears as $y)
                             <option value="{{ $y }}" {{ request('year') == $y ? 'selected' : '' }}>
@@ -107,7 +107,7 @@
                             </option>
                         @endforeach
                     </select>
-                    <div class="absolute inset-y-0 end-3 flex items-center pointer-events-none text-text-muted">
+                    <div class="absolute inset-y-0 end-3 flex items-center pointer-events-none text-text-primary">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                 @if(request('search') || request('category') || request('year'))
                     <a
                         href="{{ route('governance.index') }}"
-                        class="p-2 rounded-full hover:bg-gray-100 flex items-center justify-center shrink-0 text-red-500"
+                        class="p-2 rounded-full hover:bg-background flex items-center justify-center shrink-0 text-red-500"
                         title="{{ app()->getLocale() === 'ar' ? 'إعادة ضبط' : 'Reset' }}"
                     >
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -135,9 +135,9 @@
             {{-- Mobile Chip Row --}}
             <div class="flex items-center gap-2 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:hidden">
                 <a href="{{ route('governance.index', request()->except('category')) }}"
-                   class="shrink-0 px-4 py-2 rounded-full text-xs font-bold transition-all {{ !request('category') ? 'bg-[#A38B54] text-white shadow-sm' : 'bg-white text-text-primary border border-primary-light/20 hover:bg-[#EAEAE9]/50' }}">
+                   class="shrink-0 px-4 py-2 rounded-full text-xs font-bold transition-all {{ !request('category') ? 'bg-[#A38B54] text-background shadow-sm' : 'bg-background text-text-primary border border-secondary/20 hover:bg-secondary/50' }}">
                     {{ app()->getLocale() === 'ar' ? 'جميع المستندات' : 'All Documents' }}
-                    <span class="ms-1 px-2 py-0.5 rounded-full text-[10px] {{ !request('category') ? 'bg-white/20 text-white' : 'bg-gray-100 text-text-muted' }}">
+                    <span class="ms-1 px-2 py-0.5 rounded-full text-[10px] {{ !request('category') ? 'bg-background/20 text-background' : 'bg-background text-text-primary' }}">
                         {{ \App\Models\GovernanceDocument::active()->count() }}
                     </span>
                 </a>
@@ -147,9 +147,9 @@
                         $isActive = request('category') === $catKey;
                     @endphp
                     <a href="{{ route('governance.index', array_merge(request()->query(), ['category' => $catKey])) }}"
-                       class="shrink-0 px-4 py-2 rounded-full text-xs font-bold transition-all {{ $isActive ? 'bg-[#A38B54] text-white shadow-sm' : 'bg-white text-text-primary border border-primary-light/20 hover:bg-[#EAEAE9]/50' }}">
+                       class="shrink-0 px-4 py-2 rounded-full text-xs font-bold transition-all {{ $isActive ? 'bg-[#A38B54] text-background shadow-sm' : 'bg-background text-text-primary border border-secondary/20 hover:bg-secondary/50' }}">
                         {{ $catName }}
-                        <span class="ms-1 px-2 py-0.5 rounded-full text-[10px] {{ $isActive ? 'bg-white/20 text-white' : 'bg-gray-100 text-text-muted' }}">
+                        <span class="ms-1 px-2 py-0.5 rounded-full text-[10px] {{ $isActive ? 'bg-background/20 text-background' : 'bg-background text-text-primary' }}">
                             {{ $catCount }}
                         </span>
                     </a>
@@ -157,15 +157,15 @@
             </div>
 
             {{-- Desktop Sidebar Navigation --}}
-            <div class="hidden lg:block bg-white p-5 rounded-2xl border border-primary-light/20 shadow-sm space-y-4">
-                <h3 class="text-sm font-bold text-[#3D342A] border-b border-primary-light/15 pb-2">
+            <div class="hidden lg:block bg-background p-5 rounded-2xl border border-secondary/20 shadow-sm space-y-4">
+                <h3 class="text-sm font-bold text-[#3D342A] border-b border-secondary/15 pb-2">
                     {{ app()->getLocale() === 'ar' ? 'تصنيفات المستندات' : 'Document Categories' }}
                 </h3>
                 <nav class="flex flex-col gap-1">
                     <a href="{{ route('governance.index', request()->except('category')) }}"
-                       class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all {{ !request('category') ? 'bg-[#A38B54] text-white shadow-sm' : 'text-text-primary hover:bg-[#EAEAE9]/50' }}">
+                       class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all {{ !request('category') ? 'bg-[#A38B54] text-background shadow-sm' : 'text-text-primary hover:bg-secondary/50' }}">
                         <span>{{ app()->getLocale() === 'ar' ? 'جميع المستندات' : 'All Documents' }}</span>
-                        <span class="px-2 py-0.5 rounded-full text-[10px] {{ !request('category') ? 'bg-white/20 text-white' : 'bg-gray-100 text-text-muted' }}">
+                        <span class="px-2 py-0.5 rounded-full text-[10px] {{ !request('category') ? 'bg-background/20 text-background' : 'bg-background text-text-primary' }}">
                             {{ \App\Models\GovernanceDocument::active()->count() }}
                         </span>
                     </a>
@@ -175,9 +175,9 @@
                             $isActive = request('category') === $catKey;
                         @endphp
                         <a href="{{ route('governance.index', array_merge(request()->query(), ['category' => $catKey])) }}"
-                           class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all {{ $isActive ? 'bg-[#A38B54] text-white shadow-sm' : 'text-text-primary hover:bg-[#EAEAE9]/50' }}">
+                           class="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-bold transition-all {{ $isActive ? 'bg-[#A38B54] text-background shadow-sm' : 'text-text-primary hover:bg-secondary/50' }}">
                             <span>{{ $catName }}</span>
-                            <span class="px-2 py-0.5 rounded-full text-[10px] {{ $isActive ? 'bg-white/20 text-white' : 'bg-gray-100 text-text-muted' }}">
+                            <span class="px-2 py-0.5 rounded-full text-[10px] {{ $isActive ? 'bg-background/20 text-background' : 'bg-background text-text-primary' }}">
                                 {{ $catCount }}
                             </span>
                         </a>
@@ -206,14 +206,14 @@
                         @if ($documents->has($catKey) && $documents->get($catKey)->isNotEmpty())
                             <section class="space-y-4">
                                 {{-- Category Header with circular badge numbering style --}}
-                                <div class="flex items-center gap-3 border-b border-primary-light/20 pb-2">
-                                    <div class="w-7 h-7 rounded-full bg-[#A38B54] text-white flex items-center justify-center text-xs font-bold shadow-sm">
+                                <div class="flex items-center gap-3 border-b border-secondary/20 pb-2">
+                                    <div class="w-7 h-7 rounded-full bg-[#A38B54] text-background flex items-center justify-center text-xs font-bold shadow-sm">
                                         {{ $loop->iteration }}
                                     </div>
                                     <h2 class="text-lg font-bold text-text-primary">
                                         {{ $catName }}
                                     </h2>
-                                    <span class="ms-auto text-[10px] font-semibold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">
+                                    <span class="ms-auto text-[10px] font-semibold text-gray-500 bg-background px-2 py-0.5 rounded-full">
                                         {{ $documents->get($catKey)->count() }}
                                     </span>
                                 </div>
@@ -244,23 +244,23 @@
 
                                             // Background and badge colors matching the categories
                                             $bgClass = 'bg-primary/10 border-primary/20 text-primary';
-                                            $badgeClass = 'bg-primary text-white';
+                                            $badgeClass = 'bg-primary text-background';
                                             if ($catKey === \App\Models\GovernanceDocument::CATEGORY_POLICIES) {
-                                                $bgClass = 'bg-primary-light/20 border-primary-light/30 text-text-primary';
-                                                $badgeClass = 'bg-primary-light text-text-primary border border-primary/10';
+                                                $bgClass = 'bg-secondary/20 border-secondary/30 text-text-primary';
+                                                $badgeClass = 'bg-secondary text-text-primary border border-primary/10';
                                             } elseif ($catKey === \App\Models\GovernanceDocument::CATEGORY_FINANCIAL) {
                                                 $bgClass = 'bg-primary/10 border-primary/20 text-primary';
-                                                $badgeClass = 'bg-primary text-white';
+                                                $badgeClass = 'bg-primary text-background';
                                             } elseif ($catKey === \App\Models\GovernanceDocument::CATEGORY_ACHIEVEMENT) {
-                                                $bgClass = 'bg-secondary-light/30 border-secondary-light/40 text-text-primary';
-                                                $badgeClass = 'bg-secondary-light text-text-primary border border-primary/15';
+                                                $bgClass = 'bg-secondary/30 border-secondary/40 text-text-primary';
+                                                $badgeClass = 'bg-secondary text-text-primary border border-primary/15';
                                             }
                                         @endphp
 
-                                        <div class="group flex flex-col justify-between h-full bg-white rounded-xl border border-primary-light/15 hover:border-primary/30 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                                        <div class="group flex flex-col justify-between h-full bg-background rounded-xl border border-secondary/15 hover:border-primary/30 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
                                             
                                             <!-- Thumbnail Area: fallback to PDF icon in colored background block -->
-                                            <div class="relative w-full aspect-video flex items-center justify-center border-b border-primary-light/10 transition-colors {{ $bgClass }}">
+                                            <div class="relative w-full aspect-video flex items-center justify-center border-b border-secondary/10 transition-colors {{ $bgClass }}">
                                                 
                                                 <!-- Year Badge: Absolute Top-Start -->
                                                 @if ($doc->fiscal_year)
@@ -278,7 +278,7 @@
                                             <!-- Body Info -->
                                             <div class="p-5 flex-1 flex flex-col justify-between">
                                                 <div class="space-y-2">
-                                                    <div class="flex items-center justify-between text-[10px] text-text-muted font-medium">
+                                                    <div class="flex items-center justify-between text-[10px] text-text-primary font-medium">
                                                         <span class="uppercase tracking-wider">PDF</span>
                                                         @if ($sizeMb)
                                                             <span>{{ $sizeMb }}</span>
@@ -292,7 +292,7 @@
 
                                                 <!-- Download Button -->
                                                 @if ($downloadUrl)
-                                                    <div class="mt-4 pt-3 border-t border-primary-light/10 flex flex-col gap-2">
+                                                    <div class="mt-4 pt-3 border-t border-secondary/10 flex flex-col gap-2">
                                                         <x-frontend.button :href="$downloadUrl" download variant="outline" size="sm" class="w-full justify-center gap-1.5" aria-label="{{ __('frontend.download') }}">
                                                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
@@ -311,8 +311,8 @@
                 @endforeach
             @else
                 {{-- Empty state UI for zero filtered results --}}
-                <div class="py-16 text-center flex flex-col items-center justify-center bg-white rounded-xl border border-primary-light/15 shadow-sm">
-                    <div class="w-16 h-16 rounded-full bg-secondary-light/40 flex items-center justify-center text-primary mb-4">
+                <div class="py-16 text-center flex flex-col items-center justify-center bg-background rounded-xl border border-secondary/15 shadow-sm">
+                    <div class="w-16 h-16 rounded-full bg-secondary/40 flex items-center justify-center text-primary mb-4">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 012.008 1.24l.885 1.77a2.25 2.25 0 002.007 1.24h1.98a2.25 2.25 0 002.007-1.24l.885-1.77a2.25 2.25 0 012.007-1.24h3.86m-18 8.75h18.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5z"/>
                         </svg>
@@ -320,7 +320,7 @@
                     <h3 class="text-base font-bold text-text-primary mb-1">
                         {{ app()->getLocale() === 'ar' ? 'لا توجد نتائج مطابقة' : 'No matching documents' }}
                     </h3>
-                    <p class="text-xs text-text-muted max-w-xs px-4">
+                    <p class="text-xs text-text-primary max-w-xs px-4">
                         {{ app()->getLocale() === 'ar' ? 'جرب البحث بكلمات أخرى أو تغيير خيارات التصفية' : 'Try searching with other keywords or modifying your filter choices' }}
                     </p>
                 </div>

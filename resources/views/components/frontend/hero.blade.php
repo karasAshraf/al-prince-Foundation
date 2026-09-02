@@ -150,20 +150,20 @@
             <div class="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/20 to-transparent" aria-hidden="true"></div>
 
             <!-- Content Container -->
-            <x-frontend.container class="relative z-10 py-12 text-center text-white h-full flex flex-col justify-between">
+            <x-frontend.container class="relative z-10 py-12 text-center text-background h-full flex flex-col justify-between">
                 <!-- Empty top spacer to keep title/desc vertically aligned towards center-top without collision -->
                 <div class="flex-grow flex items-center justify-center">
                     <div class="max-w-4xl mx-auto space-y-4 md:space-y-6">
                         <!-- Main H1 Headline -->
                         @if ($slide->title)
-                            <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight drop-shadow-md max-w-xl mx-auto">
+                            <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-background leading-tight tracking-tight drop-shadow-md max-w-xl mx-auto">
                                 {{ $slide->title }}
                             </h1>
                         @endif
 
                         <!-- Subtitle / Description -->
                         @if ($slide->desc)
-                            <p class="text-xs sm:text-sm md:text-base lg:text-lg text-gray-100 font-medium max-w-xl mx-auto leading-relaxed drop-shadow break-words line-clamp-3 sm:line-clamp-none">
+                            <p class="text-xs sm:text-sm md:text-base lg:text-lg text-background font-medium max-w-xl mx-auto leading-relaxed drop-shadow break-words line-clamp-3 sm:line-clamp-none">
                                 {{ $slide->desc }}
                             </p>
                         @endif
@@ -173,14 +173,14 @@
                 <!-- Action CTA Button placed at the bottom area of the slide, centered, above indicators/dots -->
                 <div class="pb-16 sm:pb-20 flex items-center justify-center">
                     @if ($slide->link)
-                        <x-frontend.button :href="$slide->link" variant="secondary" size="lg" class="px-8 py-3.5 font-bold group shadow-md transition-all duration-200 rounded-xl border border-primary-light/30 hover:bg-surface active:bg-surface/80 focus-visible:ring-2 focus-visible:ring-secondary-light focus-visible:ring-offset-2">
+                        <x-frontend.button :href="$slide->link" variant="secondary" size="lg" class="px-8 py-3.5 font-bold group shadow-md transition-all duration-200 rounded-xl border border-secondary/30 hover:bg-background active:bg-background/80 focus-visible:ring-2 focus-visible:ring-secondary-light focus-visible:ring-offset-2">
                             <span>{{ __('frontend.explore_our_projects') }}</span>
                             <svg class="w-5 h-5 rtl:rotate-180 inline-block ms-2 transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                             </svg>
                         </x-frontend.button>
                     @else
-                        <x-frontend.button :href="route('projects.index')" variant="secondary" size="lg" class="px-8 py-3.5 font-bold group shadow-md transition-all duration-200 rounded-xl border border-primary-light/30 hover:bg-surface active:bg-surface/80 focus-visible:ring-2 focus-visible:ring-secondary-light focus-visible:ring-offset-2">
+                        <x-frontend.button :href="route('projects.index')" variant="secondary" size="lg" class="px-8 py-3.5 font-bold group shadow-md transition-all duration-200 rounded-xl border border-secondary/30 hover:bg-background active:bg-background/80 focus-visible:ring-2 focus-visible:ring-secondary-light focus-visible:ring-offset-2">
                             <span>{{ __('frontend.explore_our_projects') }}</span>
                             <svg class="w-5 h-5 rtl:rotate-180 inline-block ms-2 transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -194,12 +194,12 @@
         <!-- Default Fallback Hero Slide -->
         <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-primary via-emerald-950 to-gray-950 flex items-center justify-center">
             <div class="absolute inset-0 bg-black/65" aria-hidden="true"></div>
-            <x-frontend.container class="relative z-10 text-center text-white py-16">
+            <x-frontend.container class="relative z-10 text-center text-background py-16">
                 <div class="max-w-3xl mx-auto space-y-6">
                     <x-frontend.badge variant="secondary" size="md">
                         {{ __('frontend.brand_name') }}
                     </x-frontend.badge>
-                    <h1 class="text-2xl sm:text-5xl font-bold text-white leading-tight max-w-xl mx-auto">
+                    <h1 class="text-2xl sm:text-5xl font-bold text-background leading-tight max-w-xl mx-auto">
                         {{ __('frontend.brand_tagline') }}
                     </h1>
                     <p class="text-xs sm:text-base text-gray-200 leading-relaxed break-words max-w-xl mx-auto">
@@ -215,7 +215,7 @@
         <!-- Previous Slide Button -->
         <button @click="prev()"
                 type="button"
-                class="absolute top-1/2 -translate-y-1/2 start-2 sm:start-4 md:start-8 z-20 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full text-white/90 bg-white/20 backdrop-blur-md hover:bg-white hover:text-text-primary transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-light group"
+                class="absolute top-1/2 -translate-y-1/2 start-2 sm:start-4 md:start-8 z-20 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full text-background/90 bg-background/20 backdrop-blur-md hover:bg-background hover:text-text-primary transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-light group"
                 aria-label="{{ __('frontend.previous_slide') }}">
             <svg class="w-6 h-6 rtl:rotate-180 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
@@ -225,7 +225,7 @@
         <!-- Next Slide Button -->
         <button @click="next()"
                 type="button"
-                class="absolute top-1/2 -translate-y-1/2 end-2 sm:end-4 md:end-8 z-20 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full text-white/90 bg-white/20 backdrop-blur-md hover:bg-white hover:text-text-primary transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-light group"
+                class="absolute top-1/2 -translate-y-1/2 end-2 sm:end-4 md:end-8 z-20 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full text-background/90 bg-background/20 backdrop-blur-md hover:bg-background hover:text-text-primary transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-light group"
                 aria-label="{{ __('frontend.next_slide') }}">
             <svg class="w-6 h-6 rtl:rotate-180 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
@@ -241,7 +241,7 @@
                         :aria-current="activeSlide === {{ $index }} ? 'true' : 'false'"
                         aria-label="{{ __('frontend.go_to_slide') }} {{ $index + 1 }}">
                     <span class="block h-2 rounded-full transition-all duration-300"
-                          :class="activeSlide === {{ $index }} ? 'w-6 bg-primary' : 'w-2 bg-white/50 hover:bg-white/80'">
+                          :class="activeSlide === {{ $index }} ? 'w-6 bg-primary' : 'w-2 bg-background/50 hover:bg-background/80'">
                           </span>
                 </button>
             @endforeach

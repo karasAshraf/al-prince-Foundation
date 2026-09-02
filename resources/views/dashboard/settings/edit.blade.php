@@ -61,13 +61,13 @@
         @method('PUT')
 
         {{-- General Info --}}
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
             <h2 class="mb-4 text-base font-semibold text-[#3D342A]">{{ __('dashboard.settings.general_settings') }}</h2>
 
             {{-- Current Logo Preview & Upload --}}
-            <div class="mb-5 flex flex-col gap-3 rounded-lg border border-[#B49C6E]/30 bg-[#EAEAE9]/20 p-4 sm:flex-row sm:items-center sm:justify-between">
+            <div class="mb-5 flex flex-col gap-3 rounded-lg border border-[#B49C6E]/30 bg-secondary/20 p-4 sm:flex-row sm:items-center sm:justify-between">
                 <div class="flex items-center gap-4">
-                    <div class="flex h-14 w-28 items-center justify-center rounded-lg border border-[#B49C6E]/40 bg-white p-2 shadow-sm">
+                    <div class="flex h-14 w-28 items-center justify-center rounded-lg border border-[#B49C6E]/40 bg-background p-2 shadow-sm">
                         <x-application-logo class="max-h-full max-w-full object-contain" />
                     </div>
                     <div>
@@ -83,7 +83,7 @@
                             name="logo"
                             id="logo"
                             accept="image/*"
-                            class="block w-full text-xs text-[#3D342A] file:me-3 file:rounded-md file:border-0 file:bg-[#A38B54] file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-white hover:file:bg-[#3D342A]"
+                            class="block w-full text-xs text-[#3D342A] file:me-3 file:rounded-md file:border-0 file:bg-[#A38B54] file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-background hover:file:bg-[#3D342A]"
                         />
                         @error('logo')
                             <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
@@ -108,7 +108,7 @@
                             id="logo_external"
                             placeholder="https://example.com/logo.png"
                             value="{{ old('logo_external', $logoExternalVal) }}"
-                            class="w-full sm:w-72 rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] px-3 py-1.5 text-xs text-[#3D342A] focus:border-[#A38B54] focus:outline-none placeholder:text-gray-400"
+                            class="w-full sm:w-72 rounded-lg border border-[#B49C6E]/40 bg-secondary px-3 py-1.5 text-xs text-[#3D342A] focus:border-[#A38B54] focus:outline-none placeholder:text-gray-400"
                         />
                         @error('logo_external')
                             <p class="mt-1 text-xs text-red-600">{{ $message }}</p>
@@ -179,7 +179,7 @@
                                     x-model="phones[index]"
                                     placeholder="012XXXXXXXX"
                                     dir="ltr"
-                                    class="block w-full rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] px-3.5 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none focus:ring-1 focus:ring-[#A38B54]"
+                                    class="block w-full rounded-lg border border-[#B49C6E]/40 bg-secondary px-3.5 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none focus:ring-1 focus:ring-[#A38B54]"
                                 >
                                 <button
                                     type="button"
@@ -273,7 +273,7 @@
                     }
                 }
             }"
-            class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 space-y-4"
+            class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 space-y-4"
         >
             <div class="flex items-center justify-between border-b border-[#B49C6E]/20 pb-3">
                 <h2 class="text-base font-semibold text-[#3D342A]">{{ __('dashboard.settings.social_links') }}</h2>
@@ -295,7 +295,7 @@
                         <select
                             :name="'social_links[' + index + '][platform]'"
                             x-model="link.platform"
-                            class="w-full sm:w-44 rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] px-3 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none focus:ring-1 focus:ring-[#A38B54]"
+                            class="w-full sm:w-44 rounded-lg border border-[#B49C6E]/40 bg-secondary px-3 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none focus:ring-1 focus:ring-[#A38B54]"
                         >
                             <option value="facebook">فيسبوك (Facebook)</option>
                             <option value="twitter">إكس (Twitter/X)</option>
@@ -314,7 +314,7 @@
                             x-model="link.url"
                             placeholder="https://example.com/username"
                             dir="ltr"
-                            class="block w-full rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] px-3.5 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none focus:ring-1 focus:ring-[#A38B54]"
+                            class="block w-full rounded-lg border border-[#B49C6E]/40 bg-secondary px-3.5 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none focus:ring-1 focus:ring-[#A38B54]"
                         >
 
                         <button

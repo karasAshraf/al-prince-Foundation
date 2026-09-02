@@ -19,20 +19,20 @@
         </div>
 
         {{-- Eyebrow --}}
-        <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-primary/80 dark:text-primary-light/90 mb-3 block">
+        <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-primary/80 dark:text-secondary/90 mb-3 block">
             {{ __('frontend.executive_structure') }}
         </span>
 
         {{-- Page title --}}
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-text-primary dark:text-surface leading-tight tracking-tight mb-4">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-text-primary dark:text-background leading-tight tracking-tight mb-4">
             {{ __('frontend.executive_team') }}
         </h1>
 
         {{-- Subtle decorative brand element - slightly more dynamic/human wavy/pill accent --}}
         <div class="flex items-center justify-center gap-1.5 mt-4 mb-6" aria-hidden="true">
             <div class="w-3 h-1.5 rounded-full bg-primary"></div>
-            <div class="w-1.5 h-1.5 rounded-full bg-primary-light"></div>
-            <div class="w-6 h-1 rounded-full bg-secondary-light"></div>
+            <div class="w-1.5 h-1.5 rounded-full bg-secondary"></div>
+            <div class="w-6 h-1 rounded-full bg-secondary"></div>
         </div>
 
         {{-- Description --}}

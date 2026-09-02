@@ -4,7 +4,7 @@
             <div class="w-24 h-24 rounded-3xl bg-primary/10 text-primary flex items-center justify-center text-4xl font-bold mx-auto shadow-sm">
                 404
             </div>
-            <h1 class="text-3xl font-bold text-text-primary dark:text-gray-100">
+            <h1 class="text-3xl font-bold text-text-primary dark:text-background">
                 {{ __('frontend.page_not_found_heading') }}
             </h1>
             <p class="text-text-primary/70 dark:text-gray-400 text-sm leading-relaxed">

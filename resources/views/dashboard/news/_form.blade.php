@@ -5,7 +5,7 @@
     {{-- ============ MAIN COLUMN ============ --}}
     <div class="space-y-5 lg:col-span-2">
 
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <x-forms.input
                     name="title_ar"
@@ -45,7 +45,7 @@
             </div>
         </div>
 
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
             <div class="mb-4">
                 <x-forms.rich-editor
                     name="content_ar"
@@ -67,7 +67,7 @@
     {{-- ============ SIDEBAR COLUMN ============ --}}
     <div class="space-y-5">
 
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
             <h3 class="mb-4 text-sm font-semibold text-[#3D342A]">{{ __('dashboard.news.status') }}</h3>
 
             <div class="space-y-4">

@@ -24,7 +24,7 @@
     </div>
 
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-6 space-y-4 lg:col-span-2">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-6 space-y-4 lg:col-span-2">
             <div>
                 <h3 class="text-xs text-[#3D342A]/50">اسم الشريك بالعربية</h3>
                 <p class="text-base font-medium text-[#3D342A]">{{ $partner->name_ar }}</p>
@@ -43,9 +43,9 @@
             @endif
         </div>
 
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-6 text-center space-y-3">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-6 text-center space-y-3">
             <h3 class="text-xs text-[#3D342A]/50">شعار الشريك</h3>
-            <div class="mx-auto flex h-40 w-40 items-center justify-center rounded-lg border border-[#B49C6E]/20 bg-[#EAEAE9] p-2">
+            <div class="mx-auto flex h-40 w-40 items-center justify-center rounded-lg border border-[#B49C6E]/20 bg-secondary p-2">
                 <img
                     src="{{ \App\Helpers\MediaHelper::url($partner, 'partner_logos', 'image') }}"
                     alt="{{ $partner->name_ar }}"

@@ -38,7 +38,7 @@
 
     {{-- Dialog Panel --}}
     <div
-        class="relative w-full max-w-md rounded-2xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-6 shadow-xl"
+        class="relative w-full max-w-md rounded-2xl border border-[#B49C6E]/20 bg-secondary p-6 shadow-xl"
         x-transition:enter="ease-out duration-200"
         x-transition:enter-start="opacity-0 scale-95"
         x-transition:enter-end="opacity-100 scale-100"
@@ -66,7 +66,7 @@
             <button
                 type="button"
                 @click="open = false"
-                class="rounded-lg border border-[#B49C6E]/40 px-4 py-2 text-sm font-medium text-[#3D342A] transition hover:bg-[#EAEAE9]/40 focus:outline-none focus:ring-2 focus:ring-[#A38B54]/30"
+                class="rounded-lg border border-[#B49C6E]/40 px-4 py-2 text-sm font-medium text-[#3D342A] transition hover:bg-secondary/40 focus:outline-none focus:ring-2 focus:ring-[#A38B54]/30"
             >
                 إلغاء
             </button>
@@ -76,7 +76,7 @@
                 @method('DELETE')
                 <button
                     type="submit"
-                    class="rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500/50"
+                    class="rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-background transition hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500/50"
                 >
                     نعم، احذف المشروع
                 </button>

@@ -6,7 +6,7 @@
     <div class="space-y-5 lg:col-span-2">
 
         {{-- Basic Information --}}
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm space-y-4">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 shadow-sm space-y-4">
             <h2 class="text-base font-semibold text-[#3D342A] border-b border-[#B49C6E]/20 pb-3 mb-4">{{ __('dashboard.hero_slides.slide_details') }}</h2>
 
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -25,17 +25,17 @@
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div class="space-y-1">
                     <label class="text-xs font-semibold text-[#3D342A]">{{ __('dashboard.hero_slides.subtitle_ar') }}</label>
-                    <textarea name="subtitle_ar" rows="3" class="w-full rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] px-3.5 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none">{{ $slide->subtitle_ar ?? '' }}</textarea>
+                    <textarea name="subtitle_ar" rows="3" class="w-full rounded-lg border border-[#B49C6E]/40 bg-secondary px-3.5 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none">{{ $slide->subtitle_ar ?? '' }}</textarea>
                 </div>
                 <div class="space-y-1">
                     <label class="text-xs font-semibold text-[#3D342A]">{{ __('dashboard.hero_slides.subtitle_en') }}</label>
-                    <textarea name="subtitle_en" rows="3" class="w-full rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] px-3.5 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none">{{ $slide->subtitle_en ?? '' }}</textarea>
+                    <textarea name="subtitle_en" rows="3" class="w-full rounded-lg border border-[#B49C6E]/40 bg-secondary px-3.5 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none">{{ $slide->subtitle_en ?? '' }}</textarea>
                 </div>
             </div>
         </div>
 
         {{-- Button Details --}}
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm space-y-4">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 shadow-sm space-y-4">
             <h2 class="text-base font-semibold text-[#3D342A] border-b border-[#B49C6E]/20 pb-3 mb-2">{{ __('dashboard.hero_slides.button_details') }}</h2>
 
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
@@ -65,7 +65,7 @@
     <div class="space-y-5">
 
         {{-- Configuration Card --}}
-        <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5 shadow-sm space-y-4">
+        <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5 shadow-sm space-y-4">
             <h3 class="text-sm font-semibold text-[#3D342A] border-b border-[#B49C6E]/20 pb-3">{{ __('dashboard.hero_slides.settings') }}</h3>
 
             <x-forms.select

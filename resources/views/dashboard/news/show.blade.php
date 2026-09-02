@@ -21,7 +21,7 @@
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div class="space-y-5 lg:col-span-2">
 
-            <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+            <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
                 <x-forms.image-preview :url="\App\Helpers\MediaHelper::url($news, 'news_images', 'image')" size="lg" />
 
                 <h2 class="mt-4 text-lg font-semibold text-[#3D342A]">{{ $news->title_ar }}</h2>
@@ -50,7 +50,7 @@
         </div>
 
         <div class="space-y-5">
-            <div class="rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-5">
+            <div class="rounded-xl border border-[#B49C6E]/20 bg-secondary p-5">
                 <dl class="space-y-3 text-sm">
                     <div>
                         <dt class="text-[#3D342A]/50">{{ __('dashboard.common.status') }}</dt>

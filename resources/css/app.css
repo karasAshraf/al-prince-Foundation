@@ -9,53 +9,6 @@
 }
 
 @layer base {
-    :root {
-        --color-primary: #A5780A;
-        --color-primary-light: #B8974F;
-        --color-primary-dark: #8A6408;
-        --color-secondary: #AC8321;
-        --color-secondary-light: #B8974F;
-        --color-text-primary: #372828;
-        --color-text-secondary: #695956;
-        --color-text-muted: #B4AEA4;
-        --color-surface: #E1DFDD;
-        --color-surface-alt: #EAEAE9;
-        --color-border: #D5D3CE;
-        --color-border-light: #EAEAE9;
-        --color-white: #F5F5F5;
-
-        /* Reusable design tokens */
-        --gold-main:      #A5780A;
-        --gold-secondary: #AC8321;
-        --gold-warm:      #B8974F;
-        --brown-dark:     #372828;
-        --brown-gray:     #695956;
-        --white-soft:     #F5F5F5;
-        --gray-soft:      #E1DFDD;
-        --gray-light:     #EAEAE9;
-        --gray-warm:      #D5D3CE;
-        --gray-muted:     #B4AEA4;
-
-        /* Footer-specific semantic tokens */
-        --footer-bg:      #372828;   /* dark brown — main footer canvas */
-        --divider:        #695956;   /* muted brown — section divider lines */
-    }
-
-    .dark {
-        --color-primary: #AC8321;
-        --color-primary-light: #B8974F;
-        --color-primary-dark: #A5780A;
-        --color-secondary: #B8974F;
-        --color-secondary-light: #D5D3CE;
-        --color-text-primary: #F5F5F5;
-        --color-text-secondary: #D5D3CE;
-        --color-text-muted: #B4AEA4;
-        --color-surface: #2A2520;
-        --color-surface-alt: #3D3530;
-        --color-border: #695956;
-        --color-white: #F5F5F5;
-    }
-
     html,
     body {
         max-width: 100%;
@@ -63,8 +16,7 @@
     }
 
     body {
-        background-color: var(--color-surface);
-        color: var(--color-text-primary);
+        @apply bg-background text-text-primary;
     }
 
     h1, h2, h3, .heading {
@@ -79,7 +31,7 @@
     /* Custom Modern Slim Scrollbar */
     html {
         scrollbar-width: thin;
-        scrollbar-color: #A5780A transparent;
+        scrollbar-color: #AC8322 transparent;
     }
 
     ::-webkit-scrollbar {
@@ -92,7 +44,7 @@
     }
 
     ::-webkit-scrollbar-thumb {
-        background-color: #A5780A;
+        background-color: #AC8322;
         border-radius: 9999px;
         border: 2px solid transparent;
         background-clip: content-box;
@@ -100,14 +52,14 @@
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background-color: #B8974F;
+        background-color: #EBE5D7;
     }
 }
 
 @layer utilities {
     .custom-scrollbar {
         scrollbar-width: thin;
-        scrollbar-color: #A5780A transparent;
+        scrollbar-color: #AC8322 transparent;
     }
 
     .custom-scrollbar::-webkit-scrollbar {
@@ -120,13 +72,13 @@
     }
 
     .custom-scrollbar::-webkit-scrollbar-thumb {
-        background-color: #A5780A;
+        background-color: #AC8322;
         border-radius: 9999px;
         transition: background-color 0.2s ease-in-out;
     }
 
     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-        background-color: #B8974F;
+        background-color: #EBE5D7;
     }
 
     .rotate-8 {

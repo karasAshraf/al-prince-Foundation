@@ -2,17 +2,17 @@
 
     <!-- Page Header -->
     <div class="text-center mb-16 max-w-2xl mx-auto space-y-4">
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-light/40 text-primary text-xs font-semibold tracking-widest uppercase">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/40 text-primary text-xs font-semibold tracking-widest uppercase">
             {{ __('frontend.advertising_center') }}
         </span>
         
         <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight mt-3">
             @if(app()->getLocale() === 'ar')
                 <span class="bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">المركز</span>
-                <span class="text-text-primary dark:text-surface"> الإعلاني</span>
+                <span class="text-text-primary dark:text-background"> الإعلاني</span>
             @else
                 <span class="bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">Media</span>
-                <span class="text-text-primary dark:text-surface"> Hub</span>
+                <span class="text-text-primary dark:text-background"> Hub</span>
             @endif
         </h1>
         
@@ -22,11 +22,11 @@
 
         {{-- Decorative underline --}}
         <div class="flex items-center justify-center gap-2 pt-1">
-            <span class="h-px w-12 bg-primary-light/40 rounded-full"></span>
+            <span class="h-px w-12 bg-secondary/40 rounded-full"></span>
             <span class="w-2 h-2 rounded-full bg-primary"></span>
             <span class="h-px w-24 bg-primary/60 rounded-full"></span>
             <span class="w-2 h-2 rounded-full bg-primary"></span>
-            <span class="h-px w-12 bg-primary-light/40 rounded-full"></span>
+            <span class="h-px w-12 bg-secondary/40 rounded-full"></span>
         </div>
     </div>
 

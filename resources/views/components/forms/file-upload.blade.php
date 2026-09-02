@@ -45,7 +45,7 @@
         @dragover.prevent="dragging = true"
         @dragleave.prevent="dragging = false"
         @drop.prevent="dragging = false; handleFile($event)"
-        :class="dragging ? 'border-[#A38B54] bg-[#EAEAE9]/30' : 'bg-[#EAEAE9] {{ $borderClasses }}'"
+        :class="dragging ? 'border-[#A38B54] bg-secondary/30' : 'bg-secondary {{ $borderClasses }}'"
         class="relative flex cursor-pointer flex-col items-center justify-center rounded-xl px-4 py-8 text-center transition duration-200 focus-within:ring-2 focus-within:ring-[#A38B54]/30"
         @click="$refs.fileInput.click()"
     >
@@ -58,7 +58,7 @@
         </p>
 
         <template x-if="fileName">
-            <div class="mt-3 flex items-center gap-2 rounded-lg bg-[#EAEAE9]/50 px-3 py-1.5 border border-[#B49C6E]/40" @click.stop>
+            <div class="mt-3 flex items-center gap-2 rounded-lg bg-secondary/50 px-3 py-1.5 border border-[#B49C6E]/40" @click.stop>
                 <span x-text="fileName" class="text-xs font-semibold text-[#3D342A]"></span>
                 <button type="button" @click="removeFile()" class="text-red-600 hover:text-red-800 text-xs font-bold px-1" title="إزالة">✕</button>
             </div>

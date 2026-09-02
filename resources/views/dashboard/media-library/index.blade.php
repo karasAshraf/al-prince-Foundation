@@ -18,7 +18,7 @@
     <x-alerts.error />
 
     {{-- Filters Card --}}
-    <div class="mb-6 rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] p-4 shadow-sm">
+    <div class="mb-6 rounded-xl border border-[#B49C6E]/20 bg-secondary p-4 shadow-sm">
         <form method="GET" action="{{ route('dashboard.media-library.index') }}" class="grid grid-cols-1 gap-4 sm:grid-cols-3">
             <x-forms.input
                 name="search"

@@ -4,8 +4,8 @@
     'icon' => null,
 ])
 
-<div {{ $attributes->merge(['class' => 'flex flex-col items-center justify-center text-center p-8 sm:p-12 rounded-2xl bg-white/50 dark:bg-gray-800/50 border border-dashed border-primary-light/40 space-y-4 my-6']) }}>
-    <div class="w-16 h-16 rounded-2xl bg-secondary-light/40 text-primary flex items-center justify-center p-3 shadow-inner">
+<div {{ $attributes->merge(['class' => 'flex flex-col items-center justify-center text-center p-8 sm:p-12 rounded-2xl bg-background/50 dark:bg-gray-800/50 border border-dashed border-secondary/40 space-y-4 my-6']) }}>
+    <div class="w-16 h-16 rounded-2xl bg-secondary/40 text-primary flex items-center justify-center p-3 shadow-inner">
         @if ($icon)
             {{ $icon }}
         @else
@@ -16,7 +16,7 @@
     </div>
 
     <div class="space-y-1 max-w-md">
-        <h3 class="text-lg font-bold text-text-primary dark:text-gray-100">
+        <h3 class="text-lg font-bold text-text-primary dark:text-background">
             {{ $title }}
         </h3>
         @if ($description)

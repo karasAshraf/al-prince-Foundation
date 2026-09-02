@@ -46,7 +46,7 @@
     <div class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-2">
 
         {{-- Latest Surveys --}}
-        <div class="rounded-xl border border-[#B7B5B3]/60 bg-white px-4 py-3.5">
+        <div class="rounded-xl border border-[#B7B5B3]/60 bg-background px-4 py-3.5">
             {{-- Panel header --}}
             <div class="mb-3 flex items-center justify-between">
                 <h2 class="text-[14px] font-medium text-[#3D342A]">{{ __('dashboard.dashboard.latest_surveys') }}</h2>
@@ -62,7 +62,7 @@
                         <p class="truncate text-sm text-[#3D342A] flex-1">{{ $survey->title_ar }}</p>
                         <div class="ms-3 flex items-center gap-2.5 shrink-0">
                             {{-- Status badge per spec: bg #EAEAE9, text #766868, 11px, pill --}}
-                            <span class="rounded-full bg-[#EAEAE9] px-2.5 py-0.5 text-[11px] text-[#766868]">
+                            <span class="rounded-full bg-secondary px-2.5 py-0.5 text-[11px] text-[#766868]">
                                 {{ $survey->is_active ? __('dashboard.common.active') : __('dashboard.common.inactive') }}
                             </span>
                             <a href="{{ route('dashboard.surveys.show', $survey) }}" class="text-xs font-medium text-[#A38B54] hover:underline">
@@ -77,7 +77,7 @@
         </div>
 
         {{-- Recent Contact Messages --}}
-        <div class="rounded-xl border border-[#B7B5B3]/60 bg-white px-4 py-3.5">
+        <div class="rounded-xl border border-[#B7B5B3]/60 bg-background px-4 py-3.5">
             {{-- Panel header --}}
             <div class="mb-3 flex items-center justify-between">
                 <h2 class="text-[14px] font-medium text-[#3D342A]">{{ __('dashboard.dashboard.recent_messages') }}</h2>

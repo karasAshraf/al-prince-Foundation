@@ -16,7 +16,7 @@
         </label>
     @endif
 
-    <div class="rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] overflow-hidden focus-within:border-[#A38B54] focus-within:ring-1 focus-within:ring-[#A38B54]">
+    <div class="rounded-lg border border-[#B49C6E]/40 bg-secondary overflow-hidden focus-within:border-[#A38B54] focus-within:ring-1 focus-within:ring-[#A38B54]">
         <textarea
             name="{{ $name }}"
             id="{{ $name }}"

@@ -1,6 +1,6 @@
 
 
-<footer class="border-t border-[#B49C6E]/20 bg-[#EAEAE9] px-4 py-4 sm:px-6 lg:px-8">
+<footer class="border-t border-[#B49C6E]/20 bg-secondary px-4 py-4 sm:px-6 lg:px-8">
     <div class="flex flex-col items-center justify-between gap-2 text-sm text-[#3D342A]/60 sm:flex-row">
 
         <p>

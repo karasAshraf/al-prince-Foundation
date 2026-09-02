@@ -46,7 +46,7 @@
         :readonly="locked && !{{ old($name, $value) ? 'false' : 'true' }}"
         {{ $required ? 'required' : '' }}
         {{ $attributes->merge([
-            'class' => 'w-full rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] px-3.5 py-2.5 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none focus:ring-1 focus:ring-[#A38B54] read-only:bg-[#EAEAE9]/20'
+            'class' => 'w-full rounded-lg border border-[#B49C6E]/40 bg-secondary px-3.5 py-2.5 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none focus:ring-1 focus:ring-[#A38B54] read-only:bg-secondary/20'
         ]) }}
     >
 

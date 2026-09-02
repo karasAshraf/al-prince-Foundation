@@ -18,7 +18,7 @@
         </div>
 
         <!-- Article Card -->
-        <article class="bg-white dark:bg-gray-800 border border-primary-light/20 rounded-3xl p-6 sm:p-10 space-y-6 shadow-sm">
+        <article class="bg-background dark:bg-gray-800 border border-secondary/20 rounded-3xl p-6 sm:p-10 space-y-6 shadow-sm">
             @if ($img)
                 <div class="overflow-hidden rounded-2xl aspect-video">
                     <img src="{{ $img }}" alt="{{ $title }}" loading="lazy" class="w-full h-full object-cover">
@@ -26,12 +26,12 @@
             @endif
 
             <div class="space-y-4">
-                <h1 class="text-2xl sm:text-4xl font-bold text-text-primary dark:text-gray-100 leading-tight">
+                <h1 class="text-2xl sm:text-4xl font-bold text-text-primary dark:text-background leading-tight">
                     {{ $title }}
                 </h1>
 
                 @if ($content)
-                    <div class="text-base text-text-primary/85 dark:text-gray-200 leading-relaxed space-y-4 prose max-w-none pt-4 border-t border-primary-light/20 whitespace-pre-line">
+                    <div class="text-base text-text-primary/85 dark:text-gray-200 leading-relaxed space-y-4 prose max-w-none pt-4 border-t border-secondary/20 whitespace-pre-line">
                         {{ $content }}
                     </div>
                 @endif
@@ -40,11 +40,11 @@
             {{-- Gallery Slider / Grid --}}
             @php $galleryItems = $activity->getMedia('gallery'); @endphp
             @if($galleryItems->count() > 0)
-                <div class="pt-6 border-t border-primary-light/20">
-                    <h3 class="text-lg font-bold text-text-primary dark:text-gray-100 mb-4">{{ __('frontend.activity_gallery') }}</h3>
+                <div class="pt-6 border-t border-secondary/20">
+                    <h3 class="text-lg font-bold text-text-primary dark:text-background mb-4">{{ __('frontend.activity_gallery') }}</h3>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                         @foreach($galleryItems as $mediaItem)
-                            <a href="{{ $mediaItem->getUrl() }}" target="_blank" class="block aspect-square overflow-hidden rounded-xl border border-gray-100 dark:border-gray-700 shadow-sm group">
+                            <a href="{{ $mediaItem->getUrl() }}" target="_blank" class="block aspect-square overflow-hidden rounded-xl border border-background dark:border-gray-700 shadow-sm group">
                                 <img src="{{ $mediaItem->hasGeneratedConversion('gallery_thumb') ? $mediaItem->getUrl('gallery_thumb') : $mediaItem->getUrl() }}" alt="{{ $mediaItem->name }}" loading="lazy"
                                      class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
                             </a>

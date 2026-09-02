@@ -27,7 +27,7 @@
         >
             <span
                 :class="on ? 'translate-x-5 rtl:-translate-x-5' : 'translate-x-1'"
-                class="inline-block h-4 w-4 transform rounded-full bg-[#EAEAE9] transition-transform"
+                class="inline-block h-4 w-4 transform rounded-full bg-secondary transition-transform"
             ></span>
         </span>
 

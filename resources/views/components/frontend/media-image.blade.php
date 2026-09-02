@@ -18,7 +18,7 @@
     };
 @endphp
 
-<div {{ $attributes->merge(['class' => "overflow-hidden {$rounded} bg-secondary-light/10 dark:bg-gray-800/50 {$aspectClass} w-full relative group/media"]) }}>
+<div {{ $attributes->merge(['class' => "overflow-hidden {$rounded} bg-secondary/10 dark:bg-gray-800/50 {$aspectClass} w-full relative group/media"]) }}>
     @if ($src)
         <img src="{{ $src }}"
              alt="{{ $alt }}"

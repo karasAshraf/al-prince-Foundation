@@ -16,16 +16,16 @@
         }
     }"
     :class="collapsed ? 'lg:w-20' : 'lg:w-[220px]'"
-    class="fixed inset-y-0 start-0 z-40 flex w-[220px] flex-col bg-[#372828] transition-all duration-300 lg:static lg:h-full shrink-0"
+    class="fixed inset-y-0 start-0 z-40 flex w-[220px] flex-col bg-text-primary transition-all duration-300 lg:static lg:h-full shrink-0"
     x-bind:class="sidebarOpen ? 'translate-x-0' : (document.documentElement.dir === 'rtl' ? 'translate-x-full lg:translate-x-0' : '-translate-x-full lg:translate-x-0')"
     aria-label="{{ __('dashboard.common.sidebar_aria') }}"
 >
     {{-- Desktop collapse toggle --}}
-    <div class="hidden items-center justify-end border-b border-white/10 px-3 py-3 lg:flex shrink-0">
+    <div class="hidden items-center justify-end border-b border-background/10 px-3 py-3 lg:flex shrink-0">
         <button
             type="button"
             @click="toggleCollapse()"
-            class="rounded-md p-1.5 text-[#AC8321] hover:bg-white/5 hover:text-[#B8974F]"
+            class="rounded-md p-1.5 text-primary hover:bg-background/5 hover:text-secondary"
             :aria-label="collapsed ? '{{ __('dashboard.common.sidebar_expand') }}' : '{{ __('dashboard.common.sidebar_collapse') }}'"
         >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform" :class="collapsed ? (document.documentElement.dir === 'rtl' ? '-rotate-180' : 'rotate-180') : (document.documentElement.dir === 'rtl' ? 'rotate-180' : '')" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
@@ -43,21 +43,21 @@
                     'label' => __('dashboard.sidebar.content_management'),
                     'items' => [
                         ['label' => __('dashboard.sidebar.services'), 'route' => 'dashboard.services.index', 'active' => 'dashboard.services.*', 'icon' => 'briefcase'],
-                        ['label' => __('dashboard.sidebar.activities'), 'route' => 'dashboard.activities.index', 'active' => 'dashboard.activities.*', 'icon' => 'spark'],
+                        ['label' => __('dashboard.sidebar.activities'), 'route' => 'dashboard.activities.index', 'active' => 'dashboard.activities.*', 'icon' => 'spark', 'visible' => false],
                         ['label' => __('dashboard.sidebar.industries'), 'route' => 'dashboard.industries.index', 'active' => 'dashboard.industries.*', 'icon' => 'building'],
-                        ['label' => __('dashboard.sidebar.solutions'), 'route' => 'dashboard.solutions.index', 'active' => 'dashboard.solutions.*', 'icon' => 'bulb'],
+                        ['label' => __('dashboard.sidebar.solutions'), 'route' => 'dashboard.solutions.index', 'active' => 'dashboard.solutions.*', 'icon' => 'bulb', 'visible' => false],
                         [
                             'label' => __('dashboard.sidebar.advertising_center'),
                             'icon' => 'advertising',
                             'is_dropdown' => true,
                             'children' => [
                                 ['label' => __('dashboard.sidebar.news'), 'route' => 'dashboard.news.index', 'active' => 'dashboard.news.*', 'icon' => 'newspaper'],
-                                ['label' => __('dashboard.sidebar.events'), 'route' => 'dashboard.events.index', 'active' => 'dashboard.events.*', 'icon' => 'calendar'],
-                                ['label' => __('dashboard.sidebar.media_library'), 'route' => 'dashboard.media-library.index', 'active' => 'dashboard.media-library.*', 'icon' => 'folder-download'],
+                                ['label' => __('dashboard.sidebar.events'), 'route' => 'dashboard.events.index', 'active' => 'dashboard.events.*', 'icon' => 'calendar', 'visible' => false],
+                                ['label' => __('dashboard.sidebar.media_library'), 'route' => 'dashboard.media-library.index', 'active' => 'dashboard.media-library.*', 'icon' => 'folder-download', 'visible' => false],
                             ]
                         ],
-                        ['label' => __('dashboard.sidebar.programs'), 'route' => 'dashboard.programs.index', 'active' => 'dashboard.programs.*', 'icon' => 'folder'],
-                        ['label' => __('dashboard.sidebar.projects'), 'route' => 'dashboard.projects.index', 'active' => 'dashboard.projects.*', 'icon' => 'flag'],
+                        ['label' => __('dashboard.sidebar.programs'), 'route' => 'dashboard.programs.index', 'active' => 'dashboard.programs.*', 'icon' => 'folder', 'visible' => false],
+                        ['label' => __('dashboard.sidebar.projects'), 'route' => 'dashboard.projects.index', 'active' => 'dashboard.projects.*', 'icon' => 'flag', 'visible' => false],
                         ['label' => __('dashboard.sidebar.about_us'), 'route' => 'dashboard.about-sections.index', 'active' => 'dashboard.about-sections.*', 'icon' => 'info'],
                         ['label' => __('dashboard.sidebar.organizational_structure'), 'route' => 'dashboard.organizational-structure.edit', 'active' => 'dashboard.organizational-structure.edit', 'icon' => 'layout'],
                         ['label' => __('dashboard.sidebar.team_members'), 'route' => 'dashboard.team-members.index', 'active' => 'dashboard.team-members.*', 'icon' => 'users'],
@@ -69,7 +69,7 @@
                 [
                     'label' => __('dashboard.sidebar.governance_participation'),
                     'items' => [
-                        ['label' => __('dashboard.sidebar.governance_center'), 'route' => 'dashboard.governance-documents.index', 'active' => 'dashboard.governance-documents.*', 'icon' => 'shield'],
+                        ['label' => __('dashboard.sidebar.governance_center'), 'route' => 'dashboard.governance-documents.index', 'active' => 'dashboard.governance-documents.*', 'icon' => 'shield', 'visible' => false],
                         ['label' => __('dashboard.sidebar.surveys'), 'route' => 'dashboard.surveys.index', 'active' => 'dashboard.surveys.*', 'icon' => 'clipboard'],
                         ['label' => __('dashboard.sidebar.contact_messages'), 'route' => 'dashboard.contact-messages.index', 'active' => 'dashboard.contact-messages.*', 'icon' => 'mail'],
                     ],
@@ -109,29 +109,40 @@
         @endphp
 
         @foreach ($navGroups as $idx => $group)
-            @if (count($group['items']))
+            @php
+                // Pre-filter visible items and their children, and conditionally add Analytics
+                $groupItems = collect($group['items'])
+                    ->filter(fn($i) => !isset($i['visible']) || $i['visible'] !== false)
+                    ->map(function($i) {
+                        if (isset($i['children'])) {
+                            $i['children'] = array_values(array_filter($i['children'], fn($c) => !isset($c['visible']) || $c['visible'] !== false));
+                        }
+                        return $i;
+                    })
+                    ->filter(fn($i) => empty($i['is_dropdown']) || !empty($i['children']))
+                    ->toArray();
+                    
+                if ($idx === 0) {
+                    array_unshift($groupItems, [
+                        'label'  => __('dashboard.sidebar.analytics') ?? (app()->getLocale() === 'ar' ? 'التحليلات والإحصائيات' : 'Analytics & Stats'),
+                        'route'  => 'dashboard.analytics',
+                        'active' => 'dashboard.analytics',
+                        'icon'   => 'chart',
+                    ]);
+                }
+            @endphp
+
+            @if (count($groupItems))
                 <div class="@if($idx > 0) mt-6 @else mt-2 @endif">
                     {{-- Section label — hidden when collapsed on desktop --}}
                     <p
                         x-show="!collapsed"
-                        class="mb-1.5 px-2.5 text-[11px] font-semibold uppercase tracking-wider text-[#B4AEA4]"
+                        class="mb-1.5 px-2.5 text-[11px] font-semibold uppercase tracking-wider text-text-primary"
                     >
                         {{ $group['label'] }}
                     </p>
 
                     <ul class="space-y-0.5">
-                        @php
-                            $groupItems = $group['items'];
-                            if ($idx === 0) {
-                                array_unshift($groupItems, [
-                                    'label'  => __('dashboard.sidebar.analytics') ?? (app()->getLocale() === 'ar' ? 'التحليلات والإحصائيات' : 'Analytics & Stats'),
-                                    'route'  => 'dashboard.analytics',
-                                    'active' => 'dashboard.analytics',
-                                    'icon'   => 'chart',
-                                ]);
-                            }
-                        @endphp
-
                         @foreach ($groupItems as $item)
                             @if (isset($item['is_dropdown']) && $item['is_dropdown'])
                                 @php
@@ -149,13 +160,13 @@
                                         @click="open = !open"
                                         @class([
                                             'group flex w-full items-center justify-between rounded-lg py-[9px] text-[13px] font-medium transition-all duration-200',
-                                            'bg-[#A5780A] text-[#F5F5F5]' => $anyChildActive,
-                                            'text-[#F5F5F5]/60 hover:bg-white/5 hover:text-[#B8974F]' => !$anyChildActive,
+                                            'bg-primary text-background' => $anyChildActive,
+                                            'text-background/60 hover:bg-background/5 hover:text-secondary' => !$anyChildActive,
                                         ])
                                         :class="collapsed ? 'justify-center px-[10px]' : 'px-[10px] gap-2'"
                                     >
                                         <div class="flex items-center gap-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-[18px] w-[18px] shrink-0 text-[#AC8321]" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-[18px] w-[18px] shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="{{ $icons[$item['icon']] }}" />
                                             </svg>
                                             <span x-show="!collapsed" class="truncate">{{ $item['label'] }}</span>
@@ -163,7 +174,7 @@
                                         <svg
                                             x-show="!collapsed"
                                             xmlns="http://www.w3.org/2000/svg"
-                                            class="h-3.5 w-3.5 shrink-0 text-[#AC8321] transition-transform duration-200"
+                                            class="h-3.5 w-3.5 shrink-0 text-primary transition-transform duration-200"
                                             :class="open ? 'rotate-180' : ''"
                                             fill="none"
                                             viewBox="0 0 24 24"
@@ -179,7 +190,7 @@
                                         x-transition:enter-start="transform opacity-0 scale-95"
                                         x-transition:enter-end="transform opacity-100 scale-100"
                                         x-cloak
-                                        class="mt-0.5 space-y-0.5 ps-3 border-s border-white/10 ms-4"
+                                        class="mt-0.5 space-y-0.5 ps-3 border-s border-background/10 ms-4"
                                     >
                                         @foreach ($item['children'] as $child)
                                             <li>
@@ -187,12 +198,12 @@
                                                     href="{{ route($child['route']) }}"
                                                     @class([
                                                         'group flex items-center gap-2 rounded-lg px-[10px] py-[9px] text-[13px] font-medium transition-all duration-200',
-                                                        'bg-[#A5780A] text-[#F5F5F5]' => request()->routeIs($child['active']),
-                                                        'text-[#F5F5F5]/60 hover:bg-white/5 hover:text-[#B8974F]' => !request()->routeIs($child['active']),
+                                                        'bg-primary text-background' => request()->routeIs($child['active']),
+                                                        'text-background/60 hover:bg-background/5 hover:text-secondary' => !request()->routeIs($child['active']),
                                                     ])
                                                     :title="collapsed ? '{{ $child['label'] }}' : null"
                                                 >
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-[18px] w-[18px] shrink-0 text-[#AC8321]" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-[18px] w-[18px] shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="{{ $icons[$child['icon']] }}" />
                                                     </svg>
                                                     <span x-show="!collapsed" class="truncate">{{ $child['label'] }}</span>
@@ -207,13 +218,13 @@
                                         href="{{ route($item['route']) }}"
                                         @class([
                                             'group flex items-center rounded-lg py-[9px] text-[13px] font-medium transition-all duration-200',
-                                            'bg-[#A5780A] text-[#F5F5F5]' => request()->routeIs($item['active']),
-                                            'text-[#F5F5F5]/60 hover:bg-white/5 hover:text-[#B8974F]' => ! request()->routeIs($item['active']),
+                                            'bg-primary text-background' => request()->routeIs($item['active']),
+                                            'text-background/60 hover:bg-background/5 hover:text-secondary' => ! request()->routeIs($item['active']),
                                         ])
                                         :class="collapsed ? 'justify-center px-[10px]' : 'px-[10px] gap-2'"
                                         :title="collapsed ? '{{ $item['label'] }}' : null"
                                     >
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-[18px] w-[18px] shrink-0 text-[#AC8321]" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-[18px] w-[18px] shrink-0 text-primary" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="{{ $icons[$item['icon']] }}" />
                                         </svg>
                                         <span x-show="!collapsed" class="truncate">{{ $item['label'] }}</span>

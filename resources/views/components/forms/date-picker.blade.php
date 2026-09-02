@@ -30,7 +30,7 @@
         value="{{ old($name, $value) }}"
         {{ $required ? 'required' : '' }}
         {{ $attributes->merge([
-            'class' => "w-full min-h-[44px] rounded-xl bg-[#EAEAE9] px-3.5 py-2.5 text-sm text-[#3D342A] transition duration-200 focus:outline-none disabled:opacity-50 disabled:bg-[#EAEAE9]/20 disabled:cursor-not-allowed {$borderClasses}"
+            'class' => "w-full min-h-[44px] rounded-xl bg-secondary px-3.5 py-2.5 text-sm text-[#3D342A] transition duration-200 focus:outline-none disabled:opacity-50 disabled:bg-secondary/20 disabled:cursor-not-allowed {$borderClasses}"
         ]) }}
     >
 

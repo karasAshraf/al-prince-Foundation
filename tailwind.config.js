@@ -13,20 +13,11 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: '#A5780A',
-                'primary-light': '#B8974F',
-                'primary-dark': '#8A6408',
-                secondary: '#AC8321',
-                'secondary-light': '#B8974F',
-                'text-primary': '#372828',
-                'text-secondary': '#695956',
-                'text-muted': '#B4AEA4',
-                surface: 'var(--color-surface)',
-                'surface-alt': '#EAEAE9',
-                'surface-muted': '#B4AEA4',
-                border: '#D5D3CE',
-                'border-light': '#EAEAE9',
-                white: '#F5F5F5',
+                background: '#F5F2EB',
+                primary: '#AC8322',
+                secondary: '#EBE5D7',
+                accent: '#3D2D2D',
+                'text-primary': '#3D2D2D',
             },
             fontFamily: {
                 sans: ['Cairo', 'ui-sans-serif', 'system-ui', ...defaultTheme.fontFamily.sans],

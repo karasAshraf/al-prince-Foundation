@@ -10,7 +10,7 @@
     @if($editUrl)
         <a
             href="{{ $editUrl }}"
-            class="rounded-md p-1.5 text-[#A38B54] hover:bg-[#EAEAE9]/50"
+            class="rounded-md p-1.5 text-[#A38B54] hover:bg-secondary/50"
             aria-label="تعديل"
             title="تعديل"
         >

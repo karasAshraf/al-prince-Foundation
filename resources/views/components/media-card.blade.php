@@ -135,13 +135,13 @@
     }
 @endphp
 
-<div class="group flex flex-col justify-between h-full bg-white dark:bg-gray-800 rounded-xl border border-primary-light/15 hover:border-primary/30 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+<div class="group flex flex-col justify-between h-full bg-background dark:bg-gray-800 rounded-xl border border-secondary/15 hover:border-primary/30 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
     
     <!-- Thumbnail/Icon Top Area (Fixed Aspect Ratio) -->
-    <div class="relative w-full aspect-video flex items-center justify-center bg-[#D5D3CE] border-b border-primary-light/10 overflow-hidden shrink-0">
+    <div class="relative w-full aspect-video flex items-center justify-center bg-secondary border-b border-secondary/10 overflow-hidden shrink-0">
         
         <!-- Category Badge: Absolute Top-Start (Consistent Gold styling site-wide) -->
-        <span class="absolute top-3 start-3 z-10 px-2.5 py-1 rounded-full text-xs font-bold shadow-sm tracking-wide bg-secondary text-white">
+        <span class="absolute top-3 start-3 z-10 px-2.5 py-1 rounded-full text-xs font-bold shadow-sm tracking-wide bg-secondary text-background">
             {{ __('frontend.media_' . $item->category) }}
         </span>
 
@@ -151,7 +151,7 @@
             @if ($type === 'video')
                 <!-- Play overlay icon for videos -->
                 <div class="absolute inset-0 flex items-center justify-center bg-black/10">
-                    <div class="w-12 h-12 rounded-full bg-white/95 dark:bg-gray-900/95 flex items-center justify-center text-primary shadow-md group-hover:scale-110 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-full bg-background/95 dark:bg-gray-900/95 flex items-center justify-center text-primary shadow-md group-hover:scale-110 transition-transform duration-300">
                         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                     </div>
                 </div>
@@ -165,7 +165,7 @@
 
         @if ($totalAttached > 1)
             <div class="absolute bottom-3 end-3 z-10">
-                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary text-white text-[10px] font-bold shadow-sm">
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary text-background text-[10px] font-bold shadow-sm">
                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
                     {{ $totalAttached }}
                 </span>
@@ -177,7 +177,7 @@
     <div class="p-5 flex-1 flex flex-col justify-between">
         <div class="space-y-2">
             <!-- Format type & File size info line -->
-            <div class="flex items-center justify-between text-xs text-text-muted dark:text-gray-400 font-medium">
+            <div class="flex items-center justify-between text-xs text-text-primary dark:text-gray-400 font-medium">
                 <span class="uppercase tracking-wider">
                     {{ __('frontend.' . $type) }}
                 </span>
@@ -187,13 +187,13 @@
             </div>
 
             <!-- Title: Consistent Line Clamp & Color -->
-            <h3 class="text-base font-bold text-[#372828] dark:text-gray-100 line-clamp-2 leading-snug group-hover:text-primary transition-colors">
+            <h3 class="text-base font-bold text-text-primary dark:text-background line-clamp-2 leading-snug group-hover:text-primary transition-colors">
                 {{ $title }}
             </h3>
 
             <!-- Short Description: Consistent Line Clamp (Maintains height when empty) -->
             @if ($desc)
-                <p class="text-xs text-[#695956] dark:text-gray-300 leading-relaxed line-clamp-2">
+                <p class="text-xs text-text-primary dark:text-gray-300 leading-relaxed line-clamp-2">
                     {{ $desc }}
                 </p>
             @else
@@ -202,11 +202,11 @@
         </div>
 
         <!-- Action / Download / View Buttons: Pinned to bottom -->
-        <div class="mt-auto pt-3 border-t border-primary-light/10 flex flex-col gap-2">
+        <div class="mt-auto pt-3 border-t border-secondary/10 flex flex-col gap-2">
             @if ($totalAttached > 0)
                 <button type="button"
                         @click="openModal({{ json_encode($modalPayload, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG) }})"
-                        class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold text-primary bg-primary/10 hover:bg-primary hover:text-white border border-primary/20 hover:border-primary transition-all duration-200"
+                        class="w-full inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold text-primary bg-primary/10 hover:bg-primary hover:text-background border border-primary/20 hover:border-primary transition-all duration-200"
                         aria-label="{{ __('frontend.preview_media') }}">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                     <span>{{ __('frontend.preview_media') }}</span>

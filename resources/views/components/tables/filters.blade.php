@@ -15,7 +15,7 @@
 
     <select
         name="{{ $name }}"
-        class="rounded-lg border border-[#B49C6E]/40 bg-[#EAEAE9] px-3 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none focus:ring-1 focus:ring-[#A38B54]"
+        class="rounded-lg border border-[#B49C6E]/40 bg-secondary px-3 py-2 text-sm text-[#3D342A] focus:border-[#A38B54] focus:outline-none focus:ring-1 focus:ring-[#A38B54]"
     >
         <option value="">{{ $label ?? 'الكل' }}</option>
         @foreach($options as $value => $optionLabel)

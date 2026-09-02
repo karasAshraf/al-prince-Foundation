@@ -2,7 +2,7 @@
     'seoMeta' => null,
 ])
 
-<div class="rounded-xl border border-[#B49C6E]/30 bg-[#EAEAE9]/10 p-5">
+<div class="rounded-xl border border-[#B49C6E]/30 bg-secondary/10 p-5">
     <h3 class="mb-4 flex items-center gap-2 text-sm font-semibold text-[#3D342A]">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#A38B54]" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />

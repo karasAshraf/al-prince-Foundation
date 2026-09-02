@@ -5,7 +5,7 @@
     'padding'     => true,
 ])
 
-<div {{ $attributes->merge(['class' => 'rounded-xl border border-[#B49C6E]/20 bg-[#EAEAE9] shadow-sm']) }}>
+<div {{ $attributes->merge(['class' => 'rounded-xl border border-[#B49C6E]/20 bg-secondary shadow-sm']) }}>
     @if($title)
         <div class="border-b border-[#B49C6E]/10 px-5 py-4">
             <h3 class="text-sm font-semibold text-[#3D342A]">{{ $title }}</h3>

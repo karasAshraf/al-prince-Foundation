@@ -3,7 +3,7 @@
     <!-- Page Header -->
     <div class="text-center mb-16">
         <x-frontend.badge variant="secondary">{{ __('frontend.our_solutions') }}</x-frontend.badge>
-        <h1 class="text-3xl sm:text-4xl font-bold text-text-primary dark:text-surface mt-3 leading-tight">
+        <h1 class="text-3xl sm:text-4xl font-bold text-text-primary dark:text-background mt-3 leading-tight">
             {{ __('frontend.solutions_title') }}
         </h1>
         <p class="mt-4 text-text-primary/70 dark:text-gray-400 max-w-xl mx-auto">
@@ -48,7 +48,7 @@
 
                         <div class="p-6 flex-1 flex flex-col justify-between">
                             <div class="space-y-3">
-                                <h3 class="text-xl font-bold text-text-primary dark:text-gray-100 leading-snug group-hover:text-primary transition-colors duration-200">
+                                <h3 class="text-xl font-bold text-text-primary dark:text-background leading-snug group-hover:text-primary transition-colors duration-200">
                                     <a href="{{ $targetUrl }}" class="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-md">
                                         {{ $title }}
                                     </a>
@@ -61,8 +61,8 @@
                                 @endif
                             </div>
 
-                            <div class="pt-6 border-t border-primary-light/10 mt-6">
-                                <x-frontend.button :href="$targetUrl" variant="outline" size="md" class="w-full justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                            <div class="pt-6 border-t border-secondary/10 mt-6">
+                                <x-frontend.button :href="$targetUrl" variant="outline" size="md" class="w-full justify-center group-hover:bg-primary group-hover:text-background transition-all duration-300">
                                     <span>{{ $ctaText }}</span>
                                     <svg class="w-4 h-4 inline-block ms-1.5 transform transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
