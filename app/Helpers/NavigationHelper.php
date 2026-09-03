@@ -22,6 +22,7 @@ class NavigationHelper
             'solutions' => __('dashboard.sidebar.solutions') ?: 'الحلول',
             'news' => __('dashboard.sidebar.news') ?: 'الأخبار',
             'surveys' => __('dashboard.sidebar.surveys') ?: 'الاستبيانات',
+            'contact' => __('dashboard.sidebar.contact') ?: 'اتصل بنا',
             'governance' => __('dashboard.sidebar.governance_center') ?: 'مركز الحوكمة',
             'media-library' => __('dashboard.sidebar.media_library') ?: 'مكتبة الوسائط',
         ];

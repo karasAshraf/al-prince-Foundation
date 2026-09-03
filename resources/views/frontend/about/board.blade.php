@@ -11,8 +11,8 @@
     <x-slot:hero>
         <div class="relative w-full py-16 sm:py-20 md:py-24 bg-cover bg-center bg-no-repeat overflow-hidden"
              style="background-image: url('{{ asset('storage/backgroundSolution/board.png') }}');">
-            {{-- Professional gradient overlay using brand colors and dark tones --}}
-            <div class="absolute inset-0 bg-gradient-to-tr from-primary/95 via-primary/85 to-primary-light/70 mix-blend-multiply"></div>
+            {{-- Gradient overlay using semantic brand primary overlay --}}
+            <div class="absolute inset-0 bg-gradient-to-tr from-primary/95 via-primary/85 to-primary/70 mix-blend-multiply"></div>
             <div class="absolute inset-0 bg-black/40"></div>
             
             <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -26,11 +26,11 @@
                     {{ __('frontend.board_of_directors') }}
                 </h1>
 
-                {{-- Subtle decorative brand element --}}
+                {{-- Decorative brand divider --}}
                 <div class="flex items-center justify-center gap-2 mt-4 mb-6" aria-hidden="true">
-                    <div class="h-0.5 w-12 bg-secondary/35 rounded-full"></div>
+                    <div class="h-0.5 w-12 bg-secondary/40 rounded-full"></div>
                     <div class="w-2 h-2 rounded-full bg-secondary"></div>
-                    <div class="h-0.5 w-12 bg-secondary/35 rounded-full"></div>
+                    <div class="h-0.5 w-12 bg-secondary/40 rounded-full"></div>
                 </div>
 
                 {{-- Description --}}
@@ -44,41 +44,41 @@
     {{-- ── Board Introduction & Responsibilities ───────────────────────── --}}
     <section class="mb-16 space-y-12 mt-8" x-data="{ inView: false, activeTab: 0 }" x-intersect.once="inView = true">
         
-        {{-- Two-Column Intro: Primary Card vs Content Area --}}
+        {{-- Two-Column Intro: Content Area vs Primary Card --}}
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
-            {{-- Right / Content Area (RTL: appears on the right on desktop, visually first. Mobile: second) --}}
-            <div class="order-2 lg:order-1 lg:col-span-7 flex flex-col justify-center bg-background dark:bg-gray-800 border border-secondary/15 dark:border-gray-700/60 p-6 sm:p-8 md:p-10 rounded-3xl shadow-sm transition-all duration-700 transform"
+            {{-- Right / Content Area (Warm Off-White background, Deep Brown text) --}}
+            <div class="order-2 lg:order-1 lg:col-span-7 flex flex-col justify-center bg-background border border-secondary/40 p-6 sm:p-8 md:p-10 rounded-3xl shadow-sm transition-all duration-700 transform"
                  :class="inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
                 <div class="space-y-4 max-w-2xl">
-                    <p class="text-base sm:text-lg text-text-primary/80 dark:text-gray-300 leading-relaxed font-medium text-justify">
+                    <p class="text-base sm:text-lg text-text-primary/85 leading-relaxed font-medium text-justify">
                         {{ $isRtl ? 'يمثل مجلس الأمناء السلطة العليا في المؤسسة، ويتولى الإشراف على توجهاتها الاستراتيجية، واعتماد سياساتها وخططها، ومتابعة أدائها، وضمان التزامها برسالتها وأهدافها ولائحتها الأساسية.' : 'The Board of Trustees represents the supreme authority of the Foundation, supervising its strategic directions, adopting its policies and plans, monitoring its performance, and ensuring its commitment to its mission, goals, and bylaws.' }}
                     </p>
                 </div>
             </div>
 
-            {{-- Left / Primary Card (RTL: appears on the left on desktop, visually second. Mobile: first) --}}
+            {{-- Left / Primary Card (Mustard Gold background with Warm Off-White text for contrast) --}}
             <div class="order-1 lg:order-2 lg:col-span-5 relative overflow-hidden bg-primary text-background p-6 sm:p-8 md:p-10 rounded-3xl shadow-sm flex flex-col justify-between transition-all duration-700 transform delay-200"
                  :class="inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'">
                 
                 {{-- Decorative Shapes --}}
-                <div class="absolute -end-10 -top-10 w-40 h-40 rounded-full bg-gradient-to-br from-white/10 to-transparent blur-2xl pointer-events-none"></div>
-                <div class="absolute -start-10 -bottom-10 w-40 h-40 rounded-full bg-gradient-to-tr from-secondary-light/20 to-transparent blur-2xl pointer-events-none"></div>
+                <div class="absolute -end-10 -top-10 w-40 h-40 rounded-full bg-gradient-to-br from-white/15 to-transparent blur-2xl pointer-events-none"></div>
+                <div class="absolute -start-10 -bottom-10 w-40 h-40 rounded-full bg-gradient-to-tr from-secondary/20 to-transparent blur-2xl pointer-events-none"></div>
                 
                 <div class="relative z-10 space-y-4">
-                    <span class="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider bg-secondary text-primary rounded-full">
+                    <span class="inline-block px-3.5 py-1 text-xs font-bold uppercase tracking-wider bg-secondary text-text-primary rounded-full shadow-sm">
                         {{ $isRtl ? 'الهيكل القيادي' : 'Leadership Structure' }}
                     </span>
-                    <h3 class="text-2xl sm:text-3xl font-extrabold leading-tight">
+                    <h3 class="text-2xl sm:text-3xl font-extrabold leading-tight text-background">
                         {{ $isRtl ? 'مجلس الأمناء ودوره الاستراتيجي' : 'Board of Trustees & Its Strategic Role' }}
                     </h3>
                 </div>
                 
-                <div class="relative z-10 mt-8 flex justify-between items-center">
-                    <span class="text-xs text-background/70">
+                <div class="relative z-10 mt-8 flex justify-between items-center border-t border-background/20 pt-4">
+                    <span class="text-xs text-background/80 font-medium">
                         {{ $isRtl ? 'مؤسسة الأمير عبد الرحمن' : 'Prince Abdulrahman Foundation' }}
                     </span>
-                    <div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary font-black shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-text-primary font-black shadow-sm">
                         {{ $isRtl ? 'الأمير' : 'P' }}
                     </div>
                 </div>
@@ -88,9 +88,9 @@
 
         {{-- Responsibilities Header --}}
         <div class="text-center pt-4">
-            <h3 class="inline-flex flex-col items-center text-lg sm:text-xl lg:text-2xl font-bold text-text-primary dark:text-background gap-2">
+            <h3 class="inline-flex flex-col items-center text-lg sm:text-xl lg:text-2xl font-bold text-text-primary gap-2">
                 <span>{{ $isRtl ? 'ويؤدي المجلس دوراً محورياً في:' : 'The Board plays a pivotal role in:' }}</span>
-                <span class="w-20 h-1 bg-secondary rounded-full"></span>
+                <span class="w-20 h-1 bg-primary rounded-full"></span>
             </h3>
         </div>
 
@@ -156,36 +156,36 @@
             ];
         @endphp
 
-        {{-- Mobile Dropdown Selector --}}
+        {{-- Mobile Dropdown Selector (Cleaned with semantic tokens) --}}
         <div class="block lg:hidden w-full max-w-md mx-auto mb-6">
-            <label for="board-role-select" class="block text-sm font-bold text-text-primary dark:text-gray-300 mb-2">
+            <label for="board-role-select" class="block text-sm font-bold text-text-primary mb-2">
                 {{ $isRtl ? 'اختر أحد أدوار مجلس الأمناء:' : 'Select one of the Board roles:' }}
             </label>
-            <select id="board-role-select" x-model.number="activeTab" class="w-full p-4 bg-background dark:bg-gray-800 border border-gray-200 dark:border-gray-700/60 rounded-2xl text-text-primary dark:text-background font-bold focus:outline-none focus:ring-2 focus:ring-primary">
+            <select id="board-role-select" x-model.number="activeTab" class="w-full p-4 bg-background border border-secondary rounded-2xl text-text-primary font-bold focus:outline-none focus:ring-2 focus:ring-primary shadow-sm">
                 @foreach ($responsibilities as $index => $resp)
                     <option value="{{ $index }}">{{ $isRtl ? $resp['title_ar'] : $resp['title_en'] }}</option>
                 @endforeach
             </select>
         </div>
 
-        {{-- Desktop Horizontal Tabs --}}
+        {{-- Desktop Horizontal Tabs (Cleaned with semantic tokens) --}}
         <div class="hidden lg:flex flex-wrap gap-2.5 justify-center max-w-5xl mx-auto mb-8">
             @foreach ($responsibilities as $index => $resp)
                 <button @click="activeTab = {{ $index }}"
-                        class="px-5 py-3 rounded-xl font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm flex items-center gap-2"
-                        :class="activeTab === {{ $index }} ? 'bg-primary text-background ring-2 ring-secondary/50' : 'bg-background dark:bg-gray-800 text-text-primary dark:text-gray-300 border border-gray-200/80 dark:border-gray-700/60 hover:bg-background dark:hover:bg-gray-700/40'">
+                        class="px-5 py-3 rounded-xl font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm flex items-center gap-2 cursor-pointer"
+                        :class="activeTab === {{ $index }} ? 'bg-primary text-background shadow-md' : 'bg-secondary/40 text-text-primary border border-secondary/60 hover:bg-secondary/80'">
                     
-                    {{-- Small dot indicator on active --}}
+                    {{-- Small dot indicator --}}
                     <span class="w-2 h-2 rounded-full transition-all duration-200"
-                          :class="activeTab === {{ $index }} ? 'bg-secondary' : 'bg-gray-300 dark:bg-gray-600'"></span>
+                          :class="activeTab === {{ $index }} ? 'bg-background' : 'bg-primary/40'"></span>
                           
                     <span>{{ $isRtl ? $resp['title_ar'] : $resp['title_en'] }}</span>
                 </button>
             @endforeach
         </div>
 
-        {{-- Active Responsibility Content Panel --}}
-        <div class="relative bg-background dark:bg-gray-800 border border-secondary/15 dark:border-gray-700/60 p-8 sm:p-10 rounded-3xl shadow-sm text-center max-w-3xl mx-auto overflow-hidden">
+        {{-- Active Responsibility Content Panel (Cleaned with semantic tokens) --}}
+        <div class="relative bg-background border border-secondary/40 p-8 sm:p-10 rounded-3xl shadow-sm text-center max-w-3xl mx-auto overflow-hidden">
             @foreach ($responsibilities as $index => $resp)
                 <div x-show="activeTab === {{ $index }}"
                      x-transition:enter="transition ease-out duration-300 transform"
@@ -202,10 +202,10 @@
 
                     {{-- Title and Explanation --}}
                     <div class="space-y-3 max-w-xl">
-                        <h4 class="text-xl sm:text-2xl font-black text-primary dark:text-secondary">
+                        <h4 class="text-xl sm:text-2xl font-black text-primary">
                             {{ $isRtl ? $resp['title_ar'] : $resp['title_en'] }}
                         </h4>
-                        <p class="text-base text-text-primary/75 dark:text-gray-300 leading-relaxed font-medium">
+                        <p class="text-base text-text-primary/80 leading-relaxed font-medium">
                             {{ $isRtl ? $resp['desc_ar'] : $resp['desc_en'] }}
                         </p>
                     </div>

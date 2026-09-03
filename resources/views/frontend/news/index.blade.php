@@ -48,8 +48,11 @@
              x-data="{ inView: false }"
              x-intersect.once="inView = true">
 
-            {{-- Featured Article (Latest) --}}
-            @php $featured = $news->first(); @endphp
+            {{-- Featured Article (Latest) - ONLY ON FIRST PAGE --}}
+            @php 
+                $isFirstPage = $news->onFirstPage();
+                $featured = $isFirstPage ? $news->first() : null; 
+            @endphp
             @if($featured)
             <div class="max-w-5xl mx-auto overflow-hidden rounded-2xl bg-background dark:bg-gray-800 border border-secondary transition-all hover:shadow-lg group grid grid-cols-1 md:grid-cols-2">
                 <div class="w-full h-64 md:h-[300px] relative overflow-hidden shrink-0 bg-gray-150">
@@ -104,9 +107,10 @@
             @endif
 
             {{-- Older Articles List --}}
-            @if ($news->count() > 1)
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 border-t border-secondary dark:border-gray-700 pt-10">
-                    @foreach ($news->slice(1) as $index => $item)
+            @php $gridItems = $isFirstPage ? $news->slice(1) : $news; @endphp
+            @if ($gridItems->count() > 0)
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 {{ $featured ? 'border-t border-secondary dark:border-gray-700 pt-10' : '' }}">
+                    @foreach ($gridItems as $index => $item)
                         @php
                             $itemLocale = app()->getLocale();
                             $itemTitle = $itemLocale === 'ar' ? ($item->title_ar ?: '') : ($item->title_en ?: $item->title_ar ?: '');

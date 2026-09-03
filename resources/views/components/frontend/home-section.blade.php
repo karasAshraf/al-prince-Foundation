@@ -73,26 +73,24 @@
         @if ($img)
             <div
                 :class="inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'"
-                class="{{ $isReverse ? 'lg:col-span-6 lg:order-2' : 'lg:col-span-6 lg:order-1' }} relative group transition-all duration-700 ease-out"
+                class="{{ $isReverse ? 'lg:col-span-6 lg:order-2' : 'lg:col-span-6 lg:order-1' }} relative group transition-all duration-700 ease-out flex flex-col items-center justify-center gap-4"
             >
-                {{-- Decorative Floating Glow Behind Image --}}
-                <div class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary-light/10 to-primary/10 blur-2xl opacity-40 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none"></div>
-
-                <div class="relative overflow-hidden rounded-3xl border border-secondary dark:border-gray-800/40 shadow-md group-hover:shadow-lg transition-all duration-500">
+                {{-- No decorative glow or card border — image renders clean --}}
+                <div class="flex items-center justify-center w-full">
                     <img
                         src="{{ $img }}"
                         alt="{{ $title ?? '' }}"
                         loading="lazy"
-                        class="w-full h-[360px] sm:h-[440px] object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                        class="w-auto h-auto max-w-full max-h-[520px] object-contain transform group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
                 </div>
 
-                {{-- Person Name: Displayed directly below the photo --}}
+                {{-- Person Name: stacked directly below the image, centered --}}
                 @php
                     $personName = $locale === 'ar' ? $section->person_name_ar : ($section->person_name_en ?? $section->person_name_ar);
                 @endphp
                 @if (!empty($personName))
-                    <div class="mt-4 text-center">
+                    <div class="text-center">
                         <span class="inline-block text-sm sm:text-base font-semibold text-text-primary dark:text-gray-200 bg-secondary/10 dark:bg-gray-800/60 px-4 py-1.5 rounded-full border border-secondary/20 dark:border-gray-700/40">
                             {{ $personName }}
                         </span>

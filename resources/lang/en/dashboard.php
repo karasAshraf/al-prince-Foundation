@@ -129,6 +129,7 @@ return [
         'governance_center' => 'Governance Center',
         'surveys' => 'Surveys',
         'contact_messages' => 'Contact Messages',
+        'contact' => 'Contact Us',
         'system' => 'System',
         'users' => 'Users',
         'settings' => 'Settings',

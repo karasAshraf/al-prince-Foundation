@@ -62,8 +62,7 @@
                     <div></div>
                 @endif
                 
-                <div class="flex items-center gap-3 self-end sm:self-auto bg-background dark:bg-gray-800/50 p-2 rounded-2xl border border-background dark:border-gray-700">
-                    <span class="text-sm font-bold text-text-primary dark:text-gray-400 px-2">{{ app()->getLocale() === 'ar' ? 'مشاركة:' : 'Share:' }}</span>
+                <div class="flex items-center self-end sm:self-auto bg-background dark:bg-gray-800/50 p-2 rounded-2xl border border-background dark:border-gray-700">
                     <x-frontend.share-buttons :url="url(route('news.show', $news->slug))" :title="$title" />
                 </div>
             </div>

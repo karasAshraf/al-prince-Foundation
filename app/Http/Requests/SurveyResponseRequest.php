@@ -16,7 +16,7 @@ class SurveyResponseRequest extends FormRequest
         return [
             'survey_id'          => ['required', 'exists:surveys,id'],
             'respondent_name'    => ['required', 'string', 'max:255'],
-            'respondent_phone'   => ['required', 'string', 'regex:/^((009665|9665|\+9665|05|5)[0-9]{8}|(00201|201|\+201|01)[0125][0-9]{8})$/'],
+            'respondent_phone'   => ['required', 'string', 'regex:/^(\+?(009665|9665|05|5)[0-9]{8}|\+?(00201|201|01)[0125][0-9]{8})$/'],
             'answers'            => ['required', 'array'],
             'respondent_email'   => ['nullable', 'email', 'max:255'],
             'ip_address'         => ['nullable', 'ip'],

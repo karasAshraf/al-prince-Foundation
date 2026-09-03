@@ -31,7 +31,14 @@
                     />
                 </td>
                 <td class="px-4 py-3 text-sm text-[#3D342A]/60">
-                    {{ $item->published_at?->format('Y-m-d') ?? '—' }}
+                    <div class="flex items-center gap-2">
+                        <span>{{ $item->published_at?->format('Y-m-d') ?? '—' }}</span>
+                        @if($item->status === 'published' && $item->published_at && $item->published_at > now())
+                            <span class="inline-flex items-center rounded-full bg-blue-50 px-2 py-0.5 text-[10px] font-bold text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                                {{ app()->getLocale() === 'ar' ? 'مجدول النشر' : 'Scheduled' }}
+                            </span>
+                        @endif
+                    </div>
                 </td>
                 <td class="px-4 py-3">
                     <x-tables.table-actions

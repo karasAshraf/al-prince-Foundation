@@ -129,6 +129,7 @@ return [
         'governance_center' => 'مركز الحوكمة',
         'surveys' => 'الاستبيانات',
         'contact_messages' => 'رسائل التواصل',
+        'contact' => 'اتصل بنا',
         'system' => 'النظام',
         'users' => 'المستخدمون',
         'settings' => 'الإعدادات',

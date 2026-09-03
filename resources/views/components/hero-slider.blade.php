@@ -114,16 +114,23 @@
                     </div>
                 @endif
 
-                <div class="max-w-4xl mx-auto space-y-6 md:space-y-8 flex flex-col items-center justify-center my-auto">
-                    <div class="space-y-4 md:space-y-6">
+                @php
+                    $isOffWhiteHero = in_array($placement, ['news', 'industries', 'about', 'services']) || (isset($slide->title) && (str_contains($slide->title, 'أثر ملموس') || str_contains($slide->title, 'خدمات')));
+                    $titleColorClass = $isOffWhiteHero ? 'text-[#F5F2EB]' : 'text-primary';
+                    $subtitleColorClass = $isOffWhiteHero ? 'text-[#F5F2EB]/90' : 'text-[#AC8322]';
+                @endphp
+
+                <div class="max-w-4xl mx-auto flex flex-col items-center justify-center my-auto">
+                    {{-- Floating typography directly over hero image without dark container box --}}
+                    <div class="space-y-3 md:space-y-5 text-center">
                         @if ($slide->title)
-                            <h1 class="@if($variant === 'home') text-2xl sm:text-4xl md:text-5xl lg:text-6xl @else text-xl sm:text-3xl md:text-4xl lg:text-5xl @endif font-bold text-background leading-snug sm:leading-tight tracking-tight drop-shadow-md max-w-3xl mx-auto">
+                            <h1 class="@if($variant === 'home') text-2xl sm:text-4xl md:text-5xl lg:text-6xl @else text-xl sm:text-3xl md:text-4xl lg:text-5xl @endif font-extrabold {{ $titleColorClass }} leading-tight tracking-tight drop-shadow-md max-w-3xl mx-auto">
                                 {{ $slide->title }}
                             </h1>
                         @endif
 
                         @if ($slide->subtitle)
-                            <p class="@if($variant === 'home') text-xs sm:text-sm md:text-base lg:text-lg @else text-xs sm:text-sm md:text-base @endif text-background font-medium max-w-2xl mx-auto leading-relaxed drop-shadow break-words line-clamp-3 sm:line-clamp-none">
+                            <p class="@if($variant === 'home') text-xs sm:text-sm md:text-base lg:text-lg @else text-xs sm:text-sm md:text-base @endif {{ $subtitleColorClass }} font-semibold max-w-2xl mx-auto leading-relaxed break-words line-clamp-3 sm:line-clamp-none drop-shadow-md">
                                 {{ $slide->subtitle }}
                             </p>
                         @endif

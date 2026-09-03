@@ -171,10 +171,9 @@
                             $valuePairs = [];
                             if ($section->slug === 'kymna' && !empty($pDesc)) {
                                 $lines = array_values(array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', trim($pDesc)))));
-                                for ($j = 0; $j < count($lines); $j += 2) {
-                                    if (isset($lines[$j])) {
-                                        $valuePairs[] = ['title' => $lines[$j], 'desc' => $lines[$j + 1] ?? ''];
-                                    }
+                                foreach ($lines as $line) {
+                                    // Treat each line as a separate value title
+                                    $valuePairs[] = ['title' => $line, 'desc' => ''];
                                 }
                             }
                         @endphp
@@ -325,11 +324,11 @@
                     </p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto pt-2">
                         <x-frontend.button :href="route('about.board')" variant="primary"
-                            class="w-full justify-center py-3.5 rounded-2xl shadow-md hover:shadow-lg !bg-primary hover:!bg-accent transition-all duration-300 {{ $easeSoft }} active:scale-[0.98]">
+                            class="w-full justify-center py-3.5 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 {{ $easeSoft }} active:scale-[0.98]">
                             {{ __('frontend.board_of_directors') }}
                         </x-frontend.button>
                         <x-frontend.button :href="route('about.executive-team')" variant="outline"
-                            class="w-full justify-center py-3.5 rounded-2xl !border-primary !text-primary hover:!bg-primary/10 transition-all duration-300 {{ $easeSoft }} active:scale-[0.98]">
+                            class="w-full justify-center py-3.5 rounded-2xl transition-all duration-300 {{ $easeSoft }} active:scale-[0.98]">
                             {{ __('frontend.executive_team') }}
                         </x-frontend.button>
                     </div>

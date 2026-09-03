@@ -7,6 +7,22 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Storage Filesystem Safeguard
+
+**IMPORTANT:** Laravel stores public files in `storage/app/public`.
+To serve these files to the web, `public/storage` MUST be a valid filesystem link pointing to that directory.
+
+If you clone the project, extract a ZIP, move the project, or if `public/storage` is accidentally recreated as a normal folder, **images will fail to upload or display properly**.
+
+**How to fix:**
+1. Stop any local servers (`npm run dev`, `php artisan serve`).
+2. Run this exact command to delete the incorrect folder on Windows:
+   `rmdir /S /Q public\storage`
+3. Run the official link command:
+   `php artisan storage:link`
+
+**Never commit `public/storage` as a normal folder.**
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

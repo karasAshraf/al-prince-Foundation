@@ -10,25 +10,25 @@
     {{-- ── Page Header ──────────────────────────────────────────────────── --}}
     <div class="relative text-center pt-8 pb-4 mb-12 sm:mb-16">
 
-        {{-- Decorative background blob --}}
+        {{-- Decorative background glow --}}
         <div
             aria-hidden="true"
             class="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none"
         >
-            <div class="w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-br from-secondary-light/30 via-primary-light/25 to-transparent blur-3xl opacity-60"></div>
+            <div class="w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-br from-secondary/40 via-primary/10 to-transparent blur-3xl opacity-70"></div>
         </div>
 
         {{-- Eyebrow --}}
-        <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-primary/80 dark:text-secondary/90 mb-3 block">
+        <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-primary mb-3 block">
             {{ __('frontend.executive_structure') }}
         </span>
 
         {{-- Page title --}}
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-text-primary dark:text-background leading-tight tracking-tight mb-4">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-text-primary leading-tight tracking-tight mb-4">
             {{ __('frontend.executive_team') }}
         </h1>
 
-        {{-- Subtle decorative brand element - slightly more dynamic/human wavy/pill accent --}}
+        {{-- Subtle decorative brand element --}}
         <div class="flex items-center justify-center gap-1.5 mt-4 mb-6" aria-hidden="true">
             <div class="w-3 h-1.5 rounded-full bg-primary"></div>
             <div class="w-1.5 h-1.5 rounded-full bg-secondary"></div>
@@ -36,7 +36,7 @@
         </div>
 
         {{-- Description --}}
-        <p class="mt-4 text-base sm:text-lg text-text-primary/75 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        <p class="mt-4 text-base sm:text-lg text-text-primary/80 max-w-2xl mx-auto leading-relaxed">
             {{ __('frontend.executive_team_desc') }}
         </p>
     </div>
@@ -79,15 +79,9 @@
             variant="ghost"
             size="md"
         >
-            @if ($isRtl)
-                <svg class="w-4 h-4 inline-block me-1 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-                </svg>
-            @else
-                <svg class="w-4 h-4 inline-block me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-                </svg>
-            @endif
+            <svg class="w-4 h-4 inline-block me-1 {{ $isRtl ? 'rotate-180' : '' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+            </svg>
             {{ __('frontend.back_to_about') }}
         </x-frontend.button>
     </div>

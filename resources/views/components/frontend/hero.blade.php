@@ -152,18 +152,23 @@
             <!-- Content Container -->
             <x-frontend.container class="relative z-10 py-12 text-center text-background h-full flex flex-col justify-between">
                 <!-- Empty top spacer to keep title/desc vertically aligned towards center-top without collision -->
-                <div class="flex-grow flex items-center justify-center">
-                    <div class="max-w-4xl mx-auto space-y-4 md:space-y-6">
-                        <!-- Main H1 Headline -->
+                @php
+                    $isOffWhiteHero = in_array($placement, ['news', 'industries', 'about', 'services']) || (isset($slide->title) && (str_contains($slide->title, 'أثر ملموس') || str_contains($slide->title, 'خدمات')));
+                    $titleColorClass = $isOffWhiteHero ? 'text-[#F5F2EB]' : 'text-primary';
+                    $subtitleColorClass = $isOffWhiteHero ? 'text-[#F5F2EB]/90' : 'text-[#AC8322]';
+                @endphp
+
+                <div class="max-w-4xl mx-auto space-y-4 md:space-y-6">
+                    {{-- Floating typography directly over hero image without dark container box --}}
+                    <div class="space-y-3 md:space-y-5 text-center">
                         @if ($slide->title)
-                            <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-background leading-tight tracking-tight drop-shadow-md max-w-xl mx-auto">
+                            <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold {{ $titleColorClass }} leading-tight tracking-tight drop-shadow-md max-w-2xl mx-auto">
                                 {{ $slide->title }}
                             </h1>
                         @endif
 
-                        <!-- Subtitle / Description -->
                         @if ($slide->desc)
-                            <p class="text-xs sm:text-sm md:text-base lg:text-lg text-background font-medium max-w-xl mx-auto leading-relaxed drop-shadow break-words line-clamp-3 sm:line-clamp-none">
+                            <p class="text-sm sm:text-base md:text-lg {{ $subtitleColorClass }} font-semibold max-w-xl mx-auto leading-relaxed break-words line-clamp-3 sm:line-clamp-none drop-shadow-md">
                                 {{ $slide->desc }}
                             </p>
                         @endif
