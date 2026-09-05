@@ -24,10 +24,10 @@
             :url="route('dashboard.surveys.index')"
         />
         <x-cards.stat-card
-            label="{{ app()->getLocale() === 'ar' ? 'إجمالي الأخبار والبرامج والمشاريع' : 'Total News, Programs & Projects' }}"
-            :value="$newsCount + $programsCount + $projectsCount"
+            label="{{ app()->getLocale() === 'ar' ? 'إجمالي الأخبار والخدمات والقطاعات' : 'Total News, Services & Sectors' }}"
+            :value="$newsCount + $servicesCount + $industriesCount"
             icon="folder"
-            :url="route('dashboard.projects.index')"
+            :url="route('dashboard.services.index')"
         />
         <x-cards.stat-card
             label="{{ app()->getLocale() === 'ar' ? 'المستخدمين المسجلين' : 'Registered Users' }}"

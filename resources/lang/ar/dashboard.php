@@ -98,6 +98,8 @@ return [
         'welcome' => 'مرحباً بك في لوحة التحكم',
         'overview' => 'نظرة عامة',
         'news_count' => 'إجمالي الأخبار',
+        'services_count' => 'إجمالي الخدمات',
+        'industries_count' => 'إجمالي المجالات',
         'programs_count' => 'إجمالي البرامج',
         'projects_count' => 'إجمالي المشاريع',
         'users_count' => 'إجمالي المستخدمين',

@@ -23,16 +23,16 @@
             :url="route('dashboard.news.index')"
         />
         <x-cards.stat-card
-            label="{{ __('dashboard.dashboard.programs_count') }}"
-            :value="$programsCount"
-            icon="folder"
-            :url="route('dashboard.programs.index')"
+            label="{{ __('dashboard.dashboard.services_count') }}"
+            :value="$servicesCount"
+            icon="cog"
+            :url="route('dashboard.services.index')"
         />
         <x-cards.stat-card
-            label="{{ __('dashboard.dashboard.projects_count') }}"
-            :value="$projectsCount"
-            icon="flag"
-            :url="route('dashboard.projects.index')"
+            label="{{ __('dashboard.dashboard.industries_count') }}"
+            :value="$industriesCount"
+            icon="view-grid"
+            :url="route('dashboard.industries.index')"
         />
         <x-cards.stat-card
             label="{{ __('dashboard.dashboard.users_count') }}"

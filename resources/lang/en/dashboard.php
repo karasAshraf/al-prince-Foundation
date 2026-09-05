@@ -98,6 +98,8 @@ return [
         'welcome' => 'Welcome to the Dashboard',
         'overview' => 'Overview',
         'news_count' => 'Total News',
+        'services_count' => 'Total Services',
+        'industries_count' => 'Total Sectors',
         'programs_count' => 'Total Programs',
         'projects_count' => 'Total Projects',
         'users_count' => 'Total Users',
